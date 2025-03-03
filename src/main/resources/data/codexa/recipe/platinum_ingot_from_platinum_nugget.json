@@ -1,0 +1,17 @@
+{
+  "type":"minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern":[
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#":{
+      "item": "codexa:platinum_nugget"
+    }
+  },
+  "result": {
+    "id": "codexa:platinum_ingot"
+  }
+}

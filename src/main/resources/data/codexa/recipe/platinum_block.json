@@ -1,0 +1,18 @@
+{
+  "type":"minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#":{
+      "item": "codexa:platinum_ingot"
+    }
+  },
+  "pattern":[
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "codexa:platinum_block"
+  }
+}
