@@ -2,12 +2,12 @@
   "type": "minecraft:smelting",
   "category": "misc",
   "cookingtime": 200,
-  "experience": 0.8,
+  "experience": 0.15,
   "group": "platinum_ingot",
   "ingredient": {
-    "item": "codexa:raw_platinum"
+    "item": "minecraft:bamboo"
   },
   "result": {
-    "id": "codexa:platinum_ingot"
+    "item": "codexa:bamboo_charcoal"
   }
 }

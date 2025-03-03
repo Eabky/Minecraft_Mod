@@ -26,8 +26,14 @@ public class ModCreativeModTabs
 
                         pOutput.accept(ModBlocks.PLATINUM_BLOCK.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+                        pOutput.accept(ModBlocks.BLACK_HOLE.get());
 
                         pOutput.accept(ModItems.DARK_STAR_RING.get());
+
+                        pOutput.accept(ModItems.WISDOM_FRUIT.get());
+
+                        pOutput.accept(ModItems.BAMBOO_CHARCOAL.get());
+
                     })
                     .build());
 

@@ -2,12 +2,12 @@
   "type": "minecraft:smelting",
   "category": "misc",
   "cookingtime": 200,
-  "experience": 0.6,
+  "experience": 0.8,
   "group": "platinum_ingot",
   "ingredient": {
-    "item": "codexa:platinum_residue"
+    "item": "codexa:raw_platinum"
   },
   "result": {
-    "id": "codexa:platinum_nugget"
+    "item": "codexa:platinum_ingot"
   }
 }

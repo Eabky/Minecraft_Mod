@@ -6,8 +6,16 @@
 
   "item.codexa.dark_star_ring": "Dark Star Ring",
 
+  "item.codexa.wisdom_fruit": "Wisdom Fruit",
+  "item.codexa.bamboo_charcoal": "Bamboo Charcoal",
+
   "block.codexa.platinum_block": "Platinum Block",
   "block.codexa.deepslate_platinum_ore": "Platinum Ore",
+  "block.codexa.black_hole": "Black Hole",
 
-  "creativetab.codexa_tab": "Codex Arcanum"
+  "creativetab.codexa_tab": "Codex Arcanum",
+
+
+  "tooltip.codexa.black_hole.tooltip": "SUCKY SUCKY",
+  "tooltip.codexa.dark_star_ring.tooltip": "The power of a §5Dark Star§r in your fingers."
 }

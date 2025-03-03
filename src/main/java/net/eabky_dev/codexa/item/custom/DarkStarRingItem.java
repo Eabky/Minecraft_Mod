@@ -1,37 +1,39 @@
 package net.eabky_dev.codexa.item.custom;
 
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class PowerRingItem extends Item
+public class DarkStarRingItem extends Item implements ICurioItem
 {
-    public PowerRingItem(Properties pProperties)
+    public DarkStarRingItem(Properties pProperties)
     {
-        super(pProperties);
+        super(new Properties().stacksTo(1).defaultDurability(0));
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
+    public void curioTick(SlotContext slotContext, ItemStack stack)
     {
-
-        if (!pLevel.isClientSide && pEntity instanceof Player player)
+        if (slotContext.entity() instanceof Player player)
         {
+            Level pLevel = player.level();
+
             DamageSource ringDamageSource = pLevel.damageSources().magic();
             float minDamage = 0.5f;
             float maxDamage = 4f;
 
             double radius = 3.0; // Define the radius around the player
             AABB area = new AABB(
-                    pEntity.getX() - radius, pEntity.getY() - radius, pEntity.getZ() - radius,
-                    pEntity.getX() + radius, pEntity.getY() + radius, pEntity.getZ() + radius
+                    slotContext.entity().getX() - radius, slotContext.entity().getY() - radius, slotContext.entity().getZ() - radius,
+                    slotContext.entity().getX() + radius, slotContext.entity().getY() + radius, slotContext.entity().getZ() + radius
             );
 
             List<LivingEntity> nearbyEntities = pLevel.getEntitiesOfClass(LivingEntity.class, area, e -> e != player);
@@ -49,6 +51,13 @@ public class PowerRingItem extends Item
             }
         }
 
-        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+        ICurioItem.super.curioTick(slotContext, stack);
     }
+
+    @Override
+    public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
+        return true;
+    }
+
+
 }

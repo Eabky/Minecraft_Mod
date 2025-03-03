@@ -1,6 +1,7 @@
 package net.eabky_dev.codexa.block;
 
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.block.custom.BlackHoleBlock;
 import net.eabky_dev.codexa.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -20,12 +21,14 @@ public class ModBlocks
             DeferredRegister.create(ForgeRegistries.BLOCKS, CODEXA.MOD_ID);
 
     public static final RegistryObject<Block> PLATINUM_BLOCK = registerBlock("platinum_block",
-            ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> DEEPSLATE_PLATINUM_ORE = registerBlock("deepslate_platinum_ore",
-            ()-> new DropExperienceBlock(UniformInt.of(3, 6), BlockBehaviour.Properties.of()
+            ()-> new DropExperienceBlock(BlockBehaviour.Properties.of()
                     .strength(5f)
                     .sound(SoundType.DEEPSLATE)
-                    .requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops(),UniformInt.of(3, 6)));
+    public static final RegistryObject<Block> BLACK_HOLE = registerBlock("black_hole",
+            ()-> new BlackHoleBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 
 
 

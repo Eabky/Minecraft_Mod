@@ -2,12 +2,12 @@
   "type": "minecraft:blasting",
   "category": "misc",
   "cookingtime": 100,
-  "experience": 0.8,
+  "experience": 0.6,
   "group": "platinum_ingot",
   "ingredient": {
-    "item": "codexa:raw_platinum"
+    "item": "codexa:platinum_residue"
   },
   "result": {
-    "id": "codexa:platinum_ingot"
+    "item": "codexa:platinum_nugget"
   }
 }
