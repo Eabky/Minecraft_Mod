@@ -27,6 +27,22 @@ public class ModBlocks
                     .strength(5f)
                     .sound(SoundType.DEEPSLATE)
                     .requiresCorrectToolForDrops(),UniformInt.of(3, 6)));
+
+    public static final RegistryObject<Block> CONCRETE = registerBlock("concrete",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+    public static final RegistryObject<Block> CONCRETE_STRAIRS = registerBlock("concrete_stairs",
+            ()-> new StairBlock(()->ModBlocks.CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+    public static final RegistryObject<Block> CONCRETE_SLAB = registerBlock("concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+    public static final RegistryObject<Block> CONCRETE_WALL = registerBlock("concrete_wall",
+            ()-> new WallBlock(BlockBehaviour.Properties.copy(CONCRETE.get())));
+    public static final RegistryObject<Block> POLISHED_CONCRETE = registerBlock("polished_concrete",
+            ()-> new Block(BlockBehaviour.Properties.copy(CONCRETE.get())));
+    public static final RegistryObject<Block> POLISHED_CONCRETE_STRAIRS = registerBlock("polished_concrete_stairs",
+            ()-> new StairBlock(()->ModBlocks.POLISHED_CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
+    public static final RegistryObject<Block> POLISHED_CONCRETE_SLAB = registerBlock("polished_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
+
     public static final RegistryObject<Block> BLACK_HOLE = registerBlock("black_hole",
             ()-> new BlackHoleBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 

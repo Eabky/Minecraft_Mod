@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "codexa:block/concrete_slab"
+    },
+    "type=double": {
+      "model": "codexa:block/concrete"
+    },
+    "type=top": {
+      "model": "codexa:block/concrete_slab_top"
+    }
+  }
+}

@@ -3,10 +3,16 @@
   "item.codexa.raw_platinum": "Raw Platinum",
   "item.codexa.platinum_residue": "Platinum Residue",
   "item.codexa.platinum_nugget": "Platinum Nugget",
+  "item.codexa.platinum_pickaxe": "Platinum Pickaxe",
+  "item.codexa.platinum_helmet": "Platinum Helmet",
+  "item.codexa.platinum_chestplate": "Platinum Chestplate",
+  "item.codexa.platinum_leggings": "Platinum leggings",
+  "item.codexa.platinum_boots": "Platinum Boots",
 
   "item.codexa.paladinium_ingot": "Paladinium Ingot",
 
   "item.codexa.dark_star_ring": "Dark Star Ring",
+  "item.codexa.iron_greatsword": "Iron Greatsword",
 
   "item.codexa.wisdom_fruit": "Wisdom Fruit",
   "item.codexa.bamboo_charcoal": "Bamboo Charcoal",
@@ -14,6 +20,14 @@
   "block.codexa.platinum_block": "Platinum Block",
   "block.codexa.deepslate_platinum_ore": "Platinum Ore",
   "block.codexa.black_hole": "Black Hole",
+  "block.codexa.concrete": "Concrete",
+  "block.codexa.concrete_stairs": "Concrete Stairs",
+  "block.codexa.concrete_slab": "Concrete Slab",
+  "block.codexa.concrete_wall": "Concrete Wall",
+  "block.codexa.polished_concrete": "Polished Concrete",
+  "block.codexa.polished_concrete_stairs": "Polished Concrete Stairs",
+  "block.codexa.polished_concrete_slab": "Polished Concrete Slab",
+
 
   "creativetab.codexa_tab": "Codex Arcanum",
 

@@ -4,9 +4,7 @@ import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.item.custom.DarkStarRingItem;
 import net.eabky_dev.codexa.item.custom.FuelItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,6 +25,17 @@ public class ModItems
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_NUGGET = ITEMS.register("platinum_nugget",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.PLATINUM, 1, 1,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> PLATINUM_HELMET = ITEMS.register("platinum_helmet",
+            () -> new ArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> PLATINUM_CHESTPLATE = ITEMS.register("platinum_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> PLATINUM_LEGGINGS = ITEMS.register("platinum_leggings",
+            () -> new ArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> PLATINUM_BOOTS = ITEMS.register("platinum_boots",
+            () -> new ArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> PALADINIUM_INGOT = ITEMS.register("paladinium_ingot",
             ()-> new Item(new Item.Properties()));
@@ -41,6 +50,10 @@ public class ModItems
                     super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
                 }
             });
+
+    public static final RegistryObject<Item> IRON_GREATSWORD = ITEMS.register("iron_greatsword",
+            ()-> new SwordItem(Tiers.IRON, 5,-3F,
+                    new Item.Properties()));
 
     public static final RegistryObject<Item> WISDOM_FRUIT = ITEMS.register("wisdom_fruit",
             ()-> new Item(new Item.Properties().food(ModFoodProperties.WISDOM_FRUIT)));

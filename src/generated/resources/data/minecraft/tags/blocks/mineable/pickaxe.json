@@ -1,6 +1,11 @@
 {
   "values": [
     "codexa:platinum_block",
-    "codexa:deepslate_platinum_ore"
+    "codexa:deepslate_platinum_ore",
+    "codexa:concrete",
+    "codexa:concrete_slab",
+    "codexa:concrete_stairs",
+    "codexa:polished_concrete_slab",
+    "codexa:polished_concrete_stairs"
   ]
 }

@@ -1,4 +1,11 @@
-// 1.20.1	2025-03-04T08:33:37.4850276	Loot Tables
+// 1.20.1	2025-03-04T13:10:11.7105086	Loot Tables
 1030e4c7e3da0613d6e028fdf618439950f066ec data/codexa/loot_tables/blocks/black_hole.json
+715ca4b62bb438a1e3f83d195f23fc3dc9f15537 data/codexa/loot_tables/blocks/concrete.json
+c2c4fb017496f13eb0ce748cf9bfcfcf972d56b1 data/codexa/loot_tables/blocks/concrete_slab.json
+41ef5fd853aa1d0e8de05693ebbbab08ea5fdb5b data/codexa/loot_tables/blocks/concrete_stairs.json
+a972d30c539a39fc710abf19af080cdb59301e97 data/codexa/loot_tables/blocks/concrete_wall.json
 ede90219602a8d44c2d9d27e65d5eaf321b03057 data/codexa/loot_tables/blocks/deepslate_platinum_ore.json
 c26020475c109e9b63b91eb31cb2339fad8e9987 data/codexa/loot_tables/blocks/platinum_block.json
+9acf1ebc341c8386d1cf492321beba356a48c850 data/codexa/loot_tables/blocks/polished_concrete.json
+6c552429de2b6ba5bfc783f4d0a1efb95ae62f8a data/codexa/loot_tables/blocks/polished_concrete_slab.json
+a31a65326ff70ce7edfbb6ceebbdef4780ac7958 data/codexa/loot_tables/blocks/polished_concrete_stairs.json

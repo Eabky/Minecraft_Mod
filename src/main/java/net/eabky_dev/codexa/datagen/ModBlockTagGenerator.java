@@ -23,11 +23,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.PLATINUM_BLOCK.get(),
-                        ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+                        ModBlocks.DEEPSLATE_PLATINUM_ORE.get(),
+                        ModBlocks.CONCRETE.get(),
+                        ModBlocks.CONCRETE_SLAB.get(),
+                        ModBlocks.CONCRETE_STRAIRS.get(),
+                        ModBlocks.POLISHED_CONCRETE_SLAB.get(),
+                        ModBlocks.POLISHED_CONCRETE_STRAIRS.get());
 
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.PLATINUM_BLOCK.get(), ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+                .add(ModBlocks.PLATINUM_BLOCK.get(),
+                        ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
 
@@ -35,5 +41,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
 
+        this.tag(ModTags.Blocks.NEEDS_PLATINUM_TOOL);
+
+        this.tag(BlockTags.WALLS)
+                .add(ModBlocks.CONCRETE_WALL.get());
     }
 }

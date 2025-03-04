@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -10,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,7 +27,12 @@ public class ModItemTagGenerator extends ItemTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider pProvider)
     {
-        tag(TagKey.create(Registries.ITEM, ResourceLocation.parse("curios:ring")))
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.parse("curios:ring")))
                 .add(ModItems.DARK_STAR_RING.get());
+
+        this.tag(ItemTags.TRIMMABLE_ARMOR).add(ModItems.PLATINUM_HELMET.get(),
+                ModItems.PLATINUM_CHESTPLATE.get(),
+                ModItems.PLATINUM_LEGGINGS.get(),
+                ModItems.PLATINUM_BOOTS.get());
     }
 }

@@ -28,6 +28,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.PLATINUM_BLOCK.get());
         this.dropSelf(ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
         this.dropSelf(ModBlocks.BLACK_HOLE.get());
+        this.dropSelf(ModBlocks.CONCRETE.get());
+        this.dropSelf(ModBlocks.POLISHED_CONCRETE.get());
+        this.dropSelf(ModBlocks.CONCRETE_STRAIRS.get());
+        this.dropSelf(ModBlocks.POLISHED_CONCRETE_STRAIRS.get());
+        this.dropSelf(ModBlocks.CONCRETE_WALL.get());
+
+        this.add(ModBlocks.CONCRETE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CONCRETE_SLAB.get()));
+        this.add(ModBlocks.POLISHED_CONCRETE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.POLISHED_CONCRETE_SLAB.get()));
 
         this.add(ModBlocks.DEEPSLATE_PLATINUM_ORE.get(),
                 block -> createCopperLikeOreDrops(ModBlocks.DEEPSLATE_PLATINUM_ORE.get(), ModItems.RAW_PLATINUM.get()));

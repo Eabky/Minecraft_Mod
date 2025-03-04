@@ -23,14 +23,28 @@ public class ModCreativeModTabs
                         pOutput.accept(ModItems.RAW_PLATINUM.get());
                         pOutput.accept(ModItems.PLATINUM_RESIDUE.get());
                         pOutput.accept(ModItems.PLATINUM_NUGGET.get());
+                        pOutput.accept(ModItems.PLATINUM_PICKAXE.get());
+                        pOutput.accept(ModItems.PLATINUM_HELMET.get());
+                        pOutput.accept(ModItems.PLATINUM_CHESTPLATE.get());
+                        pOutput.accept(ModItems.PLATINUM_LEGGINGS.get());
+                        pOutput.accept(ModItems.PLATINUM_BOOTS.get());
 
                         pOutput.accept(ModItems.PALADINIUM_INGOT.get());
 
                         pOutput.accept(ModBlocks.PLATINUM_BLOCK.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+                        pOutput.accept(ModBlocks.CONCRETE.get());
+                        pOutput.accept(ModBlocks.CONCRETE_STRAIRS.get());
+                        pOutput.accept(ModBlocks.CONCRETE_SLAB.get());
+                        pOutput.accept(ModBlocks.CONCRETE_WALL.get());
+                        pOutput.accept(ModBlocks.POLISHED_CONCRETE.get());
+                        pOutput.accept(ModBlocks.POLISHED_CONCRETE_STRAIRS.get());
+                        pOutput.accept(ModBlocks.POLISHED_CONCRETE_SLAB.get());
+
                         pOutput.accept(ModBlocks.BLACK_HOLE.get());
 
                         pOutput.accept(ModItems.DARK_STAR_RING.get());
+                        pOutput.accept(ModItems.IRON_GREATSWORD.get());
 
                         pOutput.accept(ModItems.WISDOM_FRUIT.get());
 
