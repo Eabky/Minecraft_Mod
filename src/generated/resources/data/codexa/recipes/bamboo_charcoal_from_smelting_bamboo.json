@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.15,
+  "group": "fuels",
+  "ingredient": {
+    "item": "minecraft:bamboo"
+  },
+  "result": "codexa:bamboo_charcoal"
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_platinum_residue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "codexa:platinum_residue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "codexa:platinum_ingot_from_blasting_platinum_residue"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_platinum_residue",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "codexa:platinum_ingot_from_blasting_platinum_residue"
+    ]
+  },
+  "sends_telemetry_event": false
+}
