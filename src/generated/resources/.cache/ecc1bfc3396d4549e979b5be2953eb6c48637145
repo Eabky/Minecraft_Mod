@@ -1,0 +1,6 @@
+// 1.20.1	2025-03-04T08:33:37.4840211	Tags for minecraft:block mod id codexa
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/blocks/needs_netherite_tool.json
+0e30b10d5a834928d2b51b925c69f877a2052ef0 data/minecraft/tags/blocks/mineable/pickaxe.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_diamond_tool.json
+0e30b10d5a834928d2b51b925c69f877a2052ef0 data/minecraft/tags/blocks/needs_iron_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_stone_tool.json

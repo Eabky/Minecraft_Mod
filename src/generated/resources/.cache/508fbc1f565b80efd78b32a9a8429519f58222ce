@@ -1,0 +1,10 @@
+// 1.20.1	2025-03-04T08:33:37.4830097	Block States: codexa
+8a2c4d84e2195fe885202be159113535b58d9715 assets/codexa/blockstates/black_hole.json
+a318ff8a4fa9013d5b42b6c254272ca459174b0c assets/codexa/blockstates/deepslate_platinum_ore.json
+65787ed28f088fe38e42b40de16efa4cd203837a assets/codexa/blockstates/platinum_block.json
+f2589ed2743e8f5229c0ad915958642f9d38f565 assets/codexa/models/block/black_hole.json
+3bdafe1c9071952ed2a5a55ee933552abd46eb8f assets/codexa/models/block/deepslate_platinum_ore.json
+c5f50e300abf587a56f99befa7d31dc6b1065098 assets/codexa/models/block/platinum_block.json
+ec8a1677a189587c19b9936dcd68542a1ed03cf7 assets/codexa/models/item/black_hole.json
+75ae2ba18bde898c5dd02b6e5cdd3c220422e923 assets/codexa/models/item/deepslate_platinum_ore.json
+41fbe4a06e8f852bc9fa2b31a442238412777013 assets/codexa/models/item/platinum_block.json

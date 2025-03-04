@@ -24,6 +24,8 @@ public class ModCreativeModTabs
                         pOutput.accept(ModItems.PLATINUM_RESIDUE.get());
                         pOutput.accept(ModItems.PLATINUM_NUGGET.get());
 
+                        pOutput.accept(ModItems.PALADINIUM_INGOT.get());
+
                         pOutput.accept(ModBlocks.PLATINUM_BLOCK.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
                         pOutput.accept(ModBlocks.BLACK_HOLE.get());
