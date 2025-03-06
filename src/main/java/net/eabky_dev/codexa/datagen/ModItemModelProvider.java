@@ -16,6 +16,7 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -58,6 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider
         simpleItem(ModItems.BAMBOO_CHARCOAL);
 
         simpleItem(ModItems.WISDOM_FRUIT);
+        simpleBlockItemBlockTexture(ModBlocks.PALE_FORTUNE);
 
         wallItem(ModBlocks.CONCRETE_WALL, ModBlocks.CONCRETE);
 
@@ -65,6 +67,8 @@ public class ModItemModelProvider extends ItemModelProvider
         evenSimplerBlockItem(ModBlocks.POLISHED_CONCRETE_STRAIRS);
         evenSimplerBlockItem(ModBlocks.CONCRETE_SLAB);
         evenSimplerBlockItem(ModBlocks.POLISHED_CONCRETE_SLAB);
+
+        withExistingParent(ModItems.GEM_GOLEM_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item)
@@ -72,6 +76,12 @@ public class ModItemModelProvider extends ItemModelProvider
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID,"block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

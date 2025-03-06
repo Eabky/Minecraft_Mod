@@ -7,9 +7,9 @@ import top.theillusivec4.curios.api.CuriosDataProvider;
 
 import java.util.concurrent.CompletableFuture;
 
-public class CuriosRingProvider extends CuriosDataProvider
+public class CuriosSlotProvider extends CuriosDataProvider
 {
-    public CuriosRingProvider(String modId, PackOutput output, ExistingFileHelper fileHelper, CompletableFuture<HolderLookup.Provider> registries) {
+    public CuriosSlotProvider(String modId, PackOutput output, ExistingFileHelper fileHelper, CompletableFuture<HolderLookup.Provider> registries) {
         super(modId, output, fileHelper, registries);
     }
 

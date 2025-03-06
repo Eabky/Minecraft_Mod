@@ -1,9 +1,12 @@
-// 1.20.1	2025-03-04T19:09:33.3802556	Item Models: codexa
+// 1.20.1	2025-03-06T17:52:44.4837099	Item Models: codexa
 1293a9262310c76b0cde0c6af4b3e164284aeaa9 assets/codexa/models/item/bamboo_charcoal.json
+ffe19ea649d2c88fac1eb868bed1230f24e535c6 assets/codexa/models/item/boss_killer.json
 576affceaf924eff7f43540c6ce5bf96bcd6c8da assets/codexa/models/item/concrete_slab.json
 6a62e13b564e545ade4f42086bdff54d3ade86e0 assets/codexa/models/item/concrete_stairs.json
 3743a78fe1e86e795c25a65fd8132551db865fcc assets/codexa/models/item/concrete_wall.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/codexa/models/item/gem_golem_spawn_egg.json
 5910ac691e475d06b8b9d736b8c2b63204541277 assets/codexa/models/item/paladinium_ingot.json
+b5e5dda447ab0183bfa9aa70f9ac1ebd208d08af assets/codexa/models/item/pale_fortune.json
 30cf5ca65373c880144ee96a1cc99d864dd17094 assets/codexa/models/item/platinum_boots.json
 122aaefee3a1c23f18c0384a75406cc8854c4cf0 assets/codexa/models/item/platinum_boots_amethyst_trim.json
 2e872ea683e0b38441e4ce265855cf5c0c95c3b0 assets/codexa/models/item/platinum_boots_copper_trim.json

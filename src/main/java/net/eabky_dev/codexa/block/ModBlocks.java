@@ -4,6 +4,7 @@ import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.block.custom.BlackHoleBlock;
 import net.eabky_dev.codexa.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -45,7 +46,12 @@ public class ModBlocks
 
     public static final RegistryObject<Block> BLACK_HOLE = registerBlock("black_hole",
             ()-> new BlackHoleBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
-
+    public static final RegistryObject<Block> PALE_FORTUNE = registerBlock("pale_fortune",
+            () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> POTTED_PALE_FORTUNE = BLOCKS.register("potted_pale_fortune",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.PALE_FORTUNE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
 
 

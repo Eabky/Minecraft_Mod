@@ -47,8 +47,12 @@ public class ModCreativeModTabs
                         pOutput.accept(ModItems.IRON_GREATSWORD.get());
 
                         pOutput.accept(ModItems.WISDOM_FRUIT.get());
+                        pOutput.accept(ModBlocks.PALE_FORTUNE.get());
 
                         pOutput.accept(ModItems.BAMBOO_CHARCOAL.get());
+
+                        pOutput.accept(ModItems.GEM_GOLEM_SPANW_EGG.get());
+
 
                     })
                     .build());

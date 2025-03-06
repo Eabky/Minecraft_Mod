@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.datagen;
 
 
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.datagen.loot.ModGlobalLootModifiersProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -37,6 +38,8 @@ public class DataGenerators {
                 new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
 
-        generator.addProvider(event.includeServer(), new CuriosRingProvider(CODEXA.MOD_ID, packOutput, existingFileHelper, lookupProvider));
+        generator.addProvider(event.includeServer(), new CuriosSlotProvider(CODEXA.MOD_ID, packOutput, existingFileHelper, lookupProvider));
+
+        generator.addProvider(event.includeClient(), new ModGlobalLootModifiersProvider(packOutput));
     }
 }

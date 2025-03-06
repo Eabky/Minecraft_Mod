@@ -1,0 +1,14 @@
+{
+  "type": "codexa:add_item",
+  "conditions": [
+    {
+      "block": "minecraft:copper_ore",
+      "condition": "minecraft:block_state_property"
+    },
+    {
+      "chance": 0.35,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "codexa:platinum_residue"
+}

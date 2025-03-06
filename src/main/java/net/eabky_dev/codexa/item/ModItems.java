@@ -1,11 +1,16 @@
 package net.eabky_dev.codexa.item;
 
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.entity.ModEntities;
+import net.eabky_dev.codexa.item.custom.BossKillerItem;
 import net.eabky_dev.codexa.item.custom.DarkStarRingItem;
 import net.eabky_dev.codexa.item.custom.FuelItem;
+import net.eabky_dev.codexa.item.custom.ModArmorItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,7 +34,7 @@ public class ModItems
             () -> new PickaxeItem(ModToolTiers.PLATINUM, 1, 1,
                     new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_HELMET = ITEMS.register("platinum_helmet",
-            () -> new ArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_CHESTPLATE = ITEMS.register("platinum_chestplate",
             () -> new ArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_LEGGINGS = ITEMS.register("platinum_leggings",
@@ -54,12 +59,19 @@ public class ModItems
     public static final RegistryObject<Item> IRON_GREATSWORD = ITEMS.register("iron_greatsword",
             ()-> new SwordItem(Tiers.IRON, 5,-3F,
                     new Item.Properties()));
+    public static final RegistryObject<Item> BOSS_KILLER = ITEMS.register("boss_killer",
+            ()-> new BossKillerItem(Tiers.NETHERITE, 5,1F,
+                    new Item.Properties()));
 
     public static final RegistryObject<Item> WISDOM_FRUIT = ITEMS.register("wisdom_fruit",
             ()-> new Item(new Item.Properties().food(ModFoodProperties.WISDOM_FRUIT)));
 
+
     public static final RegistryObject<Item> BAMBOO_CHARCOAL = ITEMS.register("bamboo_charcoal",
             ()-> new FuelItem(new Item.Properties(), 800));
+
+    public static final RegistryObject<Item> GEM_GOLEM_SPANW_EGG = ITEMS.register("gem_golem_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GEM_GOLEM, 5131342, 9507726, new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

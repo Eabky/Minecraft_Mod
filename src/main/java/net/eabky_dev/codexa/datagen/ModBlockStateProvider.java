@@ -3,6 +3,7 @@ package net.eabky_dev.codexa.datagen;
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.block.ModBlocks;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -31,6 +32,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock(((SlabBlock) ModBlocks.POLISHED_CONCRETE_SLAB.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()));
 
         wallBlock(((WallBlock) ModBlocks.CONCRETE_WALL.get()), blockTexture(ModBlocks.CONCRETE.get()));
+
+        simpleBlockWithItem(ModBlocks.PALE_FORTUNE.get(), models().cross(blockTexture(ModBlocks.PALE_FORTUNE.get()).getPath(),
+                blockTexture(ModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_PALE_FORTUNE.get(), models().singleTexture("potted_pale_fortune", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject)

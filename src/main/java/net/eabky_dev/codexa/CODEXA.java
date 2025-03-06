@@ -2,8 +2,15 @@ package net.eabky_dev.codexa;
 
 import com.mojang.logging.LogUtils;
 import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.entity.ModEntities;
+import net.eabky_dev.codexa.entity.client.GemGolemRenderer;
+import net.eabky_dev.codexa.event.ModEvents;
 import net.eabky_dev.codexa.item.ModCreativeModTabs;
 import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.loot.ModLootModifiers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -33,6 +40,9 @@ public class CODEXA
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModLootModifiers.register(modEventBus);
+        ModEntities.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,7 +51,9 @@ public class CODEXA
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PALE_FORTUNE.getId(), ModBlocks.POTTED_PALE_FORTUNE);
+        });
     }
 
     // Add the example block item to the building blocks tab
@@ -64,7 +76,7 @@ public class CODEXA
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            EntityRenderers.register(ModEntities.GEM_GOLEM.get(), GemGolemRenderer::new);
         }
     }
 }

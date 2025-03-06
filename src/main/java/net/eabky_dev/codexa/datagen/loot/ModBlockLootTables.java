@@ -41,6 +41,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.DEEPSLATE_PLATINUM_ORE.get(),
                 block -> createCopperLikeOreDrops(ModBlocks.DEEPSLATE_PLATINUM_ORE.get(), ModItems.RAW_PLATINUM.get()));
+
+        this.dropSelf(ModBlocks.PALE_FORTUNE.get());
+        this.add(ModBlocks.POTTED_PALE_FORTUNE.get(), createPotFlowerItemTable(ModBlocks.PALE_FORTUNE.get()));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {
