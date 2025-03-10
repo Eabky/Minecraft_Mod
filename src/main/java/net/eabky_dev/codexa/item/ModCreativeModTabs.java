@@ -51,9 +51,15 @@ public class ModCreativeModTabs
 
                         pOutput.accept(ModItems.BAMBOO_CHARCOAL.get());
 
+                        pOutput.accept(ModBlocks.SUNELM_LOG.get());
+                        pOutput.accept(ModBlocks.SUNELM_WOOD.get());
+                        pOutput.accept(ModBlocks.STRIPPED_SUNELM_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_SUNELM_WOOD.get());
+                        pOutput.accept(ModBlocks.SUNELM_PLANKS.get());
+                        pOutput.accept(ModBlocks.SUNELM_LEAVES.get());
+                        pOutput.accept(ModBlocks.SUNELM_SAPLING.get());
+
                         pOutput.accept(ModItems.GEM_GOLEM_SPANW_EGG.get());
-
-
                     })
                     .build());
 

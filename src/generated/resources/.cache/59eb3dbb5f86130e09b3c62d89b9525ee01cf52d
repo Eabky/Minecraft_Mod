@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-05T17:15:28.6989677	Loot Tables
+// 1.20.1	2025-03-10T10:41:11.9483088	Loot Tables
 1030e4c7e3da0613d6e028fdf618439950f066ec data/codexa/loot_tables/blocks/black_hole.json
 715ca4b62bb438a1e3f83d195f23fc3dc9f15537 data/codexa/loot_tables/blocks/concrete.json
 c2c4fb017496f13eb0ce748cf9bfcfcf972d56b1 data/codexa/loot_tables/blocks/concrete_slab.json
@@ -11,3 +11,10 @@ c26020475c109e9b63b91eb31cb2339fad8e9987 data/codexa/loot_tables/blocks/platinum
 6c552429de2b6ba5bfc783f4d0a1efb95ae62f8a data/codexa/loot_tables/blocks/polished_concrete_slab.json
 a31a65326ff70ce7edfbb6ceebbdef4780ac7958 data/codexa/loot_tables/blocks/polished_concrete_stairs.json
 fa77ca03ab75426922c77432a34e01704c7d6407 data/codexa/loot_tables/blocks/potted_pale_fortune.json
+fbee7360169840e1a059083f45ef37dbeae0b35b data/codexa/loot_tables/blocks/stripped_sunelm_log.json
+7bc11893cb0deb72173838a5a9c9ef4a0e3f5a3f data/codexa/loot_tables/blocks/stripped_sunelm_wood.json
+5cb33272f6bed159b8fc14e6e9c1a5381ba952c4 data/codexa/loot_tables/blocks/sunelm_leaves.json
+38ee7c63048849c53061b36c823681b4f0e2ac9d data/codexa/loot_tables/blocks/sunelm_log.json
+c4cb2e41dedc35b176dd9aeec9067c298d168ea6 data/codexa/loot_tables/blocks/sunelm_planks.json
+669500f4d05b71ba7bcbc7c592cc1c646a88d355 data/codexa/loot_tables/blocks/sunelm_sapling.json
+5fea9c499ccaa0fb57e2a89ae53412e75bc7539f data/codexa/loot_tables/blocks/sunelm_wood.json

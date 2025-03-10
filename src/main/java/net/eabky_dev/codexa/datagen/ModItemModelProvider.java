@@ -69,6 +69,8 @@ public class ModItemModelProvider extends ItemModelProvider
         evenSimplerBlockItem(ModBlocks.POLISHED_CONCRETE_SLAB);
 
         withExistingParent(ModItems.GEM_GOLEM_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        saplingItem(ModBlocks.SUNELM_SAPLING);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item)
@@ -162,5 +164,11 @@ public class ModItemModelProvider extends ItemModelProvider
                                 ResourceLocation.fromNamespaceAndPath(MOD_ID, "item/" + itemRegistryObject.getId().getPath()));
             });
         }
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID,"block/" + item.getId().getPath()));
     }
 }

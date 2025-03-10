@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "codexa:block/sunelm_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "codexa:block/sunelm_wood"
+    },
+    "axis=z": {
+      "model": "codexa:block/sunelm_wood_horizontal",
+      "x": 90
+    }
+  }
+}

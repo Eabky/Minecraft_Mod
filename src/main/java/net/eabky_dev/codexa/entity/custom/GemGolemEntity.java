@@ -1,6 +1,7 @@
 package net.eabky_dev.codexa.entity.custom;
 
 import net.eabky_dev.codexa.entity.ai.GemGolemAttackGoal;
+import net.eabky_dev.codexa.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -31,6 +32,13 @@ public class GemGolemEntity extends Monster
     private boolean isAttackable = true;
     private int howLongIsDead = 0;
     private boolean rageTriggered = false;
+
+    private static float attackDamage = 25f;
+    private static float maxHealth = 1000f;
+    private static float armorToughness = 100f;
+    private static float attackKnockback = 2f;
+    private static float knockbackResistance = 1.2f;
+    private static double movementSpeed = 0.2D;
 
     public boolean isDead = false;;
 
@@ -111,7 +119,8 @@ public class GemGolemEntity extends Monster
         {
             this.setRaging(true);
             rageAnimationState.start(this.tickCount);
-            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2f);
+            this.playSound(getRoarSound(), 1, 1);
+            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(attackDamage*2);
             rageTriggered = true;
         }
     }
@@ -201,12 +210,12 @@ public class GemGolemEntity extends Monster
     public static AttributeSupplier.Builder createAttributes()
     {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 1000d)
-                .add(Attributes.ARMOR_TOUGHNESS, 100f)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.ATTACK_DAMAGE, 25f)
-                .add(Attributes.ATTACK_KNOCKBACK, 2f)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 1.2f);
+                .add(Attributes.MAX_HEALTH, maxHealth)
+                .add(Attributes.ARMOR_TOUGHNESS, armorToughness)
+                .add(Attributes.MOVEMENT_SPEED, movementSpeed)
+                .add(Attributes.ATTACK_DAMAGE, attackDamage)
+                .add(Attributes.ATTACK_KNOCKBACK, attackKnockback)
+                .add(Attributes.KNOCKBACK_RESISTANCE, knockbackResistance);
     }
 
     @Override
@@ -277,6 +286,11 @@ public class GemGolemEntity extends Monster
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.IRON_GOLEM_DEATH;
+    }
+
+    protected SoundEvent getRoarSound()
+    {
+        return ModSounds.GEM_GOLEM_ROAR.get();
     }
 
     /* BOSS BAR */

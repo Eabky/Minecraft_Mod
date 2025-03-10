@@ -1,6 +1,7 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.block.ModBlocks;
 import net.eabky_dev.codexa.item.ModItems;
 import net.eabky_dev.codexa.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -34,5 +35,14 @@ public class ModItemTagGenerator extends ItemTagsProvider
                 ModItems.PLATINUM_CHESTPLATE.get(),
                 ModItems.PLATINUM_LEGGINGS.get(),
                 ModItems.PLATINUM_BOOTS.get());
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.SUNELM_LOG.get().asItem())
+                .add(ModBlocks.SUNELM_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_SUNELM_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_SUNELM_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.SUNELM_PLANKS.get().asItem());
     }
 }

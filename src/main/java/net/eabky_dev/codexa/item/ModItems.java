@@ -56,6 +56,7 @@ public class ModItems
                 }
             });
 
+    /* Will remove, keep only boss killer */
     public static final RegistryObject<Item> IRON_GREATSWORD = ITEMS.register("iron_greatsword",
             ()-> new SwordItem(Tiers.IRON, 5,-3F,
                     new Item.Properties()));

@@ -1,0 +1,8 @@
+{
+  "gem_golem_roar": {
+    "subtitles": "sounds.codexa.gem_golem_roar",
+    "sounds": [
+      "codexa:gem_golem_roar"
+    ]
+  }
+}

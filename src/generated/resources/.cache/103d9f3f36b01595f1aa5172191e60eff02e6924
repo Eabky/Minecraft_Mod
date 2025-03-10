@@ -1,0 +1,7 @@
+// 1.20.1	2025-03-10T11:20:42.1550039	Registries
+543c173268eef5538a2ba81b0a97bef64be2882c data/codexa/forge/biome_modifier/add_platinum_ore.json
+161c9d77dc35009591fac5aabd8b576d57aeb3dd data/codexa/forge/biome_modifier/add_tree_sunelm.json
+21269039559c8265f93eda89f1082c77ac1e6230 data/codexa/worldgen/configured_feature/platinum_ore.json
+a233601d102bcf150087a73fd47ca49bd803ae04 data/codexa/worldgen/configured_feature/sunelm.json
+50089dab911b93267d7057eb90b2534a6d8f67d7 data/codexa/worldgen/placed_feature/platinum_ore_placed.json
+4f55a073bdc5d16df350582ed352b2729424f128 data/codexa/worldgen/placed_feature/sunelm_placed.json

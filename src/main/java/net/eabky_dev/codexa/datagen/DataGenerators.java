@@ -41,5 +41,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new CuriosSlotProvider(CODEXA.MOD_ID, packOutput, existingFileHelper, lookupProvider));
 
         generator.addProvider(event.includeClient(), new ModGlobalLootModifiersProvider(packOutput));
+
+        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
     }
 }

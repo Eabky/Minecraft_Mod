@@ -1,8 +1,10 @@
-// 1.20.1	2025-03-04T18:37:21.890756	Tags for minecraft:block mod id codexa
+// 1.20.1	2025-03-10T09:04:39.0571588	Tags for minecraft:block mod id codexa
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/codexa/tags/blocks/needs_platinum_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/blocks/needs_netherite_tool.json
+ea3de4d8270f3915e21cfe83bb0789dcb50b04d5 data/minecraft/tags/blocks/logs_that_burn.json
 ce230b342edbacc93c26bac2d0aa5931d5c20485 data/minecraft/tags/blocks/mineable/pickaxe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_diamond_tool.json
 0e30b10d5a834928d2b51b925c69f877a2052ef0 data/minecraft/tags/blocks/needs_iron_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_stone_tool.json
+d5f578313cf760d1ee2680059d38ee5258f7d6f5 data/minecraft/tags/blocks/planks.json
 4ef8be358fe2cc287ed6245eb99b29111b7d88cd data/minecraft/tags/blocks/walls.json

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "codexa:block/stripped_sunelm_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "codexa:block/stripped_sunelm_log"
+    },
+    "axis=z": {
+      "model": "codexa:block/stripped_sunelm_log_horizontal",
+      "x": 90
+    }
+  }
+}

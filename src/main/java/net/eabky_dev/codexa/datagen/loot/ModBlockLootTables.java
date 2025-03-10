@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -44,6 +45,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.PALE_FORTUNE.get());
         this.add(ModBlocks.POTTED_PALE_FORTUNE.get(), createPotFlowerItemTable(ModBlocks.PALE_FORTUNE.get()));
+
+        this.dropSelf(ModBlocks.SUNELM_LOG.get());
+        this.dropSelf(ModBlocks.SUNELM_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_SUNELM_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_SUNELM_WOOD.get());
+        this.dropSelf(ModBlocks.SUNELM_PLANKS.get());
+        this.dropSelf(ModBlocks.SUNELM_SAPLING.get());
+
+        this.add(ModBlocks.SUNELM_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.SUNELM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

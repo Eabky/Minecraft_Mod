@@ -45,5 +45,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.WALLS)
                 .add(ModBlocks.CONCRETE_WALL.get());
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.SUNELM_LOG.get())
+                .add(ModBlocks.SUNELM_WOOD.get())
+                .add(ModBlocks.STRIPPED_SUNELM_LOG.get())
+                .add(ModBlocks.STRIPPED_SUNELM_WOOD.get());
+
+        this.tag(BlockTags.PLANKS)
+                .add(ModBlocks.SUNELM_PLANKS.get());
     }
 }

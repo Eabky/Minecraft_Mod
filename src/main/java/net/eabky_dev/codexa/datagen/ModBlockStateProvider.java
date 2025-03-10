@@ -4,12 +4,11 @@ import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -37,10 +36,43 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.POTTED_PALE_FORTUNE.get(), models().singleTexture("potted_pale_fortune", ResourceLocation.parse("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
+
+        logBlock(((RotatedPillarBlock) ModBlocks.SUNELM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.SUNELM_WOOD.get()), blockTexture(ModBlocks.SUNELM_LOG.get()), blockTexture(ModBlocks.SUNELM_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SUNELM_LOG.get()), blockTexture(ModBlocks.STRIPPED_SUNELM_LOG.get()),
+                ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/stripped_sunelm_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SUNELM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SUNELM_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_SUNELM_LOG.get()));
+
+        blockItem(ModBlocks.SUNELM_LOG);
+        blockItem(ModBlocks.SUNELM_WOOD);
+        blockItem(ModBlocks.STRIPPED_SUNELM_LOG);
+        blockItem(ModBlocks.STRIPPED_SUNELM_WOOD);
+        blockWithItem(ModBlocks.SUNELM_PLANKS);
+        leavesBlock(ModBlocks.SUNELM_LEAVES);
+        saplingBlock(ModBlocks.SUNELM_SAPLING);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject)
     {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(CODEXA.MOD_ID +
+                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
 }

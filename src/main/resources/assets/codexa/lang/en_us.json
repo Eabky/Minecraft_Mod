@@ -27,11 +27,24 @@
   "block.codexa.polished_concrete": "Polished Concrete",
   "block.codexa.polished_concrete_stairs": "Polished Concrete Stairs",
   "block.codexa.polished_concrete_slab": "Polished Concrete Slab",
+  "block.codexa.sunelm_log": "Sunelm Log",
+  "block.codexa.sunelm_wood": "Sunelm Wood",
+  "block.codexa.stripped_sunelm_log": "Stripped Sunelm Log",
+  "block.codexa.stripped_sunelm_wood": "Stripped Sunelm Wood",
+  "block.codexa.sunelm_planks": "Sunelm Planks",
+  "block.codexa.sunelm_leaves": "Sunelm Leaves",
+  "block.codexa.sunelm_sapling": "Sunelm Sapling",
+
+  "item.codexa.boss_killer": "Boss Killer",
+
+  "item.codexa.gem_golem_spawn_egg": "Gem Golem Spawn Egg",
 
 
   "creativetab.codexa_tab": "Codex Arcanum",
 
 
   "tooltip.codexa.black_hole.tooltip": "SUCKY SUCKY",
-  "tooltip.codexa.dark_star_ring.tooltip": "The power of a §5Dark Star§r in your fingers."
+  "tooltip.codexa.dark_star_ring.tooltip": "The power of a §5Dark Star§r in your fingers.",
+
+  "sounds.codexa.gem_golem_roar": "Gem Golem Roar"
 }

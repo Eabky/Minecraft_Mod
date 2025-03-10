@@ -8,6 +8,7 @@ import net.eabky_dev.codexa.event.ModEvents;
 import net.eabky_dev.codexa.item.ModCreativeModTabs;
 import net.eabky_dev.codexa.item.ModItems;
 import net.eabky_dev.codexa.loot.ModLootModifiers;
+import net.eabky_dev.codexa.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -42,6 +43,8 @@ public class CODEXA
 
         ModLootModifiers.register(modEventBus);
         ModEntities.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

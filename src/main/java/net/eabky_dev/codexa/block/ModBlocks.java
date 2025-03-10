@@ -2,7 +2,11 @@ package net.eabky_dev.codexa.block;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.block.custom.BlackHoleBlock;
+import net.eabky_dev.codexa.block.custom.ModFlammableRotatedPillarBlock;
+import net.eabky_dev.codexa.block.custom.ModLeavesBlock;
+import net.eabky_dev.codexa.block.custom.ModPlankBlock;
 import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.worldgen.tree.SunelmTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -46,12 +50,28 @@ public class ModBlocks
 
     public static final RegistryObject<Block> BLACK_HOLE = registerBlock("black_hole",
             ()-> new BlackHoleBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+
     public static final RegistryObject<Block> PALE_FORTUNE = registerBlock("pale_fortune",
             () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final RegistryObject<Block> POTTED_PALE_FORTUNE = BLOCKS.register("potted_pale_fortune",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.PALE_FORTUNE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+
+    public static final RegistryObject<Block> SUNELM_LOG = registerBlock("sunelm_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f)));
+    public static final RegistryObject<Block> SUNELM_WOOD = registerBlock("sunelm_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f)));
+    public static final RegistryObject<Block> STRIPPED_SUNELM_LOG = registerBlock("stripped_sunelm_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
+    public static final RegistryObject<Block> STRIPPED_SUNELM_WOOD = registerBlock("stripped_sunelm_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
+    public static final RegistryObject<Block> SUNELM_PLANKS = registerBlock("sunelm_planks",
+            () -> new ModPlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> SUNELM_LEAVES = registerBlock("sunelm_leaves",
+            () -> new ModLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> SUNELM_SAPLING = registerBlock("sunelm_sapling",
+            () -> new SaplingBlock(new SunelmTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
 

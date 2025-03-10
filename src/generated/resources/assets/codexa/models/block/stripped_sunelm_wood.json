@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "codexa:block/stripped_sunelm_log",
+    "side": "codexa:block/stripped_sunelm_log"
+  }
+}
