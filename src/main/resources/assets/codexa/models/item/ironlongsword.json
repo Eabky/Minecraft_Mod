@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "codexa:item/iron_greatsword",
-		"particle": "codexa:item/iron_greatsword"
+		"0": "codexa:item/iron_longsword",
+		"particle": "codexa:item/iron_longsword"
 	},
 	"elements": [
 		{

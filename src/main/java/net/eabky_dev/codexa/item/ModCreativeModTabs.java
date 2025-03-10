@@ -44,7 +44,8 @@ public class ModCreativeModTabs
                         pOutput.accept(ModBlocks.BLACK_HOLE.get());
 
                         pOutput.accept(ModItems.DARK_STAR_RING.get());
-                        pOutput.accept(ModItems.IRON_GREATSWORD.get());
+                        pOutput.accept(ModItems.IRON_LONGSWORD.get());
+                        pOutput.accept(ModItems.WOODEN_GREATSWORD.get());
 
                         pOutput.accept(ModItems.WISDOM_FRUIT.get());
                         pOutput.accept(ModBlocks.PALE_FORTUNE.get());

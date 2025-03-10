@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.worldgen;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.worldgen.tree.custom.SunelmTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -38,7 +39,7 @@ public class ModConfiguredFeatures
 
         register(context, SUNELM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.SUNELM_LOG.get()),
-                new StraightTrunkPlacer(5, 4, 3),
+                new SunelmTrunkPlacer(5, 4, 3),
 
                 BlockStateProvider.simple(ModBlocks.SUNELM_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),

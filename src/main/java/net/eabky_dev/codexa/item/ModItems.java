@@ -56,9 +56,11 @@ public class ModItems
                 }
             });
 
-    /* Will remove, keep only boss killer */
-    public static final RegistryObject<Item> IRON_GREATSWORD = ITEMS.register("iron_greatsword",
-            ()-> new SwordItem(Tiers.IRON, 5,-3F,
+    public static final RegistryObject<Item> IRON_LONGSWORD = ITEMS.register("iron_longsword",
+            ()-> new SwordItem(Tiers.IRON, 3,-1F,
+                    new Item.Properties()));
+    public static final RegistryObject<Item> WOODEN_GREATSWORD = ITEMS.register("wooden_greatsword",
+            ()-> new SwordItem(Tiers.IRON, 2,-3F,
                     new Item.Properties()));
     public static final RegistryObject<Item> BOSS_KILLER = ITEMS.register("boss_killer",
             ()-> new BossKillerItem(Tiers.NETHERITE, 5,1F,

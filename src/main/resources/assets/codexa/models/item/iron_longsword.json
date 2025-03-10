@@ -2,29 +2,29 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "codexa:item/irongreatsword",
+    "parent": "codexa:item/ironlongsword",
     "textures": {
-      "1": "codexa:item/iron_greatsword_2d"
+      "1": "codexa:item/iron_longsword_2d"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "codexa:item/iron_greatsword_2d"
+        "layer0": "codexa:item/iron_longsword_2d"
       },
       "gui_light": "front"
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "codexa:item/iron_greatsword_2d"
+        "layer0": "codexa:item/iron_longsword_2d"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "codexa:item/iron_greatsword_2d"
+        "layer0": "codexa:item/iron_longsword_2d"
       }
     }
   }
