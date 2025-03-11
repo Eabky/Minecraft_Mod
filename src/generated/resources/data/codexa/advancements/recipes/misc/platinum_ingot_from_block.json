@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "codexa:platinum_ingot"
+        "recipe": "codexa:platinum_ingot_from_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "codexa:platinum_ingot"
+      "codexa:platinum_ingot_from_block"
     ]
   },
   "sends_telemetry_event": false

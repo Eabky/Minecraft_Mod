@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "codexa:platinum_ingot_from_smelting_platinum_residue"
+        "recipe": "codexa:platinum_nugget_from_smelting_platinum_residue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "codexa:platinum_ingot_from_smelting_platinum_residue"
+      "codexa:platinum_nugget_from_smelting_platinum_residue"
     ]
   },
   "sends_telemetry_event": false

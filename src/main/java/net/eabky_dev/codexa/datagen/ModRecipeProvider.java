@@ -17,17 +17,20 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    private static final List<ItemLike> PLATINUM_SMELTABLES = List.of(ModItems.RAW_PLATINUM.get(), ModBlocks.DEEPSLATE_PLATINUM_ORE.get(), ModItems.PLATINUM_RESIDUE.get());
-    private static final List<ItemLike> PALADINIUM_SMELTABLES = List.of(ModItems.RAW_PLATINUM.get(), ModBlocks.DEEPSLATE_PLATINUM_ORE.get(), ModItems.PLATINUM_RESIDUE.get());
+    private static final List<ItemLike> PLATINUM_SMELTABLES = List.of(ModItems.RAW_PLATINUM.get(), ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+    private static final List<ItemLike> PLATINUM_INGOT_SMELTABLES = List.of(ModItems.PLATINUM_RESIDUE.get());
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+    protected void buildRecipes(Consumer<FinishedRecipe> pWriter)
+    {
         oreSmelting(pWriter, PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 0.25f, 200, "platinum");
         oreBlasting(pWriter, PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 0.25f, 200, "platinum");
+        oreSmelting(pWriter, PLATINUM_INGOT_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_NUGGET.get(), 0.15f, 200, "platinum");
+        oreBlasting(pWriter, PLATINUM_INGOT_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_NUGGET.get(), 0.15f, 200, "platinum");
         genericSmelting(pWriter, Items.BAMBOO, RecipeCategory.MISC, ModItems.BAMBOO_CHARCOAL.get(), 0.15f, 200, "fuels");
 
 
@@ -38,11 +41,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.PLATINUM_INGOT.get())
                 .unlockedBy(getHasName(ModItems.PLATINUM_INGOT.get()), has(ModItems.PLATINUM_INGOT.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get())
+                .pattern("SSS")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.PLATINUM_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.PLATINUM_NUGGET.get()), has(ModItems.PLATINUM_NUGGET.get()))
+                .save(pWriter, CODEXA.MOD_ID + ":platinum_ingot_from_nuggets");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 9)
                 .requires(ModBlocks.PLATINUM_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.PLATINUM_BLOCK.get()), has(ModBlocks.PLATINUM_BLOCK.get()))
-                .save(pWriter);
+                .save(pWriter, CODEXA.MOD_ID + ":platinum_ingot_from_block");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PLATINUM_NUGGET.get(), 9)
+                .requires(ModItems.PLATINUM_INGOT.get())
+                .unlockedBy(getHasName(ModItems.PLATINUM_INGOT.get()), has(ModItems.PLATINUM_INGOT.get()))
+                .save(pWriter, CODEXA.MOD_ID + ":platinum_nugget_from_ingot");
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
@@ -59,7 +73,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
-        for(ItemLike itemlike : pIngredients) {
+        for(ItemLike itemlike : pIngredients)
+        {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult,
                             pExperience, pCookingTime, pCookingSerializer)
                     .group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
@@ -67,7 +82,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
     }
 
-    protected static void genericCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, Item pIngredient, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+    protected static void genericCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, Item pIngredient, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName)
+    {
         SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer)
                 .group(pGroup).unlockedBy(getHasName(pIngredient), has(pIngredient))
                 .save(pFinishedRecipeConsumer,  CODEXA.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(pIngredient));
