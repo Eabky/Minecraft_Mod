@@ -9,6 +9,7 @@ import net.eabky_dev.codexa.item.ModCreativeModTabs;
 import net.eabky_dev.codexa.item.ModItems;
 import net.eabky_dev.codexa.loot.ModLootModifiers;
 import net.eabky_dev.codexa.sound.ModSounds;
+import net.eabky_dev.codexa.worldgen.tree.ModFoliagePlacers;
 import net.eabky_dev.codexa.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
@@ -45,6 +46,7 @@ public class CODEXA
         ModEntities.register(modEventBus);
         ModSounds.register(modEventBus);
         ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

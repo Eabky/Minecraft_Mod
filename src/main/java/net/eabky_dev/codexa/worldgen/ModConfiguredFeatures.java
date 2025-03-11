@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.worldgen;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.worldgen.tree.custom.SunelmFoliagePlacer;
 import net.eabky_dev.codexa.worldgen.tree.custom.SunelmTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -9,6 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -26,8 +28,8 @@ import java.util.List;
 public class ModConfiguredFeatures
 {
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_PLATINUM_ORE_KEY = registerKey("platinum_ore");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> SUNELM_KEY = registerKey("sunelm");
+
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context)
     {
@@ -42,7 +44,7 @@ public class ModConfiguredFeatures
                 new SunelmTrunkPlacer(5, 4, 3),
 
                 BlockStateProvider.simple(ModBlocks.SUNELM_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new SunelmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), 4),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
     }
