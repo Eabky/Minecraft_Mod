@@ -1,10 +1,7 @@
 package net.eabky_dev.codexa.block;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.custom.BlackHoleBlock;
-import net.eabky_dev.codexa.block.custom.ModFlammableRotatedPillarBlock;
-import net.eabky_dev.codexa.block.custom.ModLeavesBlock;
-import net.eabky_dev.codexa.block.custom.ModPlankBlock;
+import net.eabky_dev.codexa.block.custom.*;
 import net.eabky_dev.codexa.item.ModItems;
 import net.eabky_dev.codexa.worldgen.tree.SunelmTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -49,7 +46,7 @@ public class ModBlocks
             ()-> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
 
     public static final RegistryObject<Block> BLACK_HOLE = registerBlock("black_hole",
-            ()-> new BlackHoleBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+            ()-> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK))); //temp will need to make it into an entity so the King can use it as an attack
 
     public static final RegistryObject<Block> PALE_FORTUNE = registerBlock("pale_fortune",
             () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
@@ -73,6 +70,14 @@ public class ModBlocks
     public static final RegistryObject<Block> SUNELM_SAPLING = registerBlock("sunelm_sapling",
             () -> new SaplingBlock(new SunelmTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> MIDNIGHT_GRASS_BLOCK = registerBlock("midnight_grass_block",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+    public static final RegistryObject<Block> MIDNIGHT_DIRT = registerBlock("midnight_dirt",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+    public static final RegistryObject<Block> MIDNIGHT_STONE = registerBlock("midnight_stone",
+            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> MIDNIGHT_GRASS = registerBlock("midnight_grass",
+            () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).noOcclusion().noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

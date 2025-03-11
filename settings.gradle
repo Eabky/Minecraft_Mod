@@ -10,6 +10,8 @@ pluginManagement {
             name = "Illusive Soulworks maven"
             url = "https://maven.theillusivec4.top/"
         }
+
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
     }
 }
 

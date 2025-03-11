@@ -1,7 +1,14 @@
-// 1.20.1	2025-03-11T09:16:33.4349409	Registries
+// 1.20.1	2025-03-12T00:01:39.6429763	Registries
+a21559cde76e3c5dcfd15443aa2c7d67b1778446 data/codexa/dimension/midnight_sea.json
+8d38621daf8e17e674b7e867ea3b06c34c0da4a3 data/codexa/dimension_type/midnight_sea_type.json
+d7e9dcab0230b43aac8fb42f6c83973903cd1e57 data/codexa/forge/biome_modifier/add_midnight_grass.json
 543c173268eef5538a2ba81b0a97bef64be2882c data/codexa/forge/biome_modifier/add_platinum_ore.json
 161c9d77dc35009591fac5aabd8b576d57aeb3dd data/codexa/forge/biome_modifier/add_tree_sunelm.json
+22bafd0c1b986465e9dd23ac1369678b807a1f7f data/codexa/worldgen/biome/midnight_sea_biome.json
+de427438ad7feafa1c7f7592af0fca7ebff2828d data/codexa/worldgen/configured_feature/midnight_grass.json
 21269039559c8265f93eda89f1082c77ac1e6230 data/codexa/worldgen/configured_feature/platinum_ore.json
 252939a56089cae0cb2ba34a57c9f1db21cd7f55 data/codexa/worldgen/configured_feature/sunelm.json
+05c0aaaad527f420c841181dcb50bde1ec193747 data/codexa/worldgen/noise_settings/midnight_sea_noise.json
+fcdf4cf9fbd38cab18628d3e0db6b061ba5885d8 data/codexa/worldgen/placed_feature/midnight_grass_placed.json
 50089dab911b93267d7057eb90b2534a6d8f67d7 data/codexa/worldgen/placed_feature/platinum_ore_placed.json
 4f55a073bdc5d16df350582ed352b2729424f128 data/codexa/worldgen/placed_feature/sunelm_placed.json

@@ -16,18 +16,15 @@ import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.CountPlacement;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
 public class ModPlacedFeatures
 {
     public static final ResourceKey<PlacedFeature> PLATINUME_ORE_PLACED_KEY = registerKey("platinum_ore_placed");
-
     public static final ResourceKey<PlacedFeature> SUNELM_PLACED_KEY = registerKey("sunelm_placed");
+    public static final ResourceKey<PlacedFeature> MIDNIGHT_GRASS_PLACED_KEY = registerKey("midnight_grass_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context)
     {
@@ -39,6 +36,12 @@ public class ModPlacedFeatures
         register(context, SUNELM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SUNELM_KEY),
                 VegetationPlacements.treePlacement(controlledTreePlacement(),
                         ModBlocks.SUNELM_SAPLING.get()));
+
+        register(context, MIDNIGHT_GRASS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MIDNIGHT_GRASS_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(32), // Controls density of patches
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()));
     }
 
     public static PlacementModifier controlledTreePlacement()

@@ -17,19 +17,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     @Override
-    protected void registerStatesAndModels() {
+    protected void registerStatesAndModels()
+    {
         blockWithItem(ModBlocks.PLATINUM_BLOCK);
         blockWithItem(ModBlocks.DEEPSLATE_PLATINUM_ORE);
+
         blockWithItem(ModBlocks.BLACK_HOLE);
         blockWithItem(ModBlocks.CONCRETE);
         blockWithItem(ModBlocks.POLISHED_CONCRETE);
-
         stairsBlock(((StairBlock) ModBlocks.CONCRETE_STRAIRS.get()), blockTexture(ModBlocks.CONCRETE.get()));
         stairsBlock(((StairBlock) ModBlocks.POLISHED_CONCRETE_STRAIRS.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()));
-
         slabBlock(((SlabBlock) ModBlocks.CONCRETE_SLAB.get()), blockTexture(ModBlocks.CONCRETE.get()), blockTexture(ModBlocks.CONCRETE.get()));
         slabBlock(((SlabBlock) ModBlocks.POLISHED_CONCRETE_SLAB.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()));
-
         wallBlock(((WallBlock) ModBlocks.CONCRETE_WALL.get()), blockTexture(ModBlocks.CONCRETE.get()));
 
         simpleBlockWithItem(ModBlocks.PALE_FORTUNE.get(), models().cross(blockTexture(ModBlocks.PALE_FORTUNE.get()).getPath(),
@@ -52,6 +51,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SUNELM_PLANKS);
         leavesBlock(ModBlocks.SUNELM_LEAVES);
         saplingBlock(ModBlocks.SUNELM_SAPLING);
+
+        grassBlock(ModBlocks.MIDNIGHT_GRASS_BLOCK);
+        blockWithItem(ModBlocks.MIDNIGHT_DIRT);
+        blockWithItem(ModBlocks.MIDNIGHT_STONE);
+        simpleBlockWithItem(ModBlocks.MIDNIGHT_GRASS.get(), models().cross(blockTexture(ModBlocks.MIDNIGHT_GRASS.get()).getPath(),
+                blockTexture(ModBlocks.MIDNIGHT_GRASS.get())).renderType("cutout"));
+    }
+
+    private void grassBlock(RegistryObject<Block> blockRegistryObject)
+    {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().cubeBottomTop(
+                        ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                        ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + "_side"),
+                        ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + "_bottom"),
+                        ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + "_top")
+                )
+        );
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject)
@@ -59,13 +76,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject)
+    {
         simpleBlockWithItem(blockRegistryObject.get(),
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
-    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+    private void blockItem(RegistryObject<Block> blockRegistryObject)
+    {
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(CODEXA.MOD_ID +
                 ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }

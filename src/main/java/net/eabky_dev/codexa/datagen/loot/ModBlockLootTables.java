@@ -55,6 +55,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.SUNELM_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.SUNELM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.dropSelf(ModBlocks.MIDNIGHT_GRASS_BLOCK.get());
+        this.dropSelf(ModBlocks.MIDNIGHT_DIRT.get());
+        this.dropSelf(ModBlocks.MIDNIGHT_STONE.get());
+        this.dropSelf(ModBlocks.MIDNIGHT_GRASS.get());
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

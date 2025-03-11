@@ -60,6 +60,11 @@ public class ModCreativeModTabs
                         pOutput.accept(ModBlocks.SUNELM_LEAVES.get());
                         pOutput.accept(ModBlocks.SUNELM_SAPLING.get());
 
+                        pOutput.accept(ModBlocks.MIDNIGHT_GRASS_BLOCK.get());
+                        pOutput.accept(ModBlocks.MIDNIGHT_DIRT.get());
+                        pOutput.accept(ModBlocks.MIDNIGHT_STONE.get());
+                        pOutput.accept(ModBlocks.MIDNIGHT_GRASS.get());
+
                         pOutput.accept(ModItems.GEM_GOLEM_SPANW_EGG.get());
                     })
                     .build());

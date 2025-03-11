@@ -1,10 +1,14 @@
-// 1.20.1	2025-03-10T10:41:11.9468068	Block States: codexa
+// 1.20.1	2025-03-11T15:28:10.6766213	Block States: codexa
 8a2c4d84e2195fe885202be159113535b58d9715 assets/codexa/blockstates/black_hole.json
 98c3a63ee9c2d8f2c174af533dd7b5006e78444b assets/codexa/blockstates/concrete.json
 2d91e99a41beb5c03638d9bea23788edf0bf35f1 assets/codexa/blockstates/concrete_slab.json
 5f57dc0d004b9c88ee27e16707790772a4504424 assets/codexa/blockstates/concrete_stairs.json
 b355b4bdc0786d76efab79dc0a43d42f0996a5c1 assets/codexa/blockstates/concrete_wall.json
 a318ff8a4fa9013d5b42b6c254272ca459174b0c assets/codexa/blockstates/deepslate_platinum_ore.json
+df7bdb103bb9bccdaded9df00c9df3c3796cd8f8 assets/codexa/blockstates/midnight_dirt.json
+2cb8c2c7731ab94bdcf9fdf61e241a33e46823b4 assets/codexa/blockstates/midnight_grass.json
+e7903781052c624a76d566a6191746d70211330d assets/codexa/blockstates/midnight_grass_block.json
+35aef73d2bc0d211d38097aa951ca1eecc9aae0a assets/codexa/blockstates/midnight_stone.json
 b2e8797ff7801a0490f333a99cb208742d9e09a5 assets/codexa/blockstates/pale_fortune.json
 65787ed28f088fe38e42b40de16efa4cd203837a assets/codexa/blockstates/platinum_block.json
 fd8e761808ead42e4d89b5a31c5d53d3ebab4e11 assets/codexa/blockstates/polished_concrete.json
@@ -29,6 +33,10 @@ c79ba8f0ba62442405fbc6363901155e89d65f14 assets/codexa/models/block/concrete_sta
 6273cdb47a22abe234d245486b4e2e9258da13a8 assets/codexa/models/block/concrete_wall_side.json
 dcaed4a74569460f1b7f19eb44e89b4bd77370a4 assets/codexa/models/block/concrete_wall_side_tall.json
 3bdafe1c9071952ed2a5a55ee933552abd46eb8f assets/codexa/models/block/deepslate_platinum_ore.json
+c056bb208377722c23ae34c1722ddd9bd0c9a279 assets/codexa/models/block/midnight_dirt.json
+8d651c677103369cd7241b3674b9884bdf0ab816 assets/codexa/models/block/midnight_grass.json
+a42a49f49a9bb28d55d89b639fde9c11bd711c94 assets/codexa/models/block/midnight_grass_block.json
+1c127a413c41d85b26336f9c1ab11243b30b6a31 assets/codexa/models/block/midnight_stone.json
 94e1bb38f42fa2ac28dd80947dd0e51455889769 assets/codexa/models/block/pale_fortune.json
 c5f50e300abf587a56f99befa7d31dc6b1065098 assets/codexa/models/block/platinum_block.json
 5bb6003ea63e4cddc180bb1d0d5bca454f6695ac assets/codexa/models/block/polished_concrete.json
@@ -52,6 +60,10 @@ e2fd8c3cd0af91ce1abb22bd2588ee0f185bd926 assets/codexa/models/block/sunelm_wood.
 ec8a1677a189587c19b9936dcd68542a1ed03cf7 assets/codexa/models/item/black_hole.json
 c8ce06f63fd5d62d6a5584c858eb690cbbea9825 assets/codexa/models/item/concrete.json
 75ae2ba18bde898c5dd02b6e5cdd3c220422e923 assets/codexa/models/item/deepslate_platinum_ore.json
+f6fc9314f011b48c9026c5eb41e79778f169b918 assets/codexa/models/item/midnight_dirt.json
+d00b5673e37f048218ef54a0672d3b902346005c assets/codexa/models/item/midnight_grass.json
+1d7fc346cfac973aabb2da23451c56eed832f2a0 assets/codexa/models/item/midnight_grass_block.json
+5a02e73e524703633a713a035c63cfd06147f109 assets/codexa/models/item/midnight_stone.json
 42d39f3b7d8b9af994f9917703299a64c09ec291 assets/codexa/models/item/pale_fortune.json
 41fbe4a06e8f852bc9fa2b31a442238412777013 assets/codexa/models/item/platinum_block.json
 5a882c44265dbe8606d5437af6f1c80efa7ecaf4 assets/codexa/models/item/polished_concrete.json

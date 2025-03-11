@@ -1,0 +1,11 @@
+{
+  "type": "codexa:midnight_sea_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "codexa:midnight_sea_biome"
+    },
+    "settings": "codexa:midnight_sea_noise"
+  }
+}

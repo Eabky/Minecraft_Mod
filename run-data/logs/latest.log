@@ -1,39 +1,43 @@
-[11Mar2025 12:16:33.306] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\chris\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.33, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, codexa, --all, --output, F:\Programming_Projects\Java\Minecraft_Mod\src\generated\resources, --existing, F:\Programming_Projects\Java\Minecraft_Mod\src\main\resources]
-[11Mar2025 12:16:33.309] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.6 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[11Mar2025 12:16:33.448] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[11Mar2025 12:16:33.495] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/chris/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[11Mar2025 12:16:33.755] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.33\29591758414c084b41bbd6808bf30309b149da4d\javafmllanguage-1.20.1-47.3.33.jar is missing mods.toml file
-[11Mar2025 12:16:33.757] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.33\31f826407e5bab62abe1130d8d369d7d45e7ce3\lowcodelanguage-1.20.1-47.3.33.jar is missing mods.toml file
-[11Mar2025 12:16:33.759] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.33\fb2db487fa47ae1cdcad118267d714f75569ffc7\mclanguage-1.20.1-47.3.33.jar is missing mods.toml file
-[11Mar2025 12:16:33.762] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.33\2b6f448126f68c8bbc04b942b3fe7aafb12e22c0\fmlcore-1.20.1-47.3.33.jar is missing mods.toml file
-[11Mar2025 12:16:33.848] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[11Mar2025 12:16:34.921] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[11Mar2025 12:16:34.924] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\chris\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, codexa, --all, --output, F:\Programming_Projects\Java\Minecraft_Mod\src\generated\resources, --existing, F:\Programming_Projects\Java\Minecraft_Mod\src\main\resources]
-[11Mar2025 12:16:35.223] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using F:\Programming_Projects\Java\Minecraft_Mod\build/createSrgToMcp/output.srg
-[11Mar2025 12:16:35.536] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [codexa]
-[11Mar2025 12:16:39.698] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.33, for MC 1.20.1 with MCP 20230612.114412
-[11Mar2025 12:16:39.699] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.33 Initialized
-[11Mar2025 12:16:39.876] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[11Mar2025 12:16:39.881] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.348 ms
-[11Mar2025 12:16:40.164] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/chris/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[11Mar2025 12:16:40.165] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/chris/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[11Mar2025 12:16:40.337] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[11Mar2025 12:16:40.376] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 38 ms
-[11Mar2025 12:16:40.376] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[11Mar2025 12:16:40.425] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 48 ms
-[11Mar2025 12:16:40.425] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: codexa
-[11Mar2025 12:16:40.571] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: codexa finished after 146 ms
-[11Mar2025 12:16:40.572] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: codexa
-[11Mar2025 12:16:40.606] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: codexa finished after 34 ms
-[11Mar2025 12:16:40.607] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id codexa
-[11Mar2025 12:16:40.630] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id codexa finished after 22 ms
-[11Mar2025 12:16:40.630] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id codexa
-[11Mar2025 12:16:40.631] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id codexa finished after 1 ms
-[11Mar2025 12:16:40.631] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Curios for codexa
-[11Mar2025 12:16:40.634] [main/INFO] [net.minecraft.data.DataGenerator/]: Curios for codexa finished after 2 ms
-[11Mar2025 12:16:40.634] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : codexa
-[11Mar2025 12:16:40.639] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : codexa finished after 4 ms
-[11Mar2025 12:16:40.639] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[11Mar2025 12:16:40.650] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 11 ms
-[11Mar2025 12:16:40.650] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 313 ms
-[11Mar2025 12:16:40.657] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 187, old count: 186, new count: 186, removed stale: 2, written: 2
+[12Mar2025 00:01:32.508] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\chris\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.33, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, codexa, --all, --output, F:\Programming_Projects\Java\Minecraft_Mod\src\generated\resources, --existing, F:\Programming_Projects\Java\Minecraft_Mod\src\main\resources]
+[12Mar2025 00:01:32.527] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.6 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[12Mar2025 00:01:32.642] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[12Mar2025 00:01:32.683] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/chris/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[12Mar2025 00:01:32.958] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.33\29591758414c084b41bbd6808bf30309b149da4d\javafmllanguage-1.20.1-47.3.33.jar is missing mods.toml file
+[12Mar2025 00:01:32.960] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.33\31f826407e5bab62abe1130d8d369d7d45e7ce3\lowcodelanguage-1.20.1-47.3.33.jar is missing mods.toml file
+[12Mar2025 00:01:32.962] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.33\fb2db487fa47ae1cdcad118267d714f75569ffc7\mclanguage-1.20.1-47.3.33.jar is missing mods.toml file
+[12Mar2025 00:01:32.965] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\chris\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.33\2b6f448126f68c8bbc04b942b3fe7aafb12e22c0\fmlcore-1.20.1-47.3.33.jar is missing mods.toml file
+[12Mar2025 00:01:33.072] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[12Mar2025 00:01:34.122] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[12Mar2025 00:01:34.127] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\chris\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, codexa, --all, --output, F:\Programming_Projects\Java\Minecraft_Mod\src\generated\resources, --existing, F:\Programming_Projects\Java\Minecraft_Mod\src\main\resources]
+[12Mar2025 00:01:34.402] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using F:\Programming_Projects\Java\Minecraft_Mod\build/createSrgToMcp/output.srg
+[12Mar2025 00:01:34.403] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using F:\Programming_Projects\Java\Minecraft_Mod\build/createSrgToMcp/output.srg
+[12Mar2025 00:01:34.404] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using F:\Programming_Projects\Java\Minecraft_Mod\build/createSrgToMcp/output.srg
+[12Mar2025 00:01:34.754] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [codexa]
+[12Mar2025 00:01:38.675] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.33, for MC 1.20.1 with MCP 20230612.114412
+[12Mar2025 00:01:38.676] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.33 Initialized
+[12Mar2025 00:01:38.875] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[12Mar2025 00:01:38.878] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 2.020 ms
+[12Mar2025 00:01:39.139] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/chris/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[12Mar2025 00:01:39.139] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/chris/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.33_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[12Mar2025 00:01:39.343] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[12Mar2025 00:01:39.385] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 41 ms
+[12Mar2025 00:01:39.385] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[12Mar2025 00:01:39.436] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 50 ms
+[12Mar2025 00:01:39.436] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: codexa
+[12Mar2025 00:01:39.567] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: codexa finished after 130 ms
+[12Mar2025 00:01:39.567] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: codexa
+[12Mar2025 00:01:39.597] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: codexa finished after 30 ms
+[12Mar2025 00:01:39.597] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id codexa
+[12Mar2025 00:01:39.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id codexa finished after 14 ms
+[12Mar2025 00:01:39.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id codexa
+[12Mar2025 00:01:39.613] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id codexa finished after 1 ms
+[12Mar2025 00:01:39.613] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:worldgen/biome mod id codexa
+[12Mar2025 00:01:39.614] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:worldgen/biome mod id codexa finished after 0 ms
+[12Mar2025 00:01:39.614] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Curios for codexa
+[12Mar2025 00:01:39.618] [main/INFO] [net.minecraft.data.DataGenerator/]: Curios for codexa finished after 4 ms
+[12Mar2025 00:01:39.618] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : codexa
+[12Mar2025 00:01:39.622] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : codexa finished after 3 ms
+[12Mar2025 00:01:39.622] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[12Mar2025 00:01:39.641] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 19 ms
+[12Mar2025 00:01:39.641] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 298 ms
+[12Mar2025 00:01:39.650] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 209, old count: 210, new count: 210, removed stale: 0, written: 1

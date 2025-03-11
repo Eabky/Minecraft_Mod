@@ -1,6 +1,8 @@
 package net.eabky_dev.codexa.worldgen;
 
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.tags.ModBiomeTags;
+import net.eabky_dev.codexa.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -16,8 +18,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModBiomeModifiers
 {
     public static final ResourceKey<BiomeModifier> ADD_PLATINUM_ORE = registerKey("add_platinum_ore");
-
     public static final ResourceKey<BiomeModifier> ADD_TREE_SUNELM = registerKey("add_tree_sunelm");
+    public static final ResourceKey<BiomeModifier> ADD_MIDNIGHT_GRASS = registerKey("add_midnight_grass");
 
 
     public static void bootstrap(BootstapContext<BiomeModifier> context)
@@ -33,6 +35,11 @@ public class ModBiomeModifiers
         context.register(ADD_TREE_SUNELM, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SUNELM_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_MIDNIGHT_GRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(ModBiomeTags.IS_MIDNIGHT_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MIDNIGHT_GRASS_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 
