@@ -1,11 +1,9 @@
-package net.eabky_dev.codexa.tags;
+package net.eabky_dev.codexa.util;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraftforge.eventbus.api.IEventBus;
 
 public class ModBiomeTags
 {

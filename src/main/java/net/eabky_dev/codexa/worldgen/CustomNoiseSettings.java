@@ -85,10 +85,10 @@ public class CustomNoiseSettings
 
     public static void bootstrap(BootstapContext<NoiseGeneratorSettings> ctx)
     {
-        ctx.register(MIDNIGHT_SEA_NOISE, createMIDNIGHT_SEANoiseSettings(ctx, false, false));
+        ctx.register(MIDNIGHT_SEA_NOISE, createMidnightSeaNoiseSettings(ctx, false, false));
     }
 
-    private static NoiseGeneratorSettings createMIDNIGHT_SEANoiseSettings(
+    private static NoiseGeneratorSettings createMidnightSeaNoiseSettings(
             BootstapContext<?> p_256460_, boolean amplified, boolean large){
         return new NoiseGeneratorSettings(
                 NoiseSettings.create(-64, 384, 1, 2),
@@ -105,41 +105,25 @@ public class CustomNoiseSettings
                 false);
     }
 
-    protected static NoiseRouter overworld(HolderGetter<DensityFunction> densFunc,
-                                           HolderGetter<NormalNoise.NoiseParameters> noiseParam,
-                                           boolean large, boolean amplified) {
-        DensityFunction densityfunction
-                = DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_BARRIER), 0.5D);
-        DensityFunction densityfunction1
-                = DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_FLOODEDNESS), 0.3D);
-        DensityFunction densityfunction2
-                = DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_SPREAD), 0.5D);
+    protected static NoiseRouter overworld(HolderGetter<DensityFunction> densFunc, HolderGetter<NormalNoise.NoiseParameters> noiseParam, boolean large, boolean amplified)
+    {
+        DensityFunction densityfunction = DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_BARRIER), 0.5D);
+        DensityFunction densityfunction1 = DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_FLOODEDNESS), 0.3D);
+        DensityFunction densityfunction2 = DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_SPREAD), 0.5D);
         DensityFunction densityfunction3 = DensityFunctions.constant(0D);
-        //= DensityFunctions.noise(noiseParam.getOrThrow(Noises.AQUIFER_LAVA));
         DensityFunction densityfunction4 = getFunction(densFunc, SHIFT_X);
         DensityFunction densityfunction5 = getFunction(densFunc, SHIFT_Z);
-        DensityFunction densityfunction6
-                = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D,
-                noiseParam.getOrThrow(large ? Noises.TEMPERATURE_LARGE : Noises.TEMPERATURE));
-        DensityFunction densityfunction7
-                = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5,
-                0.25D, noiseParam.getOrThrow(large ? Noises.VEGETATION_LARGE : Noises.VEGETATION));
-        DensityFunction densityfunction8
-                = getFunction(densFunc, large ? FACTOR_LARGE : (amplified ? FACTOR_AMPLIFIED : FACTOR));
+        DensityFunction densityfunction6 = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D, noiseParam.getOrThrow(large ? Noises.TEMPERATURE_LARGE : Noises.TEMPERATURE));
+        DensityFunction densityfunction7 = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D, noiseParam.getOrThrow(large ? Noises.VEGETATION_LARGE : Noises.VEGETATION));
+        DensityFunction densityfunction8 = getFunction(densFunc, large ? FACTOR_LARGE : (amplified ? FACTOR_AMPLIFIED : FACTOR));
         DensityFunction densityfunction9 = getFunction(densFunc, large ? DEPTH_LARGE : (amplified ? DEPTH_AMPLIFIED : DEPTH));
         DensityFunction densityfunction10 = noiseGradientDensity(DensityFunctions.cache2d(densityfunction8), densityfunction9);
-        DensityFunction densityfunction11
-                = getFunction(densFunc, large ? SLOPED_CHEESE_LARGE : (amplified ? SLOPED_CHEESE_AMPLIFIED : SLOPED_CHEESE));
-        DensityFunction densityfunction12
-                = DensityFunctions.min(densityfunction11, DensityFunctions.mul(DensityFunctions.constant(5.0D),
-                getFunction(densFunc, ENTRANCES)));
-        DensityFunction densityfunction13
-                = DensityFunctions.rangeChoice(densityfunction11, -1000000.0D, 1.5625D,
-                densityfunction12, underground(densFunc, noiseParam, densityfunction11));
-        DensityFunction densityfunction14
-                = DensityFunctions.min(postProcess(slideOverworld(amplified, densityfunction13)),
-                getFunction(densFunc, NOODLE));
+        DensityFunction densityfunction11 = getFunction(densFunc, large ? SLOPED_CHEESE_LARGE : (amplified ? SLOPED_CHEESE_AMPLIFIED : SLOPED_CHEESE));
+        DensityFunction densityfunction12 = DensityFunctions.min(densityfunction11, DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densFunc, ENTRANCES)));
+        DensityFunction densityfunction13 = DensityFunctions.rangeChoice(densityfunction11, -1000000.0D, 1.5625D, densityfunction12, underground(densFunc, noiseParam, densityfunction11));
+        DensityFunction densityfunction14 = DensityFunctions.min(postProcess(slideOverworld(amplified, densityfunction13)), getFunction(densFunc, NOODLE));
         DensityFunction densityfunction15 = getFunction(densFunc, Y);
+
         int i = Stream.of(VeinType.values()).mapToInt((p_224495_) -> {
             return p_224495_.minY;
         }).min().orElse(-DimensionType.MIN_Y * 2);
@@ -151,19 +135,12 @@ public class CustomNoiseSettings
                 DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEININESS),
                         1.5D, 1.5D), i, j, 0);
         float f = 4.0F;
-        DensityFunction densityfunction17
-                = yLimitedInterpolatable(densityfunction15,
-                DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEIN_A),
-                        4.0D, 4.0D), i, j, 0).abs();
-        DensityFunction densityfunction18
-                = yLimitedInterpolatable(densityfunction15,
-                DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEIN_B),
-                        4.0D, 4.0D), i, j, 0).abs();
-        DensityFunction densityfunction19
-                = DensityFunctions.add(DensityFunctions.constant((double)-0.08F),
-                DensityFunctions.max(densityfunction17, densityfunction18));
-        DensityFunction densityfunction20 =
-                DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_GAP));
+
+        DensityFunction densityfunction17 = yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEIN_A), 4.0D, 4.0D), i, j, 0).abs();
+        DensityFunction densityfunction18 = yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEIN_B), 4.0D, 4.0D), i, j, 0).abs();
+        DensityFunction densityfunction19 = DensityFunctions.add(DensityFunctions.constant((double)-0.08F), DensityFunctions.max(densityfunction17, densityfunction18));
+        DensityFunction densityfunction20 = DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_GAP));
+
         return new NoiseRouter(densityfunction,
                 densityfunction1, densityfunction2, densityfunction3, densityfunction6,
                 densityfunction7, getFunction(densFunc, large ? CONTINENTS_LARGE : CONTINENTS),
@@ -174,54 +151,53 @@ public class CustomNoiseSettings
                 densityfunction14, densityfunction16, densityfunction19, densityfunction20);
     }
 
-    private static DensityFunction getFunction(HolderGetter<DensityFunction> p_256312_, ResourceKey<DensityFunction> p_256077_) {
+    private static DensityFunction getFunction(HolderGetter<DensityFunction> p_256312_, ResourceKey<DensityFunction> p_256077_)
+    {
         return new DensityFunctions.HolderHolder(p_256312_.getOrThrow(p_256077_));
     }
 
-    private static DensityFunction underground(HolderGetter<DensityFunction> densFuncHold, HolderGetter<NormalNoise.NoiseParameters> noiseParam, DensityFunction densFunc) {
+    private static DensityFunction underground(HolderGetter<DensityFunction> densFuncHold, HolderGetter<NormalNoise.NoiseParameters> noiseParam, DensityFunction densFunc)
+    {
         DensityFunction densityfunction = getFunction(densFuncHold, SPAGHETTI_2D);
         DensityFunction densityfunction1 = getFunction(densFuncHold, SPAGHETTI_ROUGHNESS_FUNCTION);
         DensityFunction densityfunction2 = DensityFunctions.noise(noiseParam.getOrThrow(Noises.CAVE_LAYER), 8.0D);
-        DensityFunction densityfunction3
-                = DensityFunctions.mul(DensityFunctions.constant(4.0D), densityfunction2.square());
-        DensityFunction densityfunction4
-                = DensityFunctions.noise(noiseParam.getOrThrow(Noises.CAVE_CHEESE), 0.6666666666666666D);
-        DensityFunction densityfunction5
-                = DensityFunctions.add(DensityFunctions.add(DensityFunctions.constant(0.27D),
-                densityfunction4).clamp(-1.0D, 1.0D), DensityFunctions.add(DensityFunctions.constant(1.5D), DensityFunctions.mul(DensityFunctions.constant(-0.64D), densFunc)).clamp(0.0D, 0.5D));
+        DensityFunction densityfunction3 = DensityFunctions.mul(DensityFunctions.constant(4.0D), densityfunction2.square());
+        DensityFunction densityfunction4 = DensityFunctions.noise(noiseParam.getOrThrow(Noises.CAVE_CHEESE), 0.6666666666666666D);
+        DensityFunction densityfunction5 = DensityFunctions.add(DensityFunctions.add(DensityFunctions.constant(0.27D), densityfunction4).clamp(-1.0D, 1.0D), DensityFunctions.add(DensityFunctions.constant(1.5D), DensityFunctions.mul(DensityFunctions.constant(-0.64D), densFunc)).clamp(0.0D, 0.5D));
         DensityFunction densityfunction6 = DensityFunctions.add(densityfunction3, densityfunction5);
-        DensityFunction densityfunction7
-                = DensityFunctions.min(DensityFunctions.min(densityfunction6,
-                getFunction(densFuncHold, ENTRANCES)), DensityFunctions.add(densityfunction, densityfunction1));
+        DensityFunction densityfunction7 = DensityFunctions.min(DensityFunctions.min(densityfunction6, getFunction(densFuncHold, ENTRANCES)), DensityFunctions.add(densityfunction, densityfunction1));
         DensityFunction densityfunction8 = getFunction(densFuncHold, PILLARS);
-        DensityFunction densityfunction9
-                = DensityFunctions.rangeChoice(densityfunction8,
-                -1000000.0D, 0.03D, DensityFunctions.constant(-1000000.0D), densityfunction8);
+        DensityFunction densityfunction9 = DensityFunctions.rangeChoice(densityfunction8, -1000000.0D, 0.03D, DensityFunctions.constant(-1000000.0D), densityfunction8);
+
         return DensityFunctions.max(densityfunction7, densityfunction9);
     }
 
-    private static DensityFunction postProcess(DensityFunction densFunc) {
+    private static DensityFunction postProcess(DensityFunction densFunc)
+    {
         DensityFunction densityfunction = DensityFunctions.blendDensity(densFunc);
-        return DensityFunctions.mul(DensityFunctions.interpolated(densityfunction),
-                DensityFunctions.constant(0.64D)).squeeze();
+
+        return DensityFunctions.mul(DensityFunctions.interpolated(densityfunction), DensityFunctions.constant(0.64D)).squeeze();
     }
 
-    private static DensityFunction noiseGradientDensity(DensityFunction densFunc1, DensityFunction densFunc2) {
+    private static DensityFunction noiseGradientDensity(DensityFunction densFunc1, DensityFunction densFunc2)
+    {
         DensityFunction densityfunction = DensityFunctions.mul(densFunc2, densFunc1);
+
         return DensityFunctions.mul(DensityFunctions.constant(4.0D), densityfunction.quarterNegative());
     }
 
-    private static DensityFunction yLimitedInterpolatable(DensityFunction p_209472_, DensityFunction p_209473_, int p_209474_, int p_209475_, int p_209476_) {
+    private static DensityFunction yLimitedInterpolatable(DensityFunction p_209472_, DensityFunction p_209473_, int p_209474_, int p_209475_, int p_209476_)
+    {
         return DensityFunctions.interpolated(DensityFunctions.rangeChoice(p_209472_, (double)p_209474_, (double)(p_209475_ + 1), p_209473_, DensityFunctions.constant((double)p_209476_)));
     }
 
-    private static DensityFunction slideOverworld(boolean amplified, DensityFunction densFunc) {
-        return slide(densFunc, -64, 384, amplified ? 16 : 80,
-                amplified ? 0 : 64, -0.078125D, 0, 24, amplified ? 0.4D : 0.1171875D);
+    private static DensityFunction slideOverworld(boolean amplified, DensityFunction densFunc)
+    {
+        return slide(densFunc, -64, 384, amplified ? 16 : 80, amplified ? 0 : 64, -0.078125D, 0, 24, amplified ? 0.4D : 0.1171875D);
     }
 
-    private static DensityFunction slide(DensityFunction densFunc,
-                                         int y_floor, int y_roof, int i1, int i2, double d1, int i3, int i4, double d2) {
+    private static DensityFunction slide(DensityFunction densFunc, int y_floor, int y_roof, int i1, int i2, double d1, int i3, int i4, double d2)
+    {
         DensityFunction densityfunction1
                 = DensityFunctions.yClampedGradient(y_floor + y_roof - i1,
                 y_floor + y_roof - i2, 1.0D, 0.0D);
@@ -234,8 +210,6 @@ public class CustomNoiseSettings
 
     protected static enum VeinType
     {
-        //COPPER(Blocks.COPPER_ORE.defaultBlockState(), Blocks.RAW_COPPER_BLOCK.defaultBlockState(),
-        //        Blocks.GRANITE.defaultBlockState(), 0, 50),
         IRON(Blocks.DEEPSLATE_IRON_ORE.defaultBlockState(), Blocks.RAW_IRON_BLOCK.defaultBlockState(),
                 Blocks.TUFF.defaultBlockState(), -60, -8);
 
@@ -245,7 +219,8 @@ public class CustomNoiseSettings
         protected final int minY;
         protected final int maxY;
 
-        private VeinType(BlockState p_209684_, BlockState p_209685_, BlockState p_209686_, int p_209687_, int p_209688_) {
+        private VeinType(BlockState p_209684_, BlockState p_209685_, BlockState p_209686_, int p_209687_, int p_209688_)
+        {
             this.ore = p_209684_;
             this.rawOreBlock = p_209685_;
             this.filler = p_209686_;

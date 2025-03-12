@@ -1,12 +1,8 @@
 package net.eabky_dev.codexa.item;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
-import net.eabky_dev.codexa.entity.ModEntities;
-import net.eabky_dev.codexa.item.custom.BossKillerItem;
-import net.eabky_dev.codexa.item.custom.DarkStarRingItem;
-import net.eabky_dev.codexa.item.custom.FuelItem;
-import net.eabky_dev.codexa.item.custom.ModArmorItem;
+import net.eabky_dev.codexa.entity.CodexaEntities;
+import net.eabky_dev.codexa.item.custom.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -65,6 +61,8 @@ public class ModItems
     public static final RegistryObject<Item> BOSS_KILLER = ITEMS.register("boss_killer",
             ()-> new BossKillerItem(Tiers.NETHERITE, 5,1F,
                     new Item.Properties()));
+    public static final RegistryObject<Item> TOMAHAWK = ITEMS.register("tomahawk",
+            () -> new TomahawkItem(new Item.Properties().stacksTo(16))); //will remove all releveant classes and files this is just for testing
 
     public static final RegistryObject<Item> WISDOM_FRUIT = ITEMS.register("wisdom_fruit",
             ()-> new Item(new Item.Properties().food(ModFoodProperties.WISDOM_FRUIT)));
@@ -74,7 +72,7 @@ public class ModItems
             ()-> new FuelItem(new Item.Properties(), 800));
 
     public static final RegistryObject<Item> GEM_GOLEM_SPANW_EGG = ITEMS.register("gem_golem_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.GEM_GOLEM, 5131342, 9507726, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(CodexaEntities.GEM_GOLEM, 5131342, 9507726, new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

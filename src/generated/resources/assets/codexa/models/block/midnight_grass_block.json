@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "codexa:block/midnight_grass_block_bottom",
+    "side": "codexa:block/midnight_grass_block_side",
+    "top": "codexa:block/midnight_grass_block_top"
+  }
+}

@@ -1,6 +1,6 @@
 package net.eabky_dev.codexa.datagen;
 
-import net.eabky_dev.codexa.tags.ModBiomeTags;
+import net.eabky_dev.codexa.util.ModBiomeTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;

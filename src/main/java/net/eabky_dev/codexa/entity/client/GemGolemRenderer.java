@@ -16,7 +16,8 @@ public class GemGolemRenderer extends MobRenderer<GemGolemEntity, GemGolemModel<
     }
 
     @Override
-    public ResourceLocation getTextureLocation(GemGolemEntity pEntity) {
+    public ResourceLocation getTextureLocation(GemGolemEntity pEntity)
+    {
         return ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "textures/entity/gem_golem.png");
     }
 

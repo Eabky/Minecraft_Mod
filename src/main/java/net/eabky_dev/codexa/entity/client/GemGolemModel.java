@@ -32,7 +32,8 @@ public class GemGolemModel<T extends Entity> extends HierarchicalModel<T>
 	private final ModelPart RightLeg;
 	private final ModelPart RightLeg2;
 
-	public GemGolemModel(ModelPart root) {
+	public GemGolemModel(ModelPart root)
+	{
 		this.Rocky = root.getChild("Rocky");
 		this.Body = this.Rocky.getChild("Body");
 		this.Crystal3 = this.Body.getChild("Crystal3");

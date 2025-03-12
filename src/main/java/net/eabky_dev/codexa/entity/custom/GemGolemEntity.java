@@ -314,4 +314,7 @@ public class GemGolemEntity extends Monster
         super.aiStep();
         this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
     }
+
+    public static void init() {
+    }
 }

@@ -2,20 +2,16 @@ package net.eabky_dev.codexa.event;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
-import net.eabky_dev.codexa.item.ModItems;
 import net.eabky_dev.codexa.item.custom.BossKillerItem;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import static net.eabky_dev.codexa.entity.ModEntities.GEM_GOLEM;
+import static net.eabky_dev.codexa.entity.CodexaEntities.GEM_GOLEM;
 
 @Mod.EventBusSubscriber(modid = CODEXA.MOD_ID)
 public class ModEvents
