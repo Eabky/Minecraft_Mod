@@ -39,6 +39,15 @@
   "block.codexa.midnight_dirt": "Midnight Dirt",
   "block.codexa.midnight_stone": "Midnight Stone",
   "block.codexa.midnight_grass": "Midnight Grass",
+    "block.codexa.pale_fortune": "Pale Fortune",
+
+  "effect.codexa.corrosion": "Corrosion",
+
+  "item.minecraft.potion.effect.corrosion_potion": "Corrosion Potion",
+  "item.minecraft.splash_potion.effect.corrosion_potion": "Corrosion Splash Potion",
+  "item.minecraft.lingering_potion.effect.corrosion_potion": "Corrosion Lingering Potion",
+
+  "enchantment.codexa.lightning_strike_enchantment": "Lightning Strike",
 
   "item.codexa.boss_killer": "Boss Killer",
 

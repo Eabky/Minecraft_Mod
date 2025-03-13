@@ -1,7 +1,7 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -19,44 +19,44 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels()
     {
-        blockWithItem(ModBlocks.PLATINUM_BLOCK);
-        blockWithItem(ModBlocks.DEEPSLATE_PLATINUM_ORE);
+        blockWithItem(CodexaModBlocks.PLATINUM_BLOCK);
+        blockWithItem(CodexaModBlocks.DEEPSLATE_PLATINUM_ORE);
 
-        blockWithItem(ModBlocks.BLACK_HOLE);
-        blockWithItem(ModBlocks.CONCRETE);
-        blockWithItem(ModBlocks.POLISHED_CONCRETE);
-        stairsBlock(((StairBlock) ModBlocks.CONCRETE_STRAIRS.get()), blockTexture(ModBlocks.CONCRETE.get()));
-        stairsBlock(((StairBlock) ModBlocks.POLISHED_CONCRETE_STRAIRS.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()));
-        slabBlock(((SlabBlock) ModBlocks.CONCRETE_SLAB.get()), blockTexture(ModBlocks.CONCRETE.get()), blockTexture(ModBlocks.CONCRETE.get()));
-        slabBlock(((SlabBlock) ModBlocks.POLISHED_CONCRETE_SLAB.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()), blockTexture(ModBlocks.POLISHED_CONCRETE.get()));
-        wallBlock(((WallBlock) ModBlocks.CONCRETE_WALL.get()), blockTexture(ModBlocks.CONCRETE.get()));
+        blockWithItem(CodexaModBlocks.BLACK_HOLE);
+        blockWithItem(CodexaModBlocks.CONCRETE);
+        blockWithItem(CodexaModBlocks.POLISHED_CONCRETE);
+        stairsBlock(((StairBlock) CodexaModBlocks.CONCRETE_STRAIRS.get()), blockTexture(CodexaModBlocks.CONCRETE.get()));
+        stairsBlock(((StairBlock) CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get()), blockTexture(CodexaModBlocks.POLISHED_CONCRETE.get()));
+        slabBlock(((SlabBlock) CodexaModBlocks.CONCRETE_SLAB.get()), blockTexture(CodexaModBlocks.CONCRETE.get()), blockTexture(CodexaModBlocks.CONCRETE.get()));
+        slabBlock(((SlabBlock) CodexaModBlocks.POLISHED_CONCRETE_SLAB.get()), blockTexture(CodexaModBlocks.POLISHED_CONCRETE.get()), blockTexture(CodexaModBlocks.POLISHED_CONCRETE.get()));
+        wallBlock(((WallBlock) CodexaModBlocks.CONCRETE_WALL.get()), blockTexture(CodexaModBlocks.CONCRETE.get()));
 
-        simpleBlockWithItem(ModBlocks.PALE_FORTUNE.get(), models().cross(blockTexture(ModBlocks.PALE_FORTUNE.get()).getPath(),
-                blockTexture(ModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
-        simpleBlockWithItem(ModBlocks.POTTED_PALE_FORTUNE.get(), models().singleTexture("potted_pale_fortune", ResourceLocation.parse("flower_pot_cross"), "plant",
-                blockTexture(ModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
+        simpleBlockWithItem(CodexaModBlocks.PALE_FORTUNE.get(), models().cross(blockTexture(CodexaModBlocks.PALE_FORTUNE.get()).getPath(),
+                blockTexture(CodexaModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
+        simpleBlockWithItem(CodexaModBlocks.POTTED_PALE_FORTUNE.get(), models().singleTexture("potted_pale_fortune", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(CodexaModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
 
-        logBlock(((RotatedPillarBlock) ModBlocks.SUNELM_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.SUNELM_WOOD.get()), blockTexture(ModBlocks.SUNELM_LOG.get()), blockTexture(ModBlocks.SUNELM_LOG.get()));
+        logBlock(((RotatedPillarBlock) CodexaModBlocks.SUNELM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.SUNELM_WOOD.get()), blockTexture(CodexaModBlocks.SUNELM_LOG.get()), blockTexture(CodexaModBlocks.SUNELM_LOG.get()));
 
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SUNELM_LOG.get()), blockTexture(ModBlocks.STRIPPED_SUNELM_LOG.get()),
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.STRIPPED_SUNELM_LOG.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()),
                 ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/stripped_sunelm_log_top"));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SUNELM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SUNELM_LOG.get()),
-                blockTexture(ModBlocks.STRIPPED_SUNELM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.STRIPPED_SUNELM_WOOD.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()),
+                blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()));
 
-        blockItem(ModBlocks.SUNELM_LOG);
-        blockItem(ModBlocks.SUNELM_WOOD);
-        blockItem(ModBlocks.STRIPPED_SUNELM_LOG);
-        blockItem(ModBlocks.STRIPPED_SUNELM_WOOD);
-        blockWithItem(ModBlocks.SUNELM_PLANKS);
-        leavesBlock(ModBlocks.SUNELM_LEAVES);
-        saplingBlock(ModBlocks.SUNELM_SAPLING);
+        blockItem(CodexaModBlocks.SUNELM_LOG);
+        blockItem(CodexaModBlocks.SUNELM_WOOD);
+        blockItem(CodexaModBlocks.STRIPPED_SUNELM_LOG);
+        blockItem(CodexaModBlocks.STRIPPED_SUNELM_WOOD);
+        blockWithItem(CodexaModBlocks.SUNELM_PLANKS);
+        leavesBlock(CodexaModBlocks.SUNELM_LEAVES);
+        saplingBlock(CodexaModBlocks.SUNELM_SAPLING);
 
-        grassBlock(ModBlocks.MIDNIGHT_GRASS_BLOCK);
-        blockWithItem(ModBlocks.MIDNIGHT_DIRT);
-        blockWithItem(ModBlocks.MIDNIGHT_STONE);
-        simpleBlockWithItem(ModBlocks.MIDNIGHT_GRASS.get(), models().cross(blockTexture(ModBlocks.MIDNIGHT_GRASS.get()).getPath(),
-                blockTexture(ModBlocks.MIDNIGHT_GRASS.get())).renderType("cutout"));
+        grassBlock(CodexaModBlocks.MIDNIGHT_GRASS_BLOCK);
+        blockWithItem(CodexaModBlocks.MIDNIGHT_DIRT);
+        blockWithItem(CodexaModBlocks.MIDNIGHT_STONE);
+        simpleBlockWithItem(CodexaModBlocks.MIDNIGHT_GRASS.get(), models().cross(blockTexture(CodexaModBlocks.MIDNIGHT_GRASS.get()).getPath(),
+                blockTexture(CodexaModBlocks.MIDNIGHT_GRASS.get())).renderType("cutout"));
     }
 
     private void grassBlock(RegistryObject<Block> blockRegistryObject)

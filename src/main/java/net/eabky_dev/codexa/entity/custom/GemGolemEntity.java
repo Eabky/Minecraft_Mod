@@ -1,6 +1,7 @@
 package net.eabky_dev.codexa.entity.custom;
 
 import net.eabky_dev.codexa.entity.ai.GemGolemAttackGoal;
+import net.eabky_dev.codexa.init.CodexaModEntities;
 import net.eabky_dev.codexa.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,6 +24,8 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.network.PlayMessages;
+import org.w3c.dom.Entity;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -40,7 +43,7 @@ public class GemGolemEntity extends Monster
     private static float knockbackResistance = 1.2f;
     private static double movementSpeed = 0.2D;
 
-    public boolean isDead = false;;
+    public boolean isDead = false;
 
     Predicate<Goal> pFilter = goal ->
             goal instanceof WaterAvoidingRandomStrollGoal ||
@@ -54,12 +57,12 @@ public class GemGolemEntity extends Monster
     public GemGolemEntity(EntityType<? extends Monster> pEntityType, Level pLevel)
     {
         super(pEntityType, pLevel);
+
+        System.out.println("GEM GOLEM SPAWNED ON: " + pLevel);
     }
 
-    private static final EntityDataAccessor<Boolean> ATTACKING =
-            SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> RAGING =
-            SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> RAGING = SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(Component.literal("Gem Golem"),
             BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS);
@@ -72,7 +75,6 @@ public class GemGolemEntity extends Monster
     public final AnimationState rageAnimationState = new AnimationState();
     public final AnimationState deathAnimationState = new AnimationState();
     public int deathAnimationTimeout = 1;
-
 
 
     @Override
@@ -227,46 +229,7 @@ public class GemGolemEntity extends Monster
     @Override
     public boolean hurt(DamageSource pSource, float pAmount)
     {
-        this.walkAnimation.setSpeed(1.5F);
-        boolean flag1 = true;
-
-        if ((float)this.invulnerableTime > 10.0F && !pSource.is(DamageTypeTags.BYPASSES_COOLDOWN))
-        {
-            if (pAmount <= this.lastHurt)
-            {
-                return false;
-            }
-
-            this.actuallyHurt(pSource, pAmount - this.lastHurt);
-            this.lastHurt = pAmount;
-            flag1 = false;
-        }
-        else
-        {
-            this.lastHurt = pAmount;
-            this.invulnerableTime = 20;
-            this.actuallyHurt(pSource, pAmount);
-            this.hurtDuration = 10;
-            this.hurtTime = this.hurtDuration;
-            System.out.println("Golem health: " + this.getHealth() );
-        }
-
-        if (this.isDeadOrDying())
-        {
-            SoundEvent soundevent = this.getDeathSound();
-            if (flag1 && soundevent != null)
-            {
-                this.playSound(soundevent, this.getSoundVolume(), this.getVoicePitch());
-            }
-
-            this.die(pSource);
-
-        }
-        else if (flag1)
-        {
-            this.playHurtSound(pSource);
-        }
-
+        System.out.println("Golem health: " + this.getHealth() );
         return super.hurt(pSource, pAmount);
     }
 

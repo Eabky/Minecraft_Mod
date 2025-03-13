@@ -1,9 +1,8 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
-import net.eabky_dev.codexa.item.ModItems;
-import net.eabky_dev.codexa.util.ModTags;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
+import net.eabky_dev.codexa.init.CodexaModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -12,7 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,20 +27,20 @@ public class ModItemTagGenerator extends ItemTagsProvider
     protected void addTags(HolderLookup.Provider pProvider)
     {
         this.tag(TagKey.create(Registries.ITEM, ResourceLocation.parse("curios:ring")))
-                .add(ModItems.DARK_STAR_RING.get());
+                .add(CodexaModItems.DARK_STAR_RING.get());
 
-        this.tag(ItemTags.TRIMMABLE_ARMOR).add(ModItems.PLATINUM_HELMET.get(),
-                ModItems.PLATINUM_CHESTPLATE.get(),
-                ModItems.PLATINUM_LEGGINGS.get(),
-                ModItems.PLATINUM_BOOTS.get());
+        this.tag(ItemTags.TRIMMABLE_ARMOR).add(CodexaModItems.PLATINUM_HELMET.get(),
+                CodexaModItems.PLATINUM_CHESTPLATE.get(),
+                CodexaModItems.PLATINUM_LEGGINGS.get(),
+                CodexaModItems.PLATINUM_BOOTS.get());
 
         this.tag(ItemTags.LOGS_THAT_BURN)
-                .add(ModBlocks.SUNELM_LOG.get().asItem())
-                .add(ModBlocks.SUNELM_WOOD.get().asItem())
-                .add(ModBlocks.STRIPPED_SUNELM_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_SUNELM_WOOD.get().asItem());
+                .add(CodexaModBlocks.SUNELM_LOG.get().asItem())
+                .add(CodexaModBlocks.SUNELM_WOOD.get().asItem())
+                .add(CodexaModBlocks.STRIPPED_SUNELM_LOG.get().asItem())
+                .add(CodexaModBlocks.STRIPPED_SUNELM_WOOD.get().asItem());
 
         this.tag(ItemTags.PLANKS)
-                .add(ModBlocks.SUNELM_PLANKS.get().asItem());
+                .add(CodexaModBlocks.SUNELM_PLANKS.get().asItem());
     }
 }

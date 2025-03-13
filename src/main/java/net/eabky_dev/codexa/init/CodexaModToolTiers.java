@@ -1,4 +1,4 @@
-package net.eabky_dev.codexa.item;
+package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.util.ModTags;
@@ -11,10 +11,10 @@ import net.minecraftforge.common.TierSortingRegistry;
 
 import java.util.List;
 
-public class ModToolTiers {
+public class CodexaModToolTiers {
     public static final Tier PLATINUM = TierSortingRegistry.registerTier(
             new ForgeTier(5, 1500, 5f, 4f, 25, //Balance later.
-                    ModTags.Blocks.NEEDS_PLATINUM_TOOL, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get())),
+                    ModTags.Blocks.NEEDS_PLATINUM_TOOL, () -> Ingredient.of(CodexaModItems.PLATINUM_INGOT.get())),
             ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "platinum"), List.of(Tiers.IRON), List.of());
 
 }

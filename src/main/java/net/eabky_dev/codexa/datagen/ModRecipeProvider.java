@@ -1,8 +1,8 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
-import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
+import net.eabky_dev.codexa.init.CodexaModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    private static final List<ItemLike> PLATINUM_SMELTABLES = List.of(ModItems.RAW_PLATINUM.get(), ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
-    private static final List<ItemLike> PLATINUM_INGOT_SMELTABLES = List.of(ModItems.PLATINUM_RESIDUE.get());
+    private static final List<ItemLike> PLATINUM_SMELTABLES = List.of(CodexaModItems.RAW_PLATINUM.get(), CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+    private static final List<ItemLike> PLATINUM_INGOT_SMELTABLES = List.of(CodexaModItems.PLATINUM_RESIDUE.get());
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -27,35 +27,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter)
     {
-        oreSmelting(pWriter, PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 0.25f, 200, "platinum");
-        oreBlasting(pWriter, PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 0.25f, 200, "platinum");
-        oreSmelting(pWriter, PLATINUM_INGOT_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_NUGGET.get(), 0.15f, 200, "platinum");
-        oreBlasting(pWriter, PLATINUM_INGOT_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_NUGGET.get(), 0.15f, 200, "platinum");
-        genericSmelting(pWriter, Items.BAMBOO, RecipeCategory.MISC, ModItems.BAMBOO_CHARCOAL.get(), 0.15f, 200, "fuels");
+        oreSmelting(pWriter, PLATINUM_SMELTABLES, RecipeCategory.MISC, CodexaModItems.PLATINUM_INGOT.get(), 0.25f, 200, "platinum");
+        oreBlasting(pWriter, PLATINUM_SMELTABLES, RecipeCategory.MISC, CodexaModItems.PLATINUM_INGOT.get(), 0.25f, 200, "platinum");
+        oreSmelting(pWriter, PLATINUM_INGOT_SMELTABLES, RecipeCategory.MISC, CodexaModItems.PLATINUM_NUGGET.get(), 0.15f, 200, "platinum");
+        oreBlasting(pWriter, PLATINUM_INGOT_SMELTABLES, RecipeCategory.MISC, CodexaModItems.PLATINUM_NUGGET.get(), 0.15f, 200, "platinum");
+        genericSmelting(pWriter, Items.BAMBOO, RecipeCategory.MISC, CodexaModItems.BAMBOO_CHARCOAL.get(), 0.15f, 200, "fuels");
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PLATINUM_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CodexaModBlocks.PLATINUM_BLOCK.get())
                 .pattern("SSS")
                 .pattern("SSS")
                 .pattern("SSS")
-                .define('S', ModItems.PLATINUM_INGOT.get())
-                .unlockedBy(getHasName(ModItems.PLATINUM_INGOT.get()), has(ModItems.PLATINUM_INGOT.get()))
+                .define('S', CodexaModItems.PLATINUM_INGOT.get())
+                .unlockedBy(getHasName(CodexaModItems.PLATINUM_INGOT.get()), has(CodexaModItems.PLATINUM_INGOT.get()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CodexaModItems.PLATINUM_INGOT.get())
                 .pattern("SSS")
                 .pattern("SSS")
                 .pattern("SSS")
-                .define('S', ModItems.PLATINUM_NUGGET.get())
-                .unlockedBy(getHasName(ModItems.PLATINUM_NUGGET.get()), has(ModItems.PLATINUM_NUGGET.get()))
+                .define('S', CodexaModItems.PLATINUM_NUGGET.get())
+                .unlockedBy(getHasName(CodexaModItems.PLATINUM_NUGGET.get()), has(CodexaModItems.PLATINUM_NUGGET.get()))
                 .save(pWriter, CODEXA.MOD_ID + ":platinum_ingot_from_nuggets");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 9)
-                .requires(ModBlocks.PLATINUM_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.PLATINUM_BLOCK.get()), has(ModBlocks.PLATINUM_BLOCK.get()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CodexaModItems.PLATINUM_INGOT.get(), 9)
+                .requires(CodexaModBlocks.PLATINUM_BLOCK.get())
+                .unlockedBy(getHasName(CodexaModBlocks.PLATINUM_BLOCK.get()), has(CodexaModBlocks.PLATINUM_BLOCK.get()))
                 .save(pWriter, CODEXA.MOD_ID + ":platinum_ingot_from_block");
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PLATINUM_NUGGET.get(), 9)
-                .requires(ModItems.PLATINUM_INGOT.get())
-                .unlockedBy(getHasName(ModItems.PLATINUM_INGOT.get()), has(ModItems.PLATINUM_INGOT.get()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CodexaModItems.PLATINUM_NUGGET.get(), 9)
+                .requires(CodexaModItems.PLATINUM_INGOT.get())
+                .unlockedBy(getHasName(CodexaModItems.PLATINUM_INGOT.get()), has(CodexaModItems.PLATINUM_INGOT.get()))
                 .save(pWriter, CODEXA.MOD_ID + ":platinum_nugget_from_ingot");
     }
 

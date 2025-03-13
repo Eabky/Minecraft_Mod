@@ -1,4 +1,4 @@
-package net.eabky_dev.codexa.block.custom;
+package net.eabky_dev.codexa.block;
 
 import net.eabky_dev.codexa.worldgen.dimension.ModDimensions;
 import net.eabky_dev.codexa.worldgen.portal.ModTeleporter;

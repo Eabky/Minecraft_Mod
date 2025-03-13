@@ -1,8 +1,10 @@
-package net.eabky_dev.codexa.block;
+package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.custom.*;
-import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.block.BlackHoleBlock;
+import net.eabky_dev.codexa.block.ModFlammableRotatedPillarBlock;
+import net.eabky_dev.codexa.block.ModLeavesBlock;
+import net.eabky_dev.codexa.block.ModPlankBlock;
 import net.eabky_dev.codexa.worldgen.tree.SunelmTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -17,7 +19,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-public class ModBlocks
+public class CodexaModBlocks
 {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, CODEXA.MOD_ID);
@@ -33,7 +35,7 @@ public class ModBlocks
     public static final RegistryObject<Block> CONCRETE = registerBlock("concrete",
             ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
     public static final RegistryObject<Block> CONCRETE_STRAIRS = registerBlock("concrete_stairs",
-            ()-> new StairBlock(()->ModBlocks.CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+            ()-> new StairBlock(()-> CodexaModBlocks.CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
     public static final RegistryObject<Block> CONCRETE_SLAB = registerBlock("concrete_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
     public static final RegistryObject<Block> CONCRETE_WALL = registerBlock("concrete_wall",
@@ -41,7 +43,7 @@ public class ModBlocks
     public static final RegistryObject<Block> POLISHED_CONCRETE = registerBlock("polished_concrete",
             ()-> new Block(BlockBehaviour.Properties.copy(CONCRETE.get())));
     public static final RegistryObject<Block> POLISHED_CONCRETE_STRAIRS = registerBlock("polished_concrete_stairs",
-            ()-> new StairBlock(()->ModBlocks.POLISHED_CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
+            ()-> new StairBlock(()-> CodexaModBlocks.POLISHED_CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
     public static final RegistryObject<Block> POLISHED_CONCRETE_SLAB = registerBlock("polished_concrete_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
 
@@ -52,7 +54,7 @@ public class ModBlocks
             () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
     public static final RegistryObject<Block> POTTED_PALE_FORTUNE = BLOCKS.register("potted_pale_fortune",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.PALE_FORTUNE,
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CodexaModBlocks.PALE_FORTUNE,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     public static final RegistryObject<Block> SUNELM_LOG = registerBlock("sunelm_log",
@@ -89,7 +91,7 @@ public class ModBlocks
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block)
     {
-        return ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(),new Item.Properties()));
+        return CodexaModItems.ITEMS.register(name, ()-> new BlockItem(block.get(),new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus)

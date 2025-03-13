@@ -1,7 +1,7 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.eabky_dev.codexa.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -22,18 +22,18 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider)
     {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.PLATINUM_BLOCK.get(),
-                        ModBlocks.DEEPSLATE_PLATINUM_ORE.get(),
-                        ModBlocks.CONCRETE.get(),
-                        ModBlocks.CONCRETE_SLAB.get(),
-                        ModBlocks.CONCRETE_STRAIRS.get(),
-                        ModBlocks.POLISHED_CONCRETE_SLAB.get(),
-                        ModBlocks.POLISHED_CONCRETE_STRAIRS.get());
+                .add(CodexaModBlocks.PLATINUM_BLOCK.get(),
+                        CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get(),
+                        CodexaModBlocks.CONCRETE.get(),
+                        CodexaModBlocks.CONCRETE_SLAB.get(),
+                        CodexaModBlocks.CONCRETE_STRAIRS.get(),
+                        CodexaModBlocks.POLISHED_CONCRETE_SLAB.get(),
+                        CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get());
 
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.PLATINUM_BLOCK.get(),
-                        ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
+                .add(CodexaModBlocks.PLATINUM_BLOCK.get(),
+                        CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
 
@@ -44,15 +44,15 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.NEEDS_PLATINUM_TOOL);
 
         this.tag(BlockTags.WALLS)
-                .add(ModBlocks.CONCRETE_WALL.get());
+                .add(CodexaModBlocks.CONCRETE_WALL.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(ModBlocks.SUNELM_LOG.get())
-                .add(ModBlocks.SUNELM_WOOD.get())
-                .add(ModBlocks.STRIPPED_SUNELM_LOG.get())
-                .add(ModBlocks.STRIPPED_SUNELM_WOOD.get());
+                .add(CodexaModBlocks.SUNELM_LOG.get())
+                .add(CodexaModBlocks.SUNELM_WOOD.get())
+                .add(CodexaModBlocks.STRIPPED_SUNELM_LOG.get())
+                .add(CodexaModBlocks.STRIPPED_SUNELM_WOOD.get());
 
         this.tag(BlockTags.PLANKS)
-                .add(ModBlocks.SUNELM_PLANKS.get());
+                .add(CodexaModBlocks.SUNELM_PLANKS.get());
     }
 }

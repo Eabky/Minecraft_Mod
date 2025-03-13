@@ -2,9 +2,8 @@ package net.eabky_dev.codexa.worldgen.dimension;
 
 import com.google.common.collect.ImmutableSet;
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.eabky_dev.codexa.worldgen.CustomNoiseSettings;
-import net.eabky_dev.codexa.worldgen.ModPlacedFeatures;
 import net.eabky_dev.codexa.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
@@ -16,14 +15,11 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.FixedBiomeSource;
-import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraft.world.level.levelgen.FlatLevelSource;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.flat.FlatLayerInfo;
@@ -76,9 +72,9 @@ public class ModDimensions
         HolderSet.Direct<StructureSet> direct = HolderSet.direct(ImmutableSet.of(BuiltinStructureSets.VILLAGES).stream().map(holdergetter::getOrThrow).collect(Collectors.toList()));
 
         FlatLevelGeneratorSettings flatLevelGeneratorSettings = new FlatLevelGeneratorSettings(Optional.of(direct), biomeRegistry.getOrThrow(ModBiomes.MIDNIGHT_SEA_BIOME), FlatLevelGeneratorSettings.createLakesList(holdergetter1));
-        FlatLayerInfo grassLayer = new FlatLayerInfo(1, ModBlocks.MIDNIGHT_GRASS_BLOCK.get());
-        FlatLayerInfo dirtLayer = new FlatLayerInfo(3, ModBlocks.MIDNIGHT_DIRT.get());
-        FlatLayerInfo stoneLayer = new FlatLayerInfo(60, ModBlocks.MIDNIGHT_STONE.get());
+        FlatLayerInfo grassLayer = new FlatLayerInfo(1, CodexaModBlocks.MIDNIGHT_GRASS_BLOCK.get());
+        FlatLayerInfo dirtLayer = new FlatLayerInfo(3, CodexaModBlocks.MIDNIGHT_DIRT.get());
+        FlatLayerInfo stoneLayer = new FlatLayerInfo(60, CodexaModBlocks.MIDNIGHT_STONE.get());
         FlatLayerInfo bedrockLayer = new FlatLayerInfo(1, Blocks.BEDROCK);
         flatLevelGeneratorSettings.getLayersInfo().add(bedrockLayer);
         flatLevelGeneratorSettings.getLayersInfo().add(stoneLayer);

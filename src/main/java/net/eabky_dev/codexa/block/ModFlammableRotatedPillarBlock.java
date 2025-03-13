@@ -1,6 +1,6 @@
-package net.eabky_dev.codexa.block.custom;
+package net.eabky_dev.codexa.block;
 
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;
@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 
 import javax.annotation.Nullable;
-import java.util.Properties;
 
 public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock
 {
@@ -25,12 +24,12 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock
     {
         if(context.getItemInHand().getItem() instanceof AxeItem)
         {
-            if(state.is(ModBlocks.SUNELM_LOG.get())) {
-                return ModBlocks.STRIPPED_SUNELM_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(CodexaModBlocks.SUNELM_LOG.get())) {
+                return CodexaModBlocks.STRIPPED_SUNELM_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
-            if(state.is(ModBlocks.SUNELM_WOOD.get())) {
-                return ModBlocks.STRIPPED_SUNELM_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(CodexaModBlocks.SUNELM_WOOD.get())) {
+                return CodexaModBlocks.STRIPPED_SUNELM_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 

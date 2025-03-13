@@ -1,7 +1,8 @@
 package net.eabky_dev.codexa.event;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.entity.CodexaEntities;
+import net.eabky_dev.codexa.entity.client.GemSpikeModel;
+import net.eabky_dev.codexa.init.CodexaModEntities;
 import net.eabky_dev.codexa.entity.client.GemGolemModel;
 import net.eabky_dev.codexa.entity.client.ModModelLayers;
 import net.eabky_dev.codexa.entity.client.TomahawkProjectileModel;
@@ -20,11 +21,12 @@ public class ModEventBusClientEvents
     {
         event.registerLayerDefinition(ModModelLayers.GEM_GOLEM_LAYER, GemGolemModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.TOMAHAWK_LAYER, TomahawkProjectileModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.GEM_SPIKE_LAYER, GemSpikeModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event)
     {
-        event.put(CodexaEntities.GEM_GOLEM.get(), GemGolemEntity.createAttributes().build());
+        event.put(CodexaModEntities.GEM_GOLEM.get(), GemGolemEntity.createAttributes().build());
     }
 }

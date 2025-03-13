@@ -1,7 +1,7 @@
 package net.eabky_dev.codexa.worldgen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -35,7 +35,7 @@ public class ModPlacedFeatures
 
         register(context, SUNELM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SUNELM_KEY),
                 VegetationPlacements.treePlacement(controlledTreePlacement(),
-                        ModBlocks.SUNELM_SAPLING.get()));
+                        CodexaModBlocks.SUNELM_SAPLING.get()));
 
         register(context, MIDNIGHT_GRASS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MIDNIGHT_GRASS_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(32), // Controls density of patches

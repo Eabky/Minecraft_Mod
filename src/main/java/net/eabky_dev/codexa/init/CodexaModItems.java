@@ -1,8 +1,7 @@
-package net.eabky_dev.codexa.item;
+package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.entity.CodexaEntities;
-import net.eabky_dev.codexa.item.custom.*;
+import net.eabky_dev.codexa.item.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -13,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.List;
 
-public class ModItems
+public class CodexaModItems
 {
     public static final DeferredRegister<Item> ITEMS =
         DeferredRegister.create(ForgeRegistries.ITEMS, CODEXA.MOD_ID);
@@ -27,7 +26,7 @@ public class ModItems
     public static final RegistryObject<Item> PLATINUM_NUGGET = ITEMS.register("platinum_nugget",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.PLATINUM, 1, 1,
+            () -> new PickaxeItem(CodexaModToolTiers.PLATINUM, 1, 1,
                     new Item.Properties()));
     public static final RegistryObject<Item> PLATINUM_HELMET = ITEMS.register("platinum_helmet",
             () -> new ModArmorItem(ModArmorMaterials.PLATINUM, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -64,15 +63,17 @@ public class ModItems
     public static final RegistryObject<Item> TOMAHAWK = ITEMS.register("tomahawk",
             () -> new TomahawkItem(new Item.Properties().stacksTo(16))); //will remove all releveant classes and files this is just for testing
 
+
     public static final RegistryObject<Item> WISDOM_FRUIT = ITEMS.register("wisdom_fruit",
-            ()-> new Item(new Item.Properties().food(ModFoodProperties.WISDOM_FRUIT)));
+            ()-> new Item(new Item.Properties().food(CodexaModFoodProperties.WISDOM_FRUIT)));
 
 
     public static final RegistryObject<Item> BAMBOO_CHARCOAL = ITEMS.register("bamboo_charcoal",
             ()-> new FuelItem(new Item.Properties(), 800));
 
+
     public static final RegistryObject<Item> GEM_GOLEM_SPANW_EGG = ITEMS.register("gem_golem_spawn_egg",
-            () -> new ForgeSpawnEggItem(CodexaEntities.GEM_GOLEM, 5131342, 9507726, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(CodexaModEntities.GEM_GOLEM, 5131342, 9507726, new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

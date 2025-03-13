@@ -2,7 +2,7 @@ package net.eabky_dev.codexa.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.eabky_dev.codexa.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -167,7 +167,7 @@ public class SunelmTrunkPlacer extends TrunkPlacer
         for (int i = 1; i <= 2; i++)
         {
             BlockPos checkPos = horizontalPos.above(i); // Get the position above
-            if (level.isStateAtPosition(checkPos, state -> state.is(ModBlocks.SUNELM_LOG.get())))
+            if (level.isStateAtPosition(checkPos, state -> state.is(CodexaModBlocks.SUNELM_LOG.get())))
             {
                 return false; // If a log block is found, space is not free
             }

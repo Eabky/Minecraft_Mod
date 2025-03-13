@@ -1,4 +1,4 @@
-package net.eabky_dev.codexa.item.custom;
+package net.eabky_dev.codexa.item;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,7 +16,7 @@ public class DarkStarRingItem extends Item implements ICurioItem
 {
     public DarkStarRingItem(Properties pProperties)
     {
-        super(new Properties().stacksTo(1).defaultDurability(0));
+        super(new Properties().stacksTo(1).defaultDurability(10000));
     }
 
     @Override

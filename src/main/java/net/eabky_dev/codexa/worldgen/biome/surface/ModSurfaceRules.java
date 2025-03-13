@@ -1,17 +1,15 @@
 package net.eabky_dev.codexa.worldgen.biome.surface;
 
-import net.eabky_dev.codexa.block.ModBlocks;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.eabky_dev.codexa.worldgen.biome.ModBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 public class ModSurfaceRules
 {
-    private static final SurfaceRules.RuleSource DIRT = makeStateRule(ModBlocks.MIDNIGHT_DIRT.get());
-    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(ModBlocks.MIDNIGHT_GRASS_BLOCK.get());
-    private static final SurfaceRules.RuleSource STONE = makeStateRule(ModBlocks.MIDNIGHT_STONE.get());
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(CodexaModBlocks.MIDNIGHT_DIRT.get());
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(CodexaModBlocks.MIDNIGHT_GRASS_BLOCK.get());
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(CodexaModBlocks.MIDNIGHT_STONE.get());
 
     public static SurfaceRules.RuleSource makeRules()
     {

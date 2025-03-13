@@ -52,7 +52,8 @@ public class GemGolemModel<T extends Entity> extends HierarchicalModel<T>
 		this.RightLeg2 = this.RightLeg.getChild("RightLeg2");
 	}
 
-	public static LayerDefinition createBodyLayer() {
+	public static LayerDefinition createBodyLayer()
+	{
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 

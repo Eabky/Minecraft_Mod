@@ -1,6 +1,7 @@
 package net.eabky_dev.codexa.item;
 
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.init.CodexaModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -11,8 +12,7 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial
 {
-    PLATINUM("platinum", 26, new int[]{ 5, 7, 5, 4 }, 25,
-            SoundEvents.ARMOR_EQUIP_IRON, 1f, 0f, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get()));
+    PLATINUM("platinum", 26, new int[]{ 5, 7, 5, 4 }, 25, SoundEvents.ARMOR_EQUIP_IRON, 1f, 0f, () -> Ingredient.of(CodexaModItems.PLATINUM_INGOT.get()));
 
     private final String name;
     private final int durabilityMultiplier;
@@ -25,8 +25,7 @@ public enum ModArmorMaterials implements ArmorMaterial
 
     private static final int[] BASE_DURABILITY = { 11, 16, 16, 13 };
 
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound,
-                      float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;

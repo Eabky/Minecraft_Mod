@@ -1,11 +1,10 @@
-package net.eabky_dev.codexa.item;
+package net.eabky_dev.codexa.init;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
-public class ModFoodProperties
+public class CodexaModFoodProperties
 {
     public static final FoodProperties WISDOM_FRUIT = new FoodProperties.Builder()
             .nutrition(3)

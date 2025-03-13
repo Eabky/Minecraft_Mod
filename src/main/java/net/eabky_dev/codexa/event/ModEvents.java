@@ -2,16 +2,25 @@ package net.eabky_dev.codexa.event;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
-import net.eabky_dev.codexa.item.custom.BossKillerItem;
+import net.eabky_dev.codexa.init.CodexaModPotions;
+import net.eabky_dev.codexa.item.BossKillerItem;
+import net.minecraft.server.Bootstrap;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.brewing.BrewingRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import static net.eabky_dev.codexa.entity.CodexaEntities.GEM_GOLEM;
+import javax.sound.sampled.Port;
 
 @Mod.EventBusSubscriber(modid = CODEXA.MOD_ID)
 public class ModEvents

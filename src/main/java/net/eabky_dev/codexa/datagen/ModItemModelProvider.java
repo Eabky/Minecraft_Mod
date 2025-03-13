@@ -1,8 +1,8 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.ModBlocks;
-import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
+import net.eabky_dev.codexa.init.CodexaModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -16,7 +16,6 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -44,33 +43,33 @@ public class ModItemModelProvider extends ItemModelProvider
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.PLATINUM_INGOT);
-        simpleItem(ModItems.RAW_PLATINUM);
-        simpleItem(ModItems.PLATINUM_NUGGET);
-        simpleItem(ModItems.PLATINUM_RESIDUE);
-        handheldItem(ModItems.PLATINUM_PICKAXE);
-        trimmedArmorItem(ModItems.PLATINUM_HELMET);
-        trimmedArmorItem(ModItems.PLATINUM_CHESTPLATE);
-        trimmedArmorItem(ModItems.PLATINUM_LEGGINGS);
-        trimmedArmorItem(ModItems.PLATINUM_BOOTS);
+        simpleItem(CodexaModItems.PLATINUM_INGOT);
+        simpleItem(CodexaModItems.RAW_PLATINUM);
+        simpleItem(CodexaModItems.PLATINUM_NUGGET);
+        simpleItem(CodexaModItems.PLATINUM_RESIDUE);
+        handheldItem(CodexaModItems.PLATINUM_PICKAXE);
+        trimmedArmorItem(CodexaModItems.PLATINUM_HELMET);
+        trimmedArmorItem(CodexaModItems.PLATINUM_CHESTPLATE);
+        trimmedArmorItem(CodexaModItems.PLATINUM_LEGGINGS);
+        trimmedArmorItem(CodexaModItems.PLATINUM_BOOTS);
 
-        simpleItem(ModItems.PALADINIUM_INGOT);
+        simpleItem(CodexaModItems.PALADINIUM_INGOT);
 
-        simpleItem(ModItems.BAMBOO_CHARCOAL);
+        simpleItem(CodexaModItems.BAMBOO_CHARCOAL);
 
-        simpleItem(ModItems.WISDOM_FRUIT);
-        simpleBlockItemBlockTexture(ModBlocks.PALE_FORTUNE);
+        simpleItem(CodexaModItems.WISDOM_FRUIT);
+        simpleBlockItemBlockTexture(CodexaModBlocks.PALE_FORTUNE);
 
-        wallItem(ModBlocks.CONCRETE_WALL, ModBlocks.CONCRETE);
+        wallItem(CodexaModBlocks.CONCRETE_WALL, CodexaModBlocks.CONCRETE);
 
-        evenSimplerBlockItem(ModBlocks.CONCRETE_STRAIRS);
-        evenSimplerBlockItem(ModBlocks.POLISHED_CONCRETE_STRAIRS);
-        evenSimplerBlockItem(ModBlocks.CONCRETE_SLAB);
-        evenSimplerBlockItem(ModBlocks.POLISHED_CONCRETE_SLAB);
+        evenSimplerBlockItem(CodexaModBlocks.CONCRETE_STRAIRS);
+        evenSimplerBlockItem(CodexaModBlocks.POLISHED_CONCRETE_STRAIRS);
+        evenSimplerBlockItem(CodexaModBlocks.CONCRETE_SLAB);
+        evenSimplerBlockItem(CodexaModBlocks.POLISHED_CONCRETE_SLAB);
 
-        withExistingParent(ModItems.GEM_GOLEM_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(CodexaModItems.GEM_GOLEM_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
-        saplingItem(ModBlocks.SUNELM_SAPLING);
+        saplingItem(CodexaModBlocks.SUNELM_SAPLING);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item)

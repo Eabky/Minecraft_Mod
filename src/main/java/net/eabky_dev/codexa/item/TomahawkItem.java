@@ -1,4 +1,4 @@
-package net.eabky_dev.codexa.item.custom;
+package net.eabky_dev.codexa.item;
 
 import net.eabky_dev.codexa.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.sounds.SoundEvents;

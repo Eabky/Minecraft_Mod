@@ -1,9 +1,9 @@
 package net.eabky_dev.codexa.entity.custom;
 
 
-import net.eabky_dev.codexa.block.ModBlocks;
-import net.eabky_dev.codexa.entity.CodexaEntities;
-import net.eabky_dev.codexa.item.ModItems;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
+import net.eabky_dev.codexa.init.CodexaModEntities;
+import net.eabky_dev.codexa.init.CodexaModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -31,13 +31,13 @@ public class TomahawkProjectileEntity extends AbstractArrow implements ItemSuppl
 
     public TomahawkProjectileEntity(LivingEntity shooter, Level level)
     {
-        super(CodexaEntities.TOMAHAWK.get(), shooter, level);
+        super(CodexaModEntities.TOMAHAWK.get(), shooter, level);
     }
 
     @Override
     protected ItemStack getPickupItem()
     {
-        return new ItemStack(ModItems.TOMAHAWK.get());
+        return new ItemStack(CodexaModItems.TOMAHAWK.get());
     }
 
     public float getRenderingRotation() {
@@ -91,10 +91,10 @@ public class TomahawkProjectileEntity extends AbstractArrow implements ItemSuppl
 
         // Place Black Hole block
         BlockPos blockPos = result.getBlockPos().above();
-        this.level().setBlockAndUpdate(blockPos, ModBlocks.BLACK_HOLE.get().defaultBlockState());
+        this.level().setBlockAndUpdate(blockPos, CodexaModBlocks.BLACK_HOLE.get().defaultBlockState());
 
         // Schedule block removal after 5 seconds (100 ticks)
-        this.level().scheduleTick(blockPos, ModBlocks.BLACK_HOLE.get(), 100);
+        this.level().scheduleTick(blockPos, CodexaModBlocks.BLACK_HOLE.get(), 100);
     }
 
     public static void init() {

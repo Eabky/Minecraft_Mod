@@ -1,9 +1,8 @@
-package net.eabky_dev.codexa.item.custom;
+package net.eabky_dev.codexa.item;
 
 import com.google.common.collect.ImmutableMap;
-import net.eabky_dev.codexa.item.ModArmorMaterials;
+import net.eabky_dev.codexa.init.CodexaModMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -15,7 +14,7 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem
 {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.PLATINUM, new MobEffectInstance(MobEffects.ABSORPTION, 200, 1, false,false, true)).build(); //Will change the effect to "CORROSION" once I make it.
+            .put(ModArmorMaterials.PLATINUM, new MobEffectInstance(CodexaModMobEffects.CORROSION.get(), 200, 1, false,false, true)).build();
 
     public ModArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
@@ -53,9 +52,9 @@ public class ModArmorItem extends ArmorItem
     {
         boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
 
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect)
+        if(hasCorrectArmorOn(mapArmorMaterial, player) && hasPlayerEffect)
         {
-            player.addEffect(new MobEffectInstance(mapStatusEffect));
+            player.removeEffect(CodexaModMobEffects.CORROSION.get());
         }
     }
 

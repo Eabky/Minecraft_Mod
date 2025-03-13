@@ -1,4 +1,4 @@
-package net.eabky_dev.codexa.item.custom;
+package net.eabky_dev.codexa.item;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

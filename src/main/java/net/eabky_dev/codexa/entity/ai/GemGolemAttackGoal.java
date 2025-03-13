@@ -1,10 +1,15 @@
 package net.eabky_dev.codexa.entity.ai;
 
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
+import net.eabky_dev.codexa.entity.custom.GemSpikeEntity;
+import net.eabky_dev.codexa.init.CodexaModEntities;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.level.levelgen.Heightmap;
 
 public class GemGolemAttackGoal extends MeleeAttackGoal
 {
@@ -29,7 +34,8 @@ public class GemGolemAttackGoal extends MeleeAttackGoal
 
     @Override
     protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr) {
-        if (isEnemyWithinAttackDistance(pEnemy, pDistToEnemySqr)) {
+        if (isEnemyWithinAttackDistance(pEnemy, pDistToEnemySqr))
+        {
             shouldCountTillNextAttack = true;
 
             if(isTimeToStartAttackAnimation())
@@ -54,7 +60,7 @@ public class GemGolemAttackGoal extends MeleeAttackGoal
 
     private boolean isEnemyWithinAttackDistance(LivingEntity pEnemy, double pDistToEnemySqr)
     {
-        return pDistToEnemySqr <= this.getAttackReachSqr(pEnemy);
+        return pDistToEnemySqr <= this.mob.getBbWidth() * 3.0F * this.mob.getBbWidth() * 2.0F + pEnemy.getBbWidth();
     }
 
     protected void resetAttackCooldown()
@@ -75,7 +81,8 @@ public class GemGolemAttackGoal extends MeleeAttackGoal
     }
 
 
-    protected void performAttack(LivingEntity pEnemy) {
+    protected void performAttack(LivingEntity pEnemy)
+    {
         this.resetAttackCooldown();
         this.mob.swing(InteractionHand.MAIN_HAND);
         this.mob.doHurtTarget(pEnemy);

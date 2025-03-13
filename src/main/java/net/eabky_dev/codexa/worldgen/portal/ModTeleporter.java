@@ -1,7 +1,7 @@
 package net.eabky_dev.codexa.worldgen.portal;
 
-import net.eabky_dev.codexa.block.ModBlocks;
-import net.eabky_dev.codexa.block.custom.ModPortalBlock;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
+import net.eabky_dev.codexa.block.ModPortalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -56,7 +56,7 @@ public class ModTeleporter implements ITeleporter
             }
             if (doSetBlock)
             {
-                destinationWorld.setBlock(destinationPos, ModBlocks.BLACK_HOLE.get().defaultBlockState(), 3);
+                destinationWorld.setBlock(destinationPos, CodexaModBlocks.BLACK_HOLE.get().defaultBlockState(), 3);
             }
         }
 
