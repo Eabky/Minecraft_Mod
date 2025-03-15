@@ -71,6 +71,9 @@ public class CodexaModItems
     public static final RegistryObject<Item> BAMBOO_CHARCOAL = ITEMS.register("bamboo_charcoal",
             ()-> new FuelItem(new Item.Properties(), 800));
 
+    public static final RegistryObject<Item> OTHERWORLDLY_LANTERN_ITEM = ITEMS.register("otherworldly_lantern",
+            () -> new OtherworldlyLanternBlockItem(CodexaModBlocks.OTHERWORLDLY_LANTERN.get(), new Item.Properties()));
+
 
     public static final RegistryObject<Item> GEM_GOLEM_SPANW_EGG = ITEMS.register("gem_golem_spawn_egg",
             () -> new ForgeSpawnEggItem(CodexaModEntities.GEM_GOLEM, 5131342, 9507726, new Item.Properties()));

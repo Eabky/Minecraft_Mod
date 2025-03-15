@@ -1,10 +1,7 @@
 package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.block.BlackHoleBlock;
-import net.eabky_dev.codexa.block.ModFlammableRotatedPillarBlock;
-import net.eabky_dev.codexa.block.ModLeavesBlock;
-import net.eabky_dev.codexa.block.ModPlankBlock;
+import net.eabky_dev.codexa.block.*;
 import net.eabky_dev.codexa.worldgen.tree.SunelmTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -81,6 +78,8 @@ public class CodexaModBlocks
     public static final RegistryObject<Block> MIDNIGHT_GRASS = registerBlock("midnight_grass",
             () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).noOcclusion().noCollission()));
 
+    public static final RegistryObject<Block> OTHERWORLDLY_LANTERN;
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
@@ -97,5 +96,10 @@ public class CodexaModBlocks
     public static void register(IEventBus eventBus)
     {
         BLOCKS.register(eventBus);
+    }
+
+    static
+    {
+    OTHERWORLDLY_LANTERN = BLOCKS.register("otherworldly_lantern", ()-> new OtherworldlyLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel((state) -> 15)));
     }
 }

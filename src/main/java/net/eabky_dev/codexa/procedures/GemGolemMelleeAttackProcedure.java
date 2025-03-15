@@ -4,9 +4,11 @@ import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
 import net.eabky_dev.codexa.entity.custom.GemSpikeEntity;
 import net.eabky_dev.codexa.init.CodexaModEntities;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,11 +16,13 @@ import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = CODEXA.MOD_ID)
 public class GemGolemMelleeAttackProcedure
 {
     private static boolean spikeExists = false;
+    static Random random = new Random();
 
     @SubscribeEvent
     public static void onGemGolemMelleeAttack(LivingAttackEvent event)
@@ -56,9 +60,9 @@ public class GemGolemMelleeAttackProcedure
                 }
             }
 
-            if (!level.isClientSide() && gemSpikeEntity != null && !spikeExists)
+            if (!level.isClientSide() && gemSpikeEntity != null && !spikeExists && !target.level().getBlockState(target.blockPosition().below()).isAir())
             {
-                gemSpikeEntity.setPos(target.getX(), target.getY(), target.getZ());
+                gemSpikeEntity.moveTo(target.getX() + random.nextInt(3), target.getY(), target.getZ() + random.nextInt(3));
                 level.addFreshEntity(gemSpikeEntity);
             }
 

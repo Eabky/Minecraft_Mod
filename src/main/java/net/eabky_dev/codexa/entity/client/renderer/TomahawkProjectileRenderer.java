@@ -1,9 +1,11 @@
-package net.eabky_dev.codexa.entity.client;
+package net.eabky_dev.codexa.entity.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.init.CodexaModModelLayers;
+import net.eabky_dev.codexa.entity.client.model.TomahawkProjectileModel;
 import net.eabky_dev.codexa.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -20,7 +22,7 @@ public class TomahawkProjectileRenderer extends EntityRenderer<TomahawkProjectil
     public TomahawkProjectileRenderer(EntityRendererProvider.Context context)
     {
         super(context);
-        this.model = new TomahawkProjectileModel(context.bakeLayer(ModModelLayers.TOMAHAWK_LAYER));
+        this.model = new TomahawkProjectileModel(context.bakeLayer(CodexaModModelLayers.TOMAHAWK_LAYER));
     }
 
     @Override

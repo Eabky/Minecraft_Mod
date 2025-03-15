@@ -1,9 +1,15 @@
 package net.eabky_dev.codexa.entity.custom;
 
 
-import net.minecraft.core.BlockPos;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import net.eabky_dev.codexa.CODEXA;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -11,7 +17,12 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 public class GemSpikeEntity extends Entity
 {
@@ -21,10 +32,56 @@ public class GemSpikeEntity extends Entity
     public GemSpikeEntity(EntityType<?> pEntityType, Level pLevel)
     {
         super(pEntityType, pLevel);
+
         this.setInvulnerable(false);
         this.isAttackable();
         this.canBeHitByProjectile();
+
+        System.out.println("Spike Spawned: " + this.getStringUUID());
     }
+
+    @Override
+    public void baseTick() {
+        super.baseTick();
+
+        if (!this.level().isClientSide && this.level() instanceof ServerLevel serverLevel)
+        {
+            Set<String> gemTeamEntities = loadGemTeamEntities(serverLevel);
+
+            double radius = 10D;
+            for (Entity entity : this.level().getEntities(this, this.getBoundingBox().inflate(radius)))
+            {
+                String entityKey = entity.getType().toString();
+
+                if (!gemTeamEntities.contains(entityKey))
+                {
+                    pushEntitiesBack();
+                    entity.hurt(this.level().damageSources().magic(), 5.0F); // Optional damage
+                }
+            }
+        }
+    }
+
+    private void pushEntitiesBack()
+    {
+        // Define the radius within which to apply pushback
+        double radius = 3.0;  // Adjust the radius to your needs
+        Vec3 golemPos = this.position();
+
+        // Iterate over entities in the level and push them back if they are not GemGolems
+        for (Entity entity : level().getEntities(this, this.getBoundingBox().inflate(radius)))
+        {
+            if (!(entity instanceof GemGolemEntity))  // Don't push back other Gem Golems
+            {
+                // Calculate the direction opposite to the golem
+                Vec3 pushDirection = entity.position().subtract(golemPos).normalize().scale(1.5); // Push force (adjust scale)
+
+                // Apply the pushback by modifying entity's velocity
+                entity.setDeltaMovement(entity.getDeltaMovement().add(pushDirection));
+            }
+        }
+    }
+
 
     public static void init() {
     }
@@ -51,7 +108,7 @@ public class GemSpikeEntity extends Entity
     public boolean hurt(DamageSource pSource, float pAmount)
     {
 
-        System.out.println("Hit");
+        System.out.println("Gem spike got hit");
         this.remove(Entity.RemovalReason.KILLED);
 
         return super.hurt(pSource, pAmount);
@@ -87,7 +144,8 @@ public class GemSpikeEntity extends Entity
         }
     }
 
-    private double applyPistonMovementRestriction(Direction.Axis pAxis, double pDistance) {
+    private double applyPistonMovementRestriction(Direction.Axis pAxis, double pDistance)
+    {
         int i = pAxis.ordinal();
         double d0 = Mth.clamp(pDistance + this.pistonDeltas[i], -0.51D, 0.51D);
         pDistance = d0 - this.pistonDeltas[i];
@@ -109,5 +167,32 @@ public class GemSpikeEntity extends Entity
     @Override
     public boolean isCurrentlyGlowing() {
         return super.isCurrentlyGlowing();
+    }
+
+    public Set<String> loadGemTeamEntities(ServerLevel serverLevel)
+    {
+        Set<String> entitySet = new HashSet<>();
+        ResourceLocation fileLocation = ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "entity_teams/gemteam.json");
+
+        try (InputStreamReader reader = new InputStreamReader(serverLevel.getServer().getResourceManager().getResource(fileLocation).get().open(), StandardCharsets.UTF_8))
+        {
+            JsonElement jsonElement = JsonParser.parseReader(reader);
+            if (jsonElement.isJsonObject())
+            {
+                JsonObject jsonObject = jsonElement.getAsJsonObject();
+                JsonArray entityArray = jsonObject.getAsJsonArray("entities");
+
+                for (JsonElement element : entityArray)
+                {
+                    entitySet.add(element.getAsString());
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.err.println("Failed to load gem team entities: " + e.getMessage());
+        }
+
+        return entitySet;
     }
 }

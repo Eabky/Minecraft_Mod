@@ -28,6 +28,7 @@ import net.minecraftforge.fml.util.thread.SidedThreadGroups;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 import terrablender.api.SurfaceRuleManager;
 
 import java.util.AbstractMap;
@@ -58,12 +59,15 @@ public class CODEXA
         CodexaModMobEffects.REGISTRY.register(modEventBus);
         CodexaModPotions.REGISTRY.register(modEventBus);
         CodexaModEnchantments.REGISTRY.register(modEventBus);
+        CodexaModBlockEntities.REGISTRY.register(modEventBus);
         ModSounds.register(modEventBus);
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacers.register(modEventBus);
 
         modEventBus.addListener(FlowerPotProcedure::flowerPot);
         modEventBus.addListener(BrewingPotionsProcedure::potionBrewing);
+
+        GeckoLib.initialize();
     }
 
 //    public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

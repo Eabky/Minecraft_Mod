@@ -1,8 +1,10 @@
-package net.eabky_dev.codexa.entity.client;
+package net.eabky_dev.codexa.entity.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.init.CodexaModModelLayers;
+import net.eabky_dev.codexa.entity.client.model.GemSpikeModel;
 import net.eabky_dev.codexa.entity.custom.GemSpikeEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -17,7 +19,7 @@ public class GemSpikeRenderer extends EntityRenderer<GemSpikeEntity>
     public GemSpikeRenderer(EntityRendererProvider.Context pContext)
     {
         super(pContext);
-        this.model = new GemSpikeModel(pContext.bakeLayer(ModModelLayers.GEM_SPIKE_LAYER));
+        this.model = new GemSpikeModel(pContext.bakeLayer(CodexaModModelLayers.GEM_SPIKE_LAYER));
     }
 
     @Override

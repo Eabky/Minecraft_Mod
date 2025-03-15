@@ -1,10 +1,9 @@
-package net.eabky_dev.codexa.entity.client;
+package net.eabky_dev.codexa.entity.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.eabky_dev.codexa.entity.animations.ModAnimationDefinitions;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

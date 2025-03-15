@@ -1,13 +1,16 @@
 package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.entity.client.GemGolemRenderer;
-import net.eabky_dev.codexa.entity.client.GemSpikeRenderer;
-import net.eabky_dev.codexa.entity.client.TomahawkProjectileRenderer;
+import net.eabky_dev.codexa.entity.client.renderer.GemGolemRenderer;
+import net.eabky_dev.codexa.entity.client.renderer.GemSpikeRenderer;
+import net.eabky_dev.codexa.entity.client.renderer.OtherworldlyLanternRenderer;
+import net.eabky_dev.codexa.entity.client.renderer.TomahawkProjectileRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = CODEXA.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class CodexaModEntityRenders
@@ -21,5 +24,12 @@ public class CodexaModEntityRenders
         event.registerEntityRenderer(CodexaModEntities.GEM_GOLEM.get(), GemGolemRenderer::new);
         event.registerEntityRenderer(CodexaModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
         event.registerEntityRenderer(CodexaModEntities.GEM_SPIKE.get(), GemSpikeRenderer::new);
+        BlockEntityRenderers.register(CodexaModBlockEntities.OTHERWORLDLY_LANTERN_BE.get(), OtherworldlyLanternRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockEntityRenderer(FMLClientSetupEvent event)
+    {
+
     }
 }

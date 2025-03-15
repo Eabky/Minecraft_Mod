@@ -1,7 +1,9 @@
-package net.eabky_dev.codexa.entity.client;
+package net.eabky_dev.codexa.entity.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.init.CodexaModModelLayers;
+import net.eabky_dev.codexa.entity.client.model.GemGolemModel;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -12,7 +14,7 @@ public class GemGolemRenderer extends MobRenderer<GemGolemEntity, GemGolemModel<
 {
     public GemGolemRenderer(EntityRendererProvider.Context pContext)
     {
-        super(pContext, new GemGolemModel<>(pContext.bakeLayer(ModModelLayers.GEM_GOLEM_LAYER)), 2f);
+        super(pContext, new GemGolemModel<>(pContext.bakeLayer(CodexaModModelLayers.GEM_GOLEM_LAYER)), 2f);
     }
 
     @Override

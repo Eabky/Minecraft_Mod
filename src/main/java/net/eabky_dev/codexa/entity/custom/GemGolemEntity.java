@@ -1,7 +1,6 @@
 package net.eabky_dev.codexa.entity.custom;
 
 import net.eabky_dev.codexa.entity.ai.GemGolemAttackGoal;
-import net.eabky_dev.codexa.init.CodexaModEntities;
 import net.eabky_dev.codexa.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -11,7 +10,6 @@ import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -24,17 +22,16 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.network.PlayMessages;
-import org.w3c.dom.Entity;
+import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public class GemGolemEntity extends Monster
 {
-    private boolean isAttackable = true;
-    private int howLongIsDead = 0;
-    private boolean rageTriggered = false;
+    private boolean isAttackable;
+    private int howLongIsDead;
+    private int rageTimer;
 
     private static float attackDamage = 25f;
     private static float maxHealth = 1000f;
@@ -44,6 +41,7 @@ public class GemGolemEntity extends Monster
     private static double movementSpeed = 0.2D;
 
     public boolean isDead = false;
+    public boolean isRaging = false;
 
     Predicate<Goal> pFilter = goal ->
             goal instanceof WaterAvoidingRandomStrollGoal ||
@@ -58,11 +56,19 @@ public class GemGolemEntity extends Monster
     {
         super(pEntityType, pLevel);
 
+        isAttackable = true;
+        howLongIsDead = 0;
+        rageTimer = 0;
+        isRaging = false;
+
+        this.setRaging(false);
+
         System.out.println("GEM GOLEM SPAWNED ON: " + pLevel);
     }
 
     private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> RAGING = SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
+
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(Component.literal("Gem Golem"),
             BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS);
@@ -82,12 +88,13 @@ public class GemGolemEntity extends Monster
     {
         super.tick();
 
-        if(this.level().isClientSide())
+        if (this.level().isClientSide())
         {
             setupAnimationStates();
         }
 
-        if(this.getHealth() == 0.1F)
+        // Handling the rage animation
+        if (this.getHealth() == 0.1F)
         {
             this.isAttackable = false;
             this.isDead = true;
@@ -99,7 +106,6 @@ public class GemGolemEntity extends Monster
 
             this.idleAnimationState.stop();
             this.removeAllGoals(pFilter);
-            this.setRaging(false);
             this.setAttacking(false);
 
             if (deathAnimationTimeout > 0)
@@ -112,18 +118,29 @@ public class GemGolemEntity extends Monster
             }
         }
 
-        if(isDead && howLongIsDead >= 80)
+        if (isDead && howLongIsDead >= 80)
         {
             this.remove(RemovalReason.KILLED);
         }
 
-        if (!rageTriggered && this.getHealth() <= this.getMaxHealth() * 0.5)
+        // Rage state handling
+        if (!isRaging && this.getHealth() <= this.getMaxHealth() * 0.5)
         {
-            this.setRaging(true);
-            rageAnimationState.start(this.tickCount);
-            this.playSound(getRoarSound(), 1, 1);
-            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(attackDamage*2);
-            rageTriggered = true;
+            this.isRaging = true;
+            this.rageAnimationState.start(tickCount);
+            this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(attackDamage * 2);
+
+            rageTimer++;
+
+            if (rageTimer < 88)
+            {
+                pushEntitiesBack();
+            }
+
+            if (rageTimer >= 88)
+            {
+                this.rageAnimationState.stop();
+            }
         }
     }
 
@@ -170,8 +187,6 @@ public class GemGolemEntity extends Monster
         this.walkAnimation.update(f, 0.2f);
     }
 
-
-
     public void setAttacking(boolean attacking)
     {
         this.entityData.set(ATTACKING, attacking);
@@ -185,6 +200,11 @@ public class GemGolemEntity extends Monster
     public boolean isAttacking()
     {
         return this.entityData.get(ATTACKING);
+    }
+
+    public boolean isRaging()
+    {
+        return this.entityData.get(RAGING);
     }
 
     @Override
@@ -220,6 +240,26 @@ public class GemGolemEntity extends Monster
                 .add(Attributes.KNOCKBACK_RESISTANCE, knockbackResistance);
     }
 
+    private void pushEntitiesBack()
+    {
+        // Define the radius within which to apply pushback
+        double radius = 10.0;  // Adjust the radius to your needs
+        Vec3 golemPos = this.position();
+
+        // Iterate over entities in the level and push them back if they are not GemGolems
+        for (Entity entity : level().getEntities(this, this.getBoundingBox().inflate(radius)))
+        {
+            if (!(entity instanceof GemGolemEntity))  // Don't push back other Gem Golems
+            {
+                // Calculate the direction opposite to the golem
+                Vec3 pushDirection = entity.position().subtract(golemPos).normalize().scale(1.5); // Push force (adjust scale)
+
+                // Apply the pushback by modifying entity's velocity
+                entity.setDeltaMovement(entity.getDeltaMovement().add(pushDirection));
+            }
+        }
+    }
+
     @Override
     public boolean isAttackable()
     {
@@ -251,7 +291,7 @@ public class GemGolemEntity extends Monster
         return SoundEvents.IRON_GOLEM_DEATH;
     }
 
-    protected SoundEvent getRoarSound()
+    public SoundEvent getRoarSound()
     {
         return ModSounds.GEM_GOLEM_ROAR.get();
     }

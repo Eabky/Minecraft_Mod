@@ -1,11 +1,11 @@
 package net.eabky_dev.codexa.event;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.entity.client.GemSpikeModel;
+import net.eabky_dev.codexa.entity.client.model.GemSpikeModel;
 import net.eabky_dev.codexa.init.CodexaModEntities;
-import net.eabky_dev.codexa.entity.client.GemGolemModel;
-import net.eabky_dev.codexa.entity.client.ModModelLayers;
-import net.eabky_dev.codexa.entity.client.TomahawkProjectileModel;
+import net.eabky_dev.codexa.entity.client.model.GemGolemModel;
+import net.eabky_dev.codexa.init.CodexaModModelLayers;
+import net.eabky_dev.codexa.entity.client.model.TomahawkProjectileModel;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -19,9 +19,9 @@ public class ModEventBusClientEvents
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event)
     {
-        event.registerLayerDefinition(ModModelLayers.GEM_GOLEM_LAYER, GemGolemModel::createBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.TOMAHAWK_LAYER, TomahawkProjectileModel::createBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.GEM_SPIKE_LAYER, GemSpikeModel::createBodyLayer);
+        event.registerLayerDefinition(CodexaModModelLayers.GEM_GOLEM_LAYER, GemGolemModel::createBodyLayer);
+        event.registerLayerDefinition(CodexaModModelLayers.TOMAHAWK_LAYER, TomahawkProjectileModel::createBodyLayer);
+        event.registerLayerDefinition(CodexaModModelLayers.GEM_SPIKE_LAYER, GemSpikeModel::createBodyLayer);
     }
 
     @SubscribeEvent

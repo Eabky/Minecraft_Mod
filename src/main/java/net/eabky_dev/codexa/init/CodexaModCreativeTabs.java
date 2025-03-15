@@ -67,6 +67,8 @@ public class CodexaModCreativeTabs
                         pOutput.accept(CodexaModBlocks.MIDNIGHT_STONE.get());
                         pOutput.accept(CodexaModBlocks.MIDNIGHT_GRASS.get());
 
+                        pOutput.accept(CodexaModBlocks.OTHERWORLDLY_LANTERN.get());
+
                         pOutput.accept(CodexaModItems.GEM_GOLEM_SPANW_EGG.get());
                     })
                     .build());

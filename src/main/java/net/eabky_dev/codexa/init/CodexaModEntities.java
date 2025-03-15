@@ -48,6 +48,6 @@ public class CodexaModEntities
         REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, CODEXA.MOD_ID);
         GEM_GOLEM = register("gem_golem", EntityType.Builder.of(GemGolemEntity::new, MobCategory.MONSTER).sized(2F, 3F).fireImmune());
         TOMAHAWK = register("tomahawk", EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC).sized(0.5f, 1.15f));
-        GEM_SPIKE = register("gem_spike", EntityType.Builder.of(GemSpikeEntity::new, MobCategory.MISC).sized(1F, 3F).fireImmune());
+        GEM_SPIKE = register("gem_spike", EntityType.Builder.of(GemSpikeEntity::new, MobCategory.MISC).sized(1F, 4F).fireImmune());
     }
 }
