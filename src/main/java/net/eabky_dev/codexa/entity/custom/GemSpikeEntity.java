@@ -11,12 +11,16 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.awt.*;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -28,6 +32,7 @@ public class GemSpikeEntity extends Entity
 {
     private final double[] pistonDeltas = new double[]{0.0D, 0.0D, 0.0D};
     private long pistonDeltasGameTime;
+    private int rotation;
 
     public GemSpikeEntity(EntityType<?> pEntityType, Level pLevel)
     {
@@ -36,6 +41,8 @@ public class GemSpikeEntity extends Entity
         this.setInvulnerable(false);
         this.isAttackable();
         this.canBeHitByProjectile();
+
+        this.rotation = (int) (Math.random() * 4) * 90;
 
         System.out.println("Spike Spawned: " + this.getStringUUID());
     }
@@ -194,5 +201,15 @@ public class GemSpikeEntity extends Entity
         }
 
         return entitySet;
+    }
+
+    public int getRotation()
+    {
+        return rotation;
+    }
+
+    public void setRotation(int rotation)
+    {
+        this.rotation = rotation;
     }
 }

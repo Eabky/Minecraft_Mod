@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.event;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.client.model.GemSpikeModel;
+import net.eabky_dev.codexa.entity.custom.SpiderWebSpiderEntity;
 import net.eabky_dev.codexa.init.CodexaModEntities;
 import net.eabky_dev.codexa.entity.client.model.GemGolemModel;
 import net.eabky_dev.codexa.init.CodexaModModelLayers;

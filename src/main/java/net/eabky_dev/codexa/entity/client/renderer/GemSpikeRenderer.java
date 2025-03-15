@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.entity.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.init.CodexaModModelLayers;
 import net.eabky_dev.codexa.entity.client.model.GemSpikeModel;
@@ -33,6 +34,9 @@ public class GemSpikeRenderer extends EntityRenderer<GemSpikeEntity>
     {
         VertexConsumer vertexconsumer = buffer.getBuffer(this.model.renderType(this.getTextureLocation(pEntity)));
         this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
+
+        int rotation = pEntity.getRotation();
+        poseStack.mulPose(Axis.YP.rotationDegrees(rotation)); // Rotate around Y-axis
 
         super.render(pEntity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }

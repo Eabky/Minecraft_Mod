@@ -7,6 +7,6 @@
   ],
   "textures":
   {
-    "particle": "item/otherworldly_lantern"
+    "particle": "block/spruce_planks"
   }
 }
