@@ -42,7 +42,8 @@ public class ModItemModelProvider extends ItemModelProvider
     }
 
     @Override
-    protected void registerModels() {
+    protected void registerModels()
+    {
         simpleItem(CodexaModItems.PLATINUM_INGOT);
         simpleItem(CodexaModItems.RAW_PLATINUM);
         simpleItem(CodexaModItems.PLATINUM_NUGGET);

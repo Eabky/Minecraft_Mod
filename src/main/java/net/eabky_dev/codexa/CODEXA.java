@@ -3,37 +3,17 @@ package net.eabky_dev.codexa;
 import com.mojang.logging.LogUtils;
 import net.eabky_dev.codexa.init.*;
 import net.eabky_dev.codexa.loot.ModLootModifiers;
-import net.eabky_dev.codexa.procedures.BrewingPotionsProcedure;
-import net.eabky_dev.codexa.procedures.FlowerPotProcedure;
+import net.eabky_dev.codexa.client.BrewingPotionsRegisterEvent;
+import net.eabky_dev.codexa.client.FlowerPotRegisterEvent;
 import net.eabky_dev.codexa.sound.ModSounds;
-import net.eabky_dev.codexa.util.CodexaBrewingRecipe;
-import net.eabky_dev.codexa.worldgen.biome.surface.ModSurfaceRules;
 import net.eabky_dev.codexa.worldgen.tree.ModFoliagePlacers;
 import net.eabky_dev.codexa.worldgen.tree.ModTrunkPlacerTypes;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.util.thread.SidedThreadGroups;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
-import terrablender.api.SurfaceRuleManager;
-
-import java.util.AbstractMap;
-import java.util.Collection;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 
 @Mod(net.eabky_dev.codexa.CODEXA.MOD_ID)
@@ -52,7 +32,7 @@ public class CODEXA
         IEventBus modEventBus = context.getModEventBus();
 
         CodexaModCreativeTabs.register(modEventBus);
-        CodexaModItems.register(modEventBus);
+        CodexaModItems.REGISTRY.register(modEventBus);
         CodexaModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         CodexaModEntities.REGISTRY.register(modEventBus);
@@ -60,12 +40,13 @@ public class CODEXA
         CodexaModPotions.REGISTRY.register(modEventBus);
         CodexaModEnchantments.REGISTRY.register(modEventBus);
         CodexaModBlockEntities.REGISTRY.register(modEventBus);
+        CodexaModParticles.REGISTRY.register(modEventBus);
         ModSounds.register(modEventBus);
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacers.register(modEventBus);
 
-        modEventBus.addListener(FlowerPotProcedure::flowerPot);
-        modEventBus.addListener(BrewingPotionsProcedure::potionBrewing);
+        modEventBus.addListener(FlowerPotRegisterEvent::flowerPot);
+        modEventBus.addListener(BrewingPotionsRegisterEvent::potionBrewing);
 
         GeckoLib.initialize();
     }

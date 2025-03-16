@@ -57,6 +57,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(CodexaModBlocks.MIDNIGHT_DIRT.get());
         this.dropSelf(CodexaModBlocks.MIDNIGHT_STONE.get());
         this.dropSelf(CodexaModBlocks.MIDNIGHT_GRASS.get());
+
+        this.dropSelf(CodexaModBlocks.OTHERWORLDLY_LANTERN.get());
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

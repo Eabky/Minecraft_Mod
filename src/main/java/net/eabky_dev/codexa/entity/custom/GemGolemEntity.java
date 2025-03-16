@@ -33,9 +33,9 @@ public class GemGolemEntity extends Monster
     private int howLongIsDead;
     private int rageTimer;
 
-    private static float attackDamage = 25f;
-    private static float maxHealth = 1000f;
-    private static float armorToughness = 100f;
+    private static float attackDamage = 10f;
+    private static float maxHealth = 300f;
+    private static float armorToughness = 35f;
     private static float attackKnockback = 2f;
     private static float knockbackResistance = 1.2f;
     private static double movementSpeed = 0.2D;
@@ -70,8 +70,7 @@ public class GemGolemEntity extends Monster
     private static final EntityDataAccessor<Boolean> RAGING = SynchedEntityData.defineId(GemGolemEntity.class, EntityDataSerializers.BOOLEAN);
 
 
-    private final ServerBossEvent bossEvent = new ServerBossEvent(Component.literal("Gem Golem"),
-            BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS);
+    // private final ServerBossEvent bossEvent = new ServerBossEvent(Component.literal("Gem Golem"), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS);
 
 
     public final AnimationState idleAnimationState = new AnimationState();
@@ -296,26 +295,26 @@ public class GemGolemEntity extends Monster
         return ModSounds.GEM_GOLEM_ROAR.get();
     }
 
-    /* BOSS BAR */
-    @Override
-    public void startSeenByPlayer(ServerPlayer pServerPlayer)
-    {
-        super.startSeenByPlayer(pServerPlayer);
-        this.bossEvent.addPlayer(pServerPlayer);
-    }
+//    /* BOSS BAR */
+//    @Override
+//    public void startSeenByPlayer(ServerPlayer pServerPlayer)
+//    {
+//        super.startSeenByPlayer(pServerPlayer);
+//        this.bossEvent.addPlayer(pServerPlayer);
+//    }
 
-    @Override
-    public void stopSeenByPlayer(ServerPlayer pServerPlayer)
-    {
-        super.stopSeenByPlayer(pServerPlayer);
-        this.bossEvent.removePlayer(pServerPlayer);
-    }
+//    @Override
+//    public void stopSeenByPlayer(ServerPlayer pServerPlayer)
+//    {
+//        super.stopSeenByPlayer(pServerPlayer);
+//        this.bossEvent.removePlayer(pServerPlayer);
+//    }
 
     @Override
     public void aiStep()
     {
         super.aiStep();
-        this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
+        // this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
     }
 
     public static void init() {

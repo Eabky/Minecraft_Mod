@@ -18,10 +18,10 @@ public class LightningStrikeEnchantment extends Enchantment
     @Override
     public void doPostAttack(LivingEntity pAttacker, Entity pTarget, int pLevel)
     {
+        LightningBolt lightning = EntityType.LIGHTNING_BOLT.create(pAttacker.level());
+
         if (pLevel == 1)
         {
-            LightningBolt lightning = EntityType.LIGHTNING_BOLT.create(pAttacker.level());
-
             if (lightning != null)
             {
                 lightning.moveTo(pTarget.getX(), pTarget.getY() + 1, pTarget.getZ());
@@ -30,5 +30,28 @@ public class LightningStrikeEnchantment extends Enchantment
 
             System.out.println("Lightning spawned at: " + pTarget.getX() + ", " + pTarget.getY() + ", " + pTarget.getZ());
         }
+
+        if (pLevel == 2)
+        {
+            if (lightning != null)
+            {
+                lightning.moveTo(pTarget.getX(), pTarget.getY() + 1, pTarget.getZ());
+                pAttacker.level().addFreshEntity(lightning);
+                pAttacker.level().addFreshEntity(lightning);
+            }
+
+            System.out.println("Lightnings spawned at: " + pTarget.getX() + ", " + pTarget.getY() + ", " + pTarget.getZ());
+        }
+    }
+
+    @Override
+    public int getMinLevel() {
+        return super.getMinLevel();
+    }
+
+    @Override
+    public int getMaxLevel()
+    {
+        return 2;
     }
 }

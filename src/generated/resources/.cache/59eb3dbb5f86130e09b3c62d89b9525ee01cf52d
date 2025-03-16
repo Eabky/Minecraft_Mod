@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-11T15:28:10.6786249	Loot Tables
+// 1.20.1	2025-03-16T16:09:10.9363705	Loot Tables
 1030e4c7e3da0613d6e028fdf618439950f066ec data/codexa/loot_tables/blocks/black_hole.json
 715ca4b62bb438a1e3f83d195f23fc3dc9f15537 data/codexa/loot_tables/blocks/concrete.json
 c2c4fb017496f13eb0ce748cf9bfcfcf972d56b1 data/codexa/loot_tables/blocks/concrete_slab.json
@@ -9,6 +9,7 @@ ede90219602a8d44c2d9d27e65d5eaf321b03057 data/codexa/loot_tables/blocks/deepslat
 a5f33a43316fa489fc73535948512d673b5270f0 data/codexa/loot_tables/blocks/midnight_grass.json
 475b9af93e47077536c194df3e754fb676c67422 data/codexa/loot_tables/blocks/midnight_grass_block.json
 4364f5acc2b3cb40ae6b87f67f6e3aa59d88ab57 data/codexa/loot_tables/blocks/midnight_stone.json
+31da43b8d804d2a91d83a49a801717abf689a7be data/codexa/loot_tables/blocks/otherworldly_lantern.json
 8c73e808d00581d99f167ec09e56f932f1364075 data/codexa/loot_tables/blocks/pale_fortune.json
 c26020475c109e9b63b91eb31cb2339fad8e9987 data/codexa/loot_tables/blocks/platinum_block.json
 9acf1ebc341c8386d1cf492321beba356a48c850 data/codexa/loot_tables/blocks/polished_concrete.json

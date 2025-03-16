@@ -28,7 +28,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         CodexaModBlocks.CONCRETE_SLAB.get(),
                         CodexaModBlocks.CONCRETE_STRAIRS.get(),
                         CodexaModBlocks.POLISHED_CONCRETE_SLAB.get(),
-                        CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get());
+                        CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get(),
+                        CodexaModBlocks.OTHERWORLDLY_LANTERN.get());
+
 
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)

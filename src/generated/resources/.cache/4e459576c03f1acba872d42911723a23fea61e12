@@ -1,5 +1,6 @@
-// 1.20.1	2025-03-10T09:04:39.0571588	Tags for minecraft:item mod id codexa
-656f884ddee6ecd30c7e9739a5ccc7eed5d67ee7 data/curios/tags/items/ring.json
+// 1.20.1	2025-03-16T20:55:04.3660747	Tags for minecraft:item mod id codexa
+8ca37bc647f9de3035094e1df5c8eed41c738b02 data/curios/tags/items/back.json
+ae6e7194c94602852c4bd180217381d0cfd66781 data/curios/tags/items/ring.json
 ea3de4d8270f3915e21cfe83bb0789dcb50b04d5 data/minecraft/tags/items/logs_that_burn.json
 d5f578313cf760d1ee2680059d38ee5258f7d6f5 data/minecraft/tags/items/planks.json
 0ce1491c79c2ed695d4b43a7d3273b714403f260 data/minecraft/tags/items/trimmable_armor.json

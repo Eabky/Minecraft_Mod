@@ -45,6 +45,8 @@ public class CodexaModCreativeTabs
                         pOutput.accept(CodexaModBlocks.BLACK_HOLE.get());
 
                         pOutput.accept(CodexaModItems.DARK_STAR_RING.get());
+                        pOutput.accept(CodexaModItems.RING_OF_DEFIANCE.get());
+                        pOutput.accept(CodexaModItems.MANTLE_OF_THE_UNIVERSE.get());
                         pOutput.accept(CodexaModItems.IRON_LONGSWORD.get());
                         pOutput.accept(CodexaModItems.WOODEN_GREATSWORD.get());
                         pOutput.accept(CodexaModItems.TOMAHAWK.get());

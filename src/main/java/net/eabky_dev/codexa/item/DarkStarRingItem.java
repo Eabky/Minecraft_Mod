@@ -1,5 +1,8 @@
 package net.eabky_dev.codexa.item;
 
+import net.eabky_dev.codexa.init.CodexaModParticles;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -14,6 +17,9 @@ import java.util.List;
 
 public class DarkStarRingItem extends Item implements ICurioItem
 {
+    private static final int EFFECT_DELAY = 40; // 2 seconds
+    private static final double ORBIT_RADIUS = 1.0;
+
     public DarkStarRingItem(Properties pProperties)
     {
         super(new Properties().stacksTo(1).defaultDurability(10000));
@@ -22,42 +28,60 @@ public class DarkStarRingItem extends Item implements ICurioItem
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack)
     {
-        if (slotContext.entity() instanceof Player player)
+        if (!(slotContext.entity() instanceof Player player)) return;
+
+        Level pLevel = player.level();
+        if (!pLevel.isClientSide() && pLevel instanceof ServerLevel serverLevel)
         {
-            Level pLevel = player.level();
-
-            DamageSource ringDamageSource = pLevel.damageSources().magic();
-            float minDamage = 0.5f;
-            float maxDamage = 4f;
-
-            double radius = 3.0; // Define the radius around the player
             AABB area = new AABB(
-                    slotContext.entity().getX() - radius, slotContext.entity().getY() - radius, slotContext.entity().getZ() - radius,
-                    slotContext.entity().getX() + radius, slotContext.entity().getY() + radius, slotContext.entity().getZ() + radius
+                    player.getX() - 3, player.getY() - 3, player.getZ() - 3,
+                    player.getX() + 3, player.getY() + 3, player.getZ() + 3
             );
 
             List<LivingEntity> nearbyEntities = pLevel.getEntitiesOfClass(LivingEntity.class, area, e -> e != player);
+
+            // Apply damage every 80 ticks (4 seconds)
             for (LivingEntity entity : nearbyEntities)
             {
-                float distanceToPlayer = entity.distanceTo(player);
+                // Spawn orbiting particles
+                spawnOrbitingParticles(serverLevel, entity);
 
-                // Normalize distance (closer = higher damage). Distance / radius * maxDamage - minDamage scales the damage reduction. Then we subtract from maxDamage. When distance=0 we get maxDamage, when distance=radius we get minDamage.
-                float pAmount = maxDamage - (distanceToPlayer / (float) radius) * (maxDamage - minDamage);
-                pAmount = Math.max(minDamage, pAmount); // Ensure it doesn't go below minDamage
-
-                entity.hurt(ringDamageSource, pAmount);
-                System.out.println(entity + "detected");
-                System.out.println(entity.getHealth()-pAmount);
+                // Check cooldown (apply damage every 80 ticks)
+                if (entity.tickCount % EFFECT_DELAY == 0)
+                {
+                    entity.hurt(pLevel.damageSources().magic(), 6.0f);
+                }
             }
         }
+    }
 
-        ICurioItem.super.curioTick(slotContext, stack);
+    private void spawnOrbitingParticles(ServerLevel serverLevel, LivingEntity entity)
+    {
+        ParticleOptions particleType = (ParticleOptions) CodexaModParticles.DARK_STAR_RING_PARTICLE.get();
+        double height = entity.getBbHeight() / 2.0;
+        double entityRadius = entity.getBbWidth(); // Half of entity's width
+        double spawnRadius = entityRadius + 1.0; // 1 block away from entity hitbox
+        int numParticles = 7;
+        double angleStep = Math.PI * 2 / numParticles;
+        double angle = (entity.tickCount % EFFECT_DELAY) * Math.PI / 30.0; // Creates smooth orbiting effect
+
+        for (int i = 0; i < numParticles; i++)
+        {
+            double xOffset = Math.cos(angle + i * angleStep) * spawnRadius;
+            double zOffset = Math.sin(angle + i * angleStep) * spawnRadius;
+
+            serverLevel.sendParticles(
+                    particleType,
+                    entity.getX() + xOffset, entity.getY() + height, entity.getZ() + zOffset,
+                    1,
+                    0, 0, 0,
+                    0
+            );
+        }
     }
 
     @Override
     public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
         return true;
     }
-
-
 }
