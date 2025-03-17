@@ -8,8 +8,10 @@ import net.eabky_dev.codexa.entity.client.model.GemGolemModel;
 import net.eabky_dev.codexa.init.CodexaModModelLayers;
 import net.eabky_dev.codexa.entity.client.model.TomahawkProjectileModel;
 import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
+import net.eabky_dev.codexa.util.CodexaKeyBindings;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -29,5 +31,11 @@ public class ModEventBusClientEvents
     public static void registerAttributes(EntityAttributeCreationEvent event)
     {
         event.put(CodexaModEntities.GEM_GOLEM.get(), GemGolemEntity.createAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void onKeyRegister(RegisterKeyMappingsEvent event)
+    {
+        event.register(CodexaKeyBindings.MANTLE);
     }
 }

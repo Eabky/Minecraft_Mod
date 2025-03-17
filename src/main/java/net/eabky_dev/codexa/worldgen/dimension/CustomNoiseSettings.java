@@ -1,8 +1,9 @@
-package net.eabky_dev.codexa.worldgen;
+package net.eabky_dev.codexa.worldgen.dimension;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.eabky_dev.codexa.CODEXA;
+import net.eabky_dev.codexa.init.CodexaModBlocks;
 import net.eabky_dev.codexa.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -46,40 +47,31 @@ public class CustomNoiseSettings
     private static final ResourceKey<DensityFunction> PILLARS = createKey("overworld/caves/pillars");
     private static final ResourceKey<DensityFunction> SPAGHETTI_2D = createKey("overworld/caves/spaghetti_2d");
 
-    public static final Codec<NoiseGeneratorSettings> DIRECT_CODEC
-            = RecordCodecBuilder.create((p_64475_) -> {
-        return p_64475_.group(NoiseSettings.CODEC.fieldOf("noise")
-                                .forGetter(NoiseGeneratorSettings::noiseSettings),
-                        BlockState.CODEC.fieldOf("default_block")
-                                .forGetter(NoiseGeneratorSettings::defaultBlock),
-                        BlockState.CODEC.fieldOf("default_fluid")
-                                .forGetter(NoiseGeneratorSettings::defaultFluid),
-                        NoiseRouter.CODEC.fieldOf("noise_router")
-                                .forGetter(NoiseGeneratorSettings::noiseRouter),
-                        SurfaceRules.RuleSource.CODEC.fieldOf("surface_rule")
-                                .forGetter(NoiseGeneratorSettings::surfaceRule),
-                        Climate.ParameterPoint.CODEC.listOf().fieldOf("spawn_target")
-                                .forGetter(NoiseGeneratorSettings::spawnTarget),
+    public static final Codec<NoiseGeneratorSettings> DIRECT_CODEC = RecordCodecBuilder.create((p_64475_) -> {
+        return p_64475_.group(NoiseSettings.CODEC.fieldOf("noise").forGetter(NoiseGeneratorSettings::noiseSettings),
+                        BlockState.CODEC.fieldOf("default_block").forGetter(NoiseGeneratorSettings::defaultBlock),
+                        BlockState.CODEC.fieldOf("default_fluid").forGetter(NoiseGeneratorSettings::defaultFluid),
+                        NoiseRouter.CODEC.fieldOf("noise_router").forGetter(NoiseGeneratorSettings::noiseRouter),
+                        SurfaceRules.RuleSource.CODEC.fieldOf("surface_rule").forGetter(NoiseGeneratorSettings::surfaceRule),
+                        Climate.ParameterPoint.CODEC.listOf().fieldOf("spawn_target").forGetter(NoiseGeneratorSettings::spawnTarget),
                         Codec.INT.fieldOf("sea_level").forGetter(NoiseGeneratorSettings::seaLevel),
-                        Codec.BOOL.fieldOf("disable_mob_generation")
-                                .forGetter(NoiseGeneratorSettings::disableMobGeneration),
-                        Codec.BOOL.fieldOf("aquifers_enabled")
-                                .forGetter(NoiseGeneratorSettings::isAquifersEnabled),
-                        Codec.BOOL.fieldOf("ore_veins_enabled")
-                                .forGetter(NoiseGeneratorSettings::oreVeinsEnabled),
-                        Codec.BOOL.fieldOf("legacy_random_source")
-                                .forGetter(NoiseGeneratorSettings::useLegacyRandomSource))
+                        Codec.BOOL.fieldOf("disable_mob_generation").forGetter(NoiseGeneratorSettings::disableMobGeneration),
+                        Codec.BOOL.fieldOf("aquifers_enabled").forGetter(NoiseGeneratorSettings::isAquifersEnabled),
+                        Codec.BOOL.fieldOf("ore_veins_enabled").forGetter(NoiseGeneratorSettings::oreVeinsEnabled),
+                        Codec.BOOL.fieldOf("legacy_random_source").forGetter(NoiseGeneratorSettings::useLegacyRandomSource))
                 .apply(p_64475_, NoiseGeneratorSettings::new);
     });
-    public static final Codec<Holder<NoiseGeneratorSettings>> CODEC
-            = RegistryFileCodec.create(Registries.NOISE_SETTINGS, DIRECT_CODEC);
+
+    public static final Codec<Holder<NoiseGeneratorSettings>> CODEC = RegistryFileCodec.create(Registries.NOISE_SETTINGS, DIRECT_CODEC);
     public static final ResourceKey<NoiseGeneratorSettings> MIDNIGHT_SEA_NOISE = createNoiseKey("midnight_sea_noise");
 
-    private static ResourceKey<NoiseGeneratorSettings> createNoiseKey(String name) {
+    private static ResourceKey<NoiseGeneratorSettings> createNoiseKey(String name)
+    {
         return ResourceKey.create(Registries.NOISE_SETTINGS, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, name));
     }
 
-    private static ResourceKey<DensityFunction> createKey(String name) {
+    private static ResourceKey<DensityFunction> createKey(String name)
+    {
         return ResourceKey.create(Registries.DENSITY_FUNCTION, ResourceLocation.fromNamespaceAndPath("minecraft", name));
     }
 
@@ -88,17 +80,16 @@ public class CustomNoiseSettings
         ctx.register(MIDNIGHT_SEA_NOISE, createMidnightSeaNoiseSettings(ctx, false, false));
     }
 
-    private static NoiseGeneratorSettings createMidnightSeaNoiseSettings(
-            BootstapContext<?> p_256460_, boolean amplified, boolean large){
+    private static NoiseGeneratorSettings createMidnightSeaNoiseSettings(BootstapContext<?> lookup, boolean amplified, boolean large)
+    {
         return new NoiseGeneratorSettings(
                 NoiseSettings.create(-64, 384, 1, 2),
-                Blocks.STONE.defaultBlockState(),
+                CodexaModBlocks.MIDNIGHT_STONE.get().defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
-                overworld(p_256460_.lookup(Registries.DENSITY_FUNCTION),
-                        p_256460_.lookup(Registries.NOISE), large, amplified),
+                overworld(lookup.lookup(Registries.DENSITY_FUNCTION), lookup.lookup(Registries.NOISE), large, amplified),
                 ModSurfaceRules.makeRules(),
                 (new OverworldBiomeBuilder()).spawnTarget(),
-                -100,
+                61,
                 false,
                 false,
                 true,
@@ -124,16 +115,16 @@ public class CustomNoiseSettings
         DensityFunction densityfunction14 = DensityFunctions.min(postProcess(slideOverworld(amplified, densityfunction13)), getFunction(densFunc, NOODLE));
         DensityFunction densityfunction15 = getFunction(densFunc, Y);
 
-        int i = Stream.of(VeinType.values()).mapToInt((p_224495_) -> {
+        int i = Stream.of(VeinType.values()).mapToInt((p_224495_) ->
+        {
             return p_224495_.minY;
         }).min().orElse(-DimensionType.MIN_Y * 2);
-        int j = Stream.of(VeinType.values()).mapToInt((p_224457_) -> {
+        int j = Stream.of(VeinType.values()).mapToInt((p_224457_) ->
+        {
             return p_224457_.maxY;
         }).max().orElse(-DimensionType.MIN_Y * 2);
-        DensityFunction densityfunction16
-                = yLimitedInterpolatable(densityfunction15,
-                DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEININESS),
-                        1.5D, 1.5D), i, j, 0);
+
+        DensityFunction densityfunction16 = yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEININESS), 1.5D, 1.5D), i, j, 0);
         float f = 4.0F;
 
         DensityFunction densityfunction17 = yLimitedInterpolatable(densityfunction15, DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_VEIN_A), 4.0D, 4.0D), i, j, 0).abs();
@@ -142,13 +133,16 @@ public class CustomNoiseSettings
         DensityFunction densityfunction20 = DensityFunctions.noise(noiseParam.getOrThrow(Noises.ORE_GAP));
 
         return new NoiseRouter(densityfunction,
-                densityfunction1, densityfunction2, densityfunction3, densityfunction6,
-                densityfunction7, getFunction(densFunc, large ? CONTINENTS_LARGE : CONTINENTS),
-                getFunction(densFunc, large ? EROSION_LARGE : EROSION), densityfunction9,
-                getFunction(densFunc, RIDGES), slideOverworld(amplified,
-                DensityFunctions.add(densityfunction10,
-                        DensityFunctions.constant(-0.703125D)).clamp(-64.0D, 64.0D)),
-                densityfunction14, densityfunction16, densityfunction19, densityfunction20);
+                densityfunction1,
+                densityfunction2,
+                densityfunction3,
+                densityfunction6,
+                densityfunction7,
+                getFunction(densFunc, large ? CONTINENTS_LARGE : CONTINENTS),
+                getFunction(densFunc, large ? EROSION_LARGE : EROSION),
+                densityfunction9,
+                getFunction(densFunc, RIDGES),
+                slideOverworld(amplified, DensityFunctions.add(densityfunction10, DensityFunctions.constant(-0.703125D)).clamp(-64.0D, 64.0D)), densityfunction14, densityfunction16, densityfunction19, densityfunction20);
     }
 
     private static DensityFunction getFunction(HolderGetter<DensityFunction> p_256312_, ResourceKey<DensityFunction> p_256077_)
@@ -198,20 +192,15 @@ public class CustomNoiseSettings
 
     private static DensityFunction slide(DensityFunction densFunc, int y_floor, int y_roof, int i1, int i2, double d1, int i3, int i4, double d2)
     {
-        DensityFunction densityfunction1
-                = DensityFunctions.yClampedGradient(y_floor + y_roof - i1,
-                y_floor + y_roof - i2, 1.0D, 0.0D);
+        DensityFunction densityfunction1 = DensityFunctions.yClampedGradient(y_floor + y_roof - i1, y_floor + y_roof - i2, 1.0D, 0.0D);
         DensityFunction $$9 = DensityFunctions.lerp(densityfunction1, d1, densFunc);
-        DensityFunction densityfunction2
-                = DensityFunctions.yClampedGradient(y_floor + i3,
-                y_floor + i4, 0.0D, 1.0D);
+        DensityFunction densityfunction2 = DensityFunctions.yClampedGradient(y_floor + i3, y_floor + i4, 0.0D, 1.0D);
         return DensityFunctions.lerp(densityfunction2, d2, $$9);
     }
 
     protected static enum VeinType
     {
-        IRON(Blocks.DEEPSLATE_IRON_ORE.defaultBlockState(), Blocks.RAW_IRON_BLOCK.defaultBlockState(),
-                Blocks.TUFF.defaultBlockState(), -60, -8);
+        IRON(Blocks.DEEPSLATE_IRON_ORE.defaultBlockState(), Blocks.RAW_IRON_BLOCK.defaultBlockState(), Blocks.TUFF.defaultBlockState(), -60, -8);
 
         final BlockState ore;
         final BlockState rawOreBlock;

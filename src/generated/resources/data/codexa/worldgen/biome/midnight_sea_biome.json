@@ -1,9 +1,10 @@
 {
-  "carvers": {},
-  "downfall": 0.0,
+  "carvers": {
+    "air": "codexa:abyss_cave"
+  },
+  "downfall": 0.8,
   "effects": {
-    "fog_color": 2269670,
-    "foliage_color": 13763580,
+    "fog_color": 2696491,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -16,9 +17,15 @@
       "replace_current_music": true,
       "sound": "minecraft:music.end"
     },
-    "sky_color": 3197208,
-    "water_color": 15216187,
-    "water_fog_color": 12524326
+    "particle": {
+      "options": {
+        "type": "codexa:dark_star_ring_particle"
+      },
+      "probability": 0.0025
+    },
+    "sky_color": 2696491,
+    "water_color": 2696491,
+    "water_fog_color": 0
   },
   "features": [
     [],
@@ -28,7 +35,10 @@
     [],
     [],
     [],
-    [],
+    [
+      "minecraft:ore_ancient_debris_large",
+      "minecraft:ore_debris_small"
+    ],
     [],
     [
       "codexa:midnight_grass_placed"
@@ -46,5 +56,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.0
+  "temperature": 0.7
 }

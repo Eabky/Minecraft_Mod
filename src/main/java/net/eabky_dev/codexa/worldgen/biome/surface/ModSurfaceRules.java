@@ -24,8 +24,7 @@ public class ModSurfaceRules
                                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, STONE),
                                 SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, STONE),
                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_CEILING, STONE),
-                                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, STONE),
-                                SurfaceRules.ifTrue(SurfaceRules.steep(), STONE)
+                                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, STONE)
                         )
                 ),
 

@@ -1,8 +1,9 @@
 package net.eabky_dev.codexa.datagen;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.worldgen.CustomNoiseSettings;
-import net.eabky_dev.codexa.worldgen.ModBiomeModifiers;
+import net.eabky_dev.codexa.worldgen.carvers.MidnightSeaCarver;
+import net.eabky_dev.codexa.worldgen.dimension.CustomNoiseSettings;
+import net.eabky_dev.codexa.worldgen.biome.ModBiomeModifiers;
 import net.eabky_dev.codexa.worldgen.ModConfiguredFeatures;
 import net.eabky_dev.codexa.worldgen.ModPlacedFeatures;
 import net.eabky_dev.codexa.worldgen.biome.ModBiomes;
@@ -26,6 +27,7 @@ public class ModWorldGenProvider  extends DatapackBuiltinEntriesProvider
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
             .add(Registries.BIOME, ModBiomes::boostrap)
             .add(Registries.LEVEL_STEM, ModDimensions::bootstrapStem)
+            .add(Registries.CONFIGURED_CARVER, MidnightSeaCarver::bootstrap)
             .add(Registries.NOISE_SETTINGS, CustomNoiseSettings::bootstrap);
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)

@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.procedures;
 
 import com.sun.jna.platform.unix.X11;
 import net.eabky_dev.codexa.init.CodexaModItems;
+import net.eabky_dev.codexa.util.CodexaKeyBindings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -18,27 +19,42 @@ public class MantleProcedure
 {
     private static Player trackedPlayer;
 
-//    @SubscribeEvent
-//    public static void onMantleEquip(CurioEquipEvent event)
-//    {
-//        Player player = (Player) event.getEntity();
-//        if (player != null && event.getStack().getItem() instanceof MantleOfTheUniverse)
-//        {
-//            trackedPlayer = player;
-//
-//            CuriosApi.getCuriosInventory(trackedPlayer).ifPresent(curiosInventory ->
-//            {
-//                curiosInventory.getStacksHandler("back").ifPresent(slotInventory ->
-//                {
-//                    for (int i = 0; i < slotInventory.getSlots(); i++) {
-//                        ItemStack stack = slotInventory.getStacks().getStackInSlot(i);
-//                        if (!stack.isEmpty() && stack.getItem() == CodexaModItems.MANTLE_OF_THE_UNIVERSE.get())
-//                        {
-//                            MantleOfTheUniverse.activateMantle(trackedPlayer);
-//                        }
-//                    }
-//                });
-//            });
-//        }
-//    }
+    @SubscribeEvent
+    public static void onMantleEquip(CurioEquipEvent event)
+    {
+        Player player = (Player) event.getEntity();
+        if (player != null && event.getStack().getItem() instanceof MantleOfTheUniverse)
+        {
+            trackedPlayer = player;
+        }
+    }
+
+    @SubscribeEvent
+    public static void useMantle(InputEvent.Key event)
+    {
+        if(CodexaKeyBindings.MANTLE.consumeClick())
+        {
+            CuriosApi.getCuriosInventory(trackedPlayer).ifPresent(curiosInventory ->
+            {
+                curiosInventory.getStacksHandler("back").ifPresent(slotInventory ->
+                {
+                    for (int i = 0; i < slotInventory.getSlots(); i++)
+                    {
+                        ItemStack stack = slotInventory.getStacks().getStackInSlot(i);
+                        if (!stack.isEmpty() && stack.getItem() == CodexaModItems.MANTLE_OF_THE_UNIVERSE.get())
+                        {
+                            if (!MantleOfTheUniverse.isMantleActive())
+                            {
+                                MantleOfTheUniverse.setMantleActive(true);
+                            }
+                            else
+                            {
+                                MantleOfTheUniverse.setMantleActive(false);
+                            }
+                        }
+                    }
+                });
+            });
+        }
+    }
 }

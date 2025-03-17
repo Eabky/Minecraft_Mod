@@ -3,8 +3,21 @@
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "codexa:midnight_sea_biome"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "codexa:midnight_sea_biome",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.1,
+            "humidity": 0.0,
+            "offset": 0.0,
+            "temperature": 0.0,
+            "weirdness": 0.1
+          }
+        }
+      ]
     },
     "settings": "codexa:midnight_sea_noise"
   }

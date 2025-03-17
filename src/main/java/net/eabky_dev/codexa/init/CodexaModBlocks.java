@@ -45,7 +45,7 @@ public class CodexaModBlocks
             ()-> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
 
     public static final RegistryObject<Block> BLACK_HOLE = registerBlock("black_hole",
-            ()-> new BlackHoleBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK))); //temp will need to make it into an entity so the King can use it as an attack
+            ()-> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK))); //temp will need to make it into an entity so the King can use it as an attack
 
     public static final RegistryObject<Block> PALE_FORTUNE = registerBlock("pale_fortune",
             () -> new FlowerBlock(() -> MobEffects.LUCK, 5,

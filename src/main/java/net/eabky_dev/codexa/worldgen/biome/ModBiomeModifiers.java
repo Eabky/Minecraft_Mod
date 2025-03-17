@@ -1,7 +1,8 @@
-package net.eabky_dev.codexa.worldgen;
+package net.eabky_dev.codexa.worldgen.biome;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.util.ModBiomeTags;
+import net.eabky_dev.codexa.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;

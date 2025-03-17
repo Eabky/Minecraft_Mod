@@ -6,9 +6,23 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import net.minecraft.world.item.Item;
 
-/* This item grants creative flight and allows the player to phase through block*/
+    /*
+        This item grants creative flight and allows the player to phase through block
+    */
+
+    /*
+        If I activate the mantle while on the ground I get the normal movement speed but if they activate it in the air I fly as normal
+        Need to fix this at some point.
+        Needs to save, load and unload data so the player doesn't fall
+        or suffocate when logging back in and it doesn't keep its "effect" even if it is removed.
+
+        Might need to deal with capabilities.
+     */
+
 public class MantleOfTheUniverse extends Item implements ICurioItem
 {
+    private static boolean isMantleActive = false;
+
     public MantleOfTheUniverse(Properties pProperties)
     {
         super(pProperties);
@@ -18,11 +32,10 @@ public class MantleOfTheUniverse extends Item implements ICurioItem
     public void curioTick(SlotContext slotContext, ItemStack stack)
     {
         Player player = (Player) slotContext.entity();
-        activateMantle(player);
-        if(player.getAbilities().flying)
-        {
-            player.noPhysics = true;
-        }
+        player.getAbilities().flying  = isMantleActive();
+        player.getAbilities().mayfly = isMantleActive();
+        //check how to access capabilities and make player not drown and be fire and lava immune
+        player.noPhysics = isMantleActive();
     }
 
     @Override
@@ -30,15 +43,13 @@ public class MantleOfTheUniverse extends Item implements ICurioItem
         return true;
     }
 
-    public static void activateMantle(Player player)
+    public static boolean isMantleActive()
     {
-        player.getAbilities().flying = true;
-        player.onUpdateAbilities();
+        return isMantleActive;
     }
 
-    public static void deactivateMantle(Player player)
+    public static void setMantleActive(boolean active)
     {
-        player.getAbilities().flying = false;
-        player.onUpdateAbilities();
+        isMantleActive = active;
     }
 }
