@@ -6,15 +6,27 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "codexa:midnight_sea_biome",
+          "biome": "codexa:desolate_wastes_biome",
           "parameters": {
-            "continentalness": 0.0,
+            "continentalness": -0.18,
             "depth": 0.0,
-            "erosion": 0.1,
+            "erosion": 1.0,
             "humidity": 0.0,
             "offset": 0.0,
-            "temperature": 0.0,
-            "weirdness": 0.1
+            "temperature": 1.0,
+            "weirdness": -0.1
+          }
+        },
+        {
+          "biome": "codexa:midnight_depths_biome",
+          "parameters": {
+            "continentalness": 0.7,
+            "depth": 0.2,
+            "erosion": 0.2,
+            "humidity": 1.0,
+            "offset": 0.0,
+            "temperature": 1.0,
+            "weirdness": 0.9
           }
         }
       ]

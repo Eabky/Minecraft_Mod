@@ -20,14 +20,17 @@ public class ModBiomes
     private static final int WATER_COLOR = 2696491;
     private static final int WATER_FOG =0;
 
-    public static final ResourceKey<Biome> MIDNIGHT_SEA_BIOME = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "midnight_sea_biome"));
+    public static final ResourceKey<Biome> DESOLATE_WASTES_BIOME = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "desolate_wastes_biome"));
+    public static final ResourceKey<Biome> MIDNIGHT_DEPTHS_BIOME = ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "midnight_depths_biome"));
 
     public static void boostrap(BootstapContext<Biome> context)
     {
-        context.register(MIDNIGHT_SEA_BIOME, midnightBiome(context));
+        context.register(DESOLATE_WASTES_BIOME, desolateWastesBiome(context));
+        context.register(MIDNIGHT_DEPTHS_BIOME, midnightDepthsBiome(context));
+
     }
 
-    public static Biome midnightBiome(BootstapContext<Biome> context)
+    public static Biome desolateWastesBiome(BootstapContext<Biome> context)
     {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         //spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 2, 3, 5));
@@ -37,12 +40,33 @@ public class ModBiomes
         globalMidnightGeneration(biomeBuilder);
         defaultMidnightCaves(biomeBuilder);
         defaultMidnightOres(biomeBuilder);
+
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.MIDNIGHT_GRASS_PLACED_KEY);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(false)
-                .downfall(0.8f)
-                .temperature(0.7f)
+                .downfall(0f)
+                .temperature(1f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects(commonBiomeSpecialEffects()
+                        .backgroundMusic(Musics.END)
+                        .build()).build();
+    }
+
+    public static Biome midnightDepthsBiome(BootstapContext<Biome> context)
+    {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalMidnightGeneration(biomeBuilder);
+        defaultMidnightCaves(biomeBuilder);
+        defaultMidnightOres(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false)
+                .downfall(0f)
+                .temperature(1f)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects(commonBiomeSpecialEffects()
@@ -55,8 +79,9 @@ public class ModBiomes
         BiomeDefaultFeatures.addAncientDebris(builder);
     }
 
-    public static void defaultMidnightCaves(BiomeGenerationSettings.Builder builder) {
-        builder.addCarver(GenerationStep.Carving.AIR, MidnightSeaCarver.MIDNIGHT_SEA_CAVE);
+    public static void defaultMidnightCaves(BiomeGenerationSettings.Builder builder)
+    {
+        builder.addCarver(GenerationStep.Carving.AIR, MidnightSeaCarver.MIDNIGHT_CAVE);
     }
 
     public static void defaultMidnightOres(BiomeGenerationSettings.Builder builder)

@@ -7,6 +7,7 @@ import net.eabky_dev.codexa.worldgen.tree.custom.SunelmTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -44,13 +45,17 @@ public class ModConfiguredFeatures
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
-        register(context, MIDNIGHT_GRASS_KEY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(
-                Feature.SIMPLE_BLOCK,
-                new SimpleBlockConfiguration(BlockStateProvider.simple(CodexaModBlocks.MIDNIGHT_GRASS.get()))));
+        register(context, MIDNIGHT_GRASS_KEY, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(CodexaModBlocks.MIDNIGHT_GRASS.get()), 15));
+    }
+
+    private static RandomPatchConfiguration grassPatch(BlockStateProvider stateProvider, int p_195204_)
+    {
+        return FeatureUtils.simpleRandomPatchConfiguration(p_195204_, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(stateProvider)));
     }
 
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name)
+    {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, name));
     }
 

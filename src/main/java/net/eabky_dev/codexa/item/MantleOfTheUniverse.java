@@ -6,17 +6,16 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import net.minecraft.world.item.Item;
 
-    /*
+    /**
         This item grants creative flight and allows the player to phase through block
-    */
+    **/
 
     /*
-        If I activate the mantle while on the ground I get the normal movement speed but if they activate it in the air I fly as normal
-        Need to fix this at some point.
-        Needs to save, load and unload data so the player doesn't fall
-        or suffocate when logging back in and it doesn't keep its "effect" even if it is removed.
-
-        Might need to deal with capabilities.
+        TODO: FIX ->
+            If I activate the mantle while on the ground I get the normal movement speed and fly slow in x and y axis and normal in y but if I activate it in the air I fly as normal.
+            Needs to save, load and unload data so the player doesn't fall.
+            or suffocate when logging back in and it doesn't keep its "effect" even if it is removed.
+            Might need to deal with capabilities.
      */
 
 public class MantleOfTheUniverse extends Item implements ICurioItem

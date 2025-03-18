@@ -1,3 +1,25 @@
 {
-  "parent": "codexa:block/otherworldly_lantern"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "codexa:block/otherworldly_lantern",
+    "textures": {
+      "1": "codexa:block/otherworldly_lantern_block"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "codexa:item/otherworldly_lantern_item"
+      },
+      "gui_light": "front"
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "codexa:item/otherworldly_lantern_item"
+      }
+    }
+  }
 }

@@ -11,29 +11,29 @@
     "horizontal_radius_multiplier": {
       "type": "minecraft:uniform",
       "value": {
-        "max_exclusive": 3.5,
-        "min_inclusive": 2.0
+        "max_exclusive": 16.0,
+        "min_inclusive": 4.0
       }
     },
     "lava_level": {
-      "above_bottom": 0
+      "absolute": -90
     },
-    "probability": 0.2,
+    "probability": 0.92,
     "replaceable": "#minecraft:overworld_carver_replaceables",
     "vertical_radius_multiplier": {
       "type": "minecraft:uniform",
       "value": {
-        "max_exclusive": 7.0,
-        "min_inclusive": 5.0
+        "max_exclusive": 18.0,
+        "min_inclusive": 8.0
       }
     },
     "y": {
       "type": "minecraft:uniform",
       "max_inclusive": {
-        "absolute": 30
+        "absolute": 80
       },
       "min_inclusive": {
-        "above_bottom": 8
+        "above_bottom": 5
       }
     },
     "yScale": {

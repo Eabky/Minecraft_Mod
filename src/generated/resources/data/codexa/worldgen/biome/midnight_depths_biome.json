@@ -1,8 +1,8 @@
 {
   "carvers": {
-    "air": "codexa:abyss_cave"
+    "air": "codexa:midnight_cave"
   },
-  "downfall": 0.8,
+  "downfall": 0.0,
   "effects": {
     "fog_color": 2696491,
     "mood_sound": {
@@ -38,10 +38,6 @@
     [
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small"
-    ],
-    [],
-    [
-      "codexa:midnight_grass_placed"
     ]
   ],
   "has_precipitation": false,
@@ -56,5 +52,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 1.0
 }

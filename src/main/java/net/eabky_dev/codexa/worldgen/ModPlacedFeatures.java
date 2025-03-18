@@ -34,14 +34,10 @@ public class ModPlacedFeatures
                 ModOrePlacement.commonOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
 
         register(context, SUNELM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SUNELM_KEY),
-                VegetationPlacements.treePlacement(controlledTreePlacement(),
-                        CodexaModBlocks.SUNELM_SAPLING.get()));
+                VegetationPlacements.treePlacement(controlledTreePlacement(), CodexaModBlocks.SUNELM_SAPLING.get()));
 
         register(context, MIDNIGHT_GRASS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MIDNIGHT_GRASS_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(32), // Controls density of patches
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        BiomeFilter.biome()));
+                List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP));
     }
 
     public static PlacementModifier controlledTreePlacement()

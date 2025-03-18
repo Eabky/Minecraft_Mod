@@ -24,12 +24,18 @@ import net.minecraft.world.level.levelgen.structure.StructureSet;
 import java.util.List;
 import java.util.OptionalLong;
 
-public class ModDimensions 
+public class ModDimensions
 {
     public static final ResourceKey<LevelStem> MIDNIGHT_SEA_KEY = ResourceKey.create(Registries.LEVEL_STEM, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "midnight_sea"));
     public static final ResourceKey<Level> MIDNIGHT_SEA_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "midnight_sea"));
     public static final ResourceKey<DimensionType> MIDNIGHT_SEA_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "midnight_sea_type"));
 
+    public static final ResourceKey<NoiseGeneratorSettings> MIDNIGHT_SEA_NOISE = createNoiseKey("midnight_sea_noise");
+
+    private static ResourceKey<NoiseGeneratorSettings> createNoiseKey(String name)
+    {
+        return ResourceKey.create(Registries.NOISE_SETTINGS, ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, name));
+    }
 
     public static void bootstrapType(BootstapContext<DimensionType> context)
     {
@@ -42,12 +48,12 @@ public class ModDimensions
                 1.0, // coordinateScale
                 false, // bedWorks
                 false, // respawnAnchorWorks
-                0, // minY
-                256, // height
-                256, // logicalHeight
-                BlockTags.INFINIBURN_OVERWORLD, // infiniburn
+                -64, // minY
+                384, // height
+                384, // logicalHeight
+                BlockTags.INFINIBURN_END, // infiniburn
                 BuiltinDimensionTypes.NETHER_EFFECTS, // effectsLocation
-                0f, // ambientLight
+                1f, // ambientLight //will set to 0 later but now I need to see shit
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
 
@@ -63,10 +69,12 @@ public class ModDimensions
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
-                        new Climate.ParameterList<>(List.of(Pair.of(
-                                Climate.parameters(0.0F, 0.0F, 0.0F, 0.1F, 0.0F, 0.1F, 0.0F),
-                                biomeRegistry.getOrThrow(ModBiomes.MIDNIGHT_SEA_BIOME))))),
-                noiseGenSettings.getOrThrow(CustomNoiseSettings.MIDNIGHT_SEA_NOISE));
+                        new Climate.ParameterList<>(List.of(
+                                Pair.of(Climate.parameters(1F, 0.0F, -0.18F, 1F, 0.0F, -0.10F, 0.0F),
+                                        biomeRegistry.getOrThrow(ModBiomes.DESOLATE_WASTES_BIOME)),
+                                Pair.of(Climate.parameters(1F, 1F, 0.7F, 0.2F, 0.2F, 0.9F, 0.0F),
+                                        biomeRegistry.getOrThrow(ModBiomes.MIDNIGHT_DEPTHS_BIOME))))),
+                noiseGenSettings.getOrThrow(MIDNIGHT_SEA_NOISE));
 
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.MIDNIGHT_SEA_DIM_TYPE), wrappedChunkGenerator);
