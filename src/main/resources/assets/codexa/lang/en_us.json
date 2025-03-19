@@ -55,13 +55,19 @@
   "item.codexa.boss_killer": "Boss Killer",
 
   "item.codexa.gem_golem_spawn_egg": "Gem Golem Spawn Egg",
+  "item.codexa.gemite_spawn_egg": "Gemite Spawn Egg",
 
   "tooltip.codexa.black_hole.tooltip": "SUCKY SUCKY",
   "tooltip.codexa.dark_star_ring.tooltip": "The power of a §5Dark Star§r in your fingers.",
 
   "sounds.codexa.gem_golem_roar": "Gem Golem Roar",
 
-  "creativetab.codexa_tab": "Codex Arcanum",
+  "creativetab.codexa_blocks_tab": "Codex Arcanum Blocks",
+  "creativetab.codexa_materials_tab": "Codex Arcanum Materials",
+  "creativetab.codexa_food_tab": "Codex Arcanum Food",
+  "creativetab.codexa_equipment_tab": "Codex Arcanum Equipment",
+  "creativetab.codexa_creatures_tab": "Codexa Arcanum Creatures",
+  "creativetab.codexa_miscellaneous_tab": "Codexa Arcanum Miscellaneous",
 
   "key.codexa.codexa": "Codex Arcanum",
   "key.codexa.mantle": "Mantle of the Universe"

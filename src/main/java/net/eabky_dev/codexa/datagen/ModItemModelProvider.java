@@ -68,7 +68,8 @@ public class ModItemModelProvider extends ItemModelProvider
         evenSimplerBlockItem(CodexaModBlocks.CONCRETE_SLAB);
         evenSimplerBlockItem(CodexaModBlocks.POLISHED_CONCRETE_SLAB);
 
-        withExistingParent(CodexaModItems.GEM_GOLEM_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(CodexaModItems.GEM_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(CodexaModItems.GEMITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         saplingItem(CodexaModBlocks.SUNELM_SAPLING);
     }

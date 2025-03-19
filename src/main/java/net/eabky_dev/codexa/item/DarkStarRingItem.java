@@ -2,12 +2,14 @@ package net.eabky_dev.codexa.item;
 
 import net.eabky_dev.codexa.init.CodexaModParticles;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import top.theillusivec4.curios.api.SlotContext;
@@ -83,5 +85,12 @@ public class DarkStarRingItem extends Item implements ICurioItem
     @Override
     public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
         return true;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, Level pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
+    {
+        pTooltipComponents.add(Component.translatable("tooltip.codexa.dark_star_ring.tooltip"));
+        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }
 }

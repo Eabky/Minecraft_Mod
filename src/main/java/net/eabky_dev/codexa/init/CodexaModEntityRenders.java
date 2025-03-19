@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.client.renderer.*;
+import net.eabky_dev.codexa.entity.custom.GemiteEntity;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -22,6 +23,7 @@ public class CodexaModEntityRenders
         event.registerEntityRenderer(CodexaModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
         event.registerEntityRenderer(CodexaModEntities.GEM_SPIKE.get(), GemSpikeRenderer::new);
         event.registerEntityRenderer(CodexaModEntities.SPIDER_WEB_SPIDER.get(), SpiderWebSpiderRenderer::new);
+        event.registerEntityRenderer(CodexaModEntities.GEMITE.get(), GemiteRenderer::new);
 
         BlockEntityRenderers.register(CodexaModBlockEntities.OTHERWORLDLY_LANTERN_BE.get(), OtherworldlyLanternRenderer::new);
     }

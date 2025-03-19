@@ -31,16 +31,16 @@ public class CODEXA
         MinecraftForge.EVENT_BUS.register(this);
         IEventBus modEventBus = context.getModEventBus();
 
-        CodexaModCreativeTabs.register(modEventBus);
+        CodexaModCreativeTabs.REGISTRY.register(modEventBus);
         CodexaModItems.REGISTRY.register(modEventBus);
-        CodexaModBlocks.register(modEventBus);
-        ModLootModifiers.register(modEventBus);
+        CodexaModBlocks.REGISTRY.register(modEventBus);
         CodexaModEntities.REGISTRY.register(modEventBus);
         CodexaModMobEffects.REGISTRY.register(modEventBus);
         CodexaModPotions.REGISTRY.register(modEventBus);
         CodexaModEnchantments.REGISTRY.register(modEventBus);
         CodexaModBlockEntities.REGISTRY.register(modEventBus);
         CodexaModParticles.REGISTRY.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
         ModSounds.register(modEventBus);
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacers.register(modEventBus);

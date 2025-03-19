@@ -2,6 +2,7 @@ package net.eabky_dev.codexa.event;
 
 import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.client.model.GemSpikeModel;
+import net.eabky_dev.codexa.entity.custom.GemiteEntity;
 import net.eabky_dev.codexa.entity.custom.SpiderWebSpiderEntity;
 import net.eabky_dev.codexa.init.CodexaModEntities;
 import net.eabky_dev.codexa.entity.client.model.GemGolemModel;
@@ -30,7 +31,8 @@ public class ModEventBusClientEvents
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event)
     {
-        event.put(CodexaModEntities.GEM_GOLEM.get(), GemGolemEntity.createAttributes().build());
+        event.put(CodexaModEntities.GEM_GOLEM.get(), GemGolemEntity.createAttributes());
+        event.put(CodexaModEntities.GEMITE.get(), GemiteEntity.createAttributes());
     }
 
     @SubscribeEvent

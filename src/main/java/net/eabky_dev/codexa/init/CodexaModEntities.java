@@ -1,17 +1,10 @@
 package net.eabky_dev.codexa.init;
 
 import net.eabky_dev.codexa.CODEXA;
-import net.eabky_dev.codexa.entity.custom.GemGolemEntity;
-import net.eabky_dev.codexa.entity.custom.GemSpikeEntity;
-import net.eabky_dev.codexa.entity.custom.SpiderWebSpiderEntity;
-import net.eabky_dev.codexa.entity.custom.TomahawkProjectileEntity;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.server.level.ServerLevel;
+import net.eabky_dev.codexa.entity.custom.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +21,7 @@ public class CodexaModEntities
     public static final RegistryObject<EntityType<GemSpikeEntity>> GEM_SPIKE;
     public static final RegistryObject<EntityType<TomahawkProjectileEntity>> TOMAHAWK;
     public static final RegistryObject<EntityType<SpiderWebSpiderEntity>> SPIDER_WEB_SPIDER;
+    public static final RegistryObject<EntityType<GemiteEntity>> GEMITE;
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder)
     {
@@ -42,6 +36,7 @@ public class CodexaModEntities
             GemGolemEntity.init();
             TomahawkProjectileEntity.init();
             GemSpikeEntity.init();
+            GemiteEntity.init();
         });
     }
 
@@ -52,5 +47,6 @@ public class CodexaModEntities
         TOMAHAWK = register("tomahawk", EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC).sized(0.5f, 1.15f));
         GEM_SPIKE = register("gem_spike", EntityType.Builder.of(GemSpikeEntity::new, MobCategory.MISC).sized(1F, 4F).fireImmune());
         SPIDER_WEB_SPIDER = register("spider_web_spider", EntityType.Builder.of(SpiderWebSpiderEntity::new, MobCategory.MONSTER).sized(0.5F, 1F));
+        GEMITE = register("gemite", EntityType.Builder.of(GemiteEntity::new, MobCategory.MONSTER).sized(1F, 1.5F).fireImmune());
     }
 }

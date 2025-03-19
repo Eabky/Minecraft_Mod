@@ -71,6 +71,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return CodexaModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return CodexaModBlocks.REGISTRY.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }

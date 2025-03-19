@@ -228,7 +228,7 @@ public class GemGolemEntity extends Monster
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
     }
 
-    public static AttributeSupplier.Builder createAttributes()
+    public static AttributeSupplier createAttributes()
     {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, maxHealth)
@@ -236,7 +236,7 @@ public class GemGolemEntity extends Monster
                 .add(Attributes.MOVEMENT_SPEED, movementSpeed)
                 .add(Attributes.ATTACK_DAMAGE, attackDamage)
                 .add(Attributes.ATTACK_KNOCKBACK, attackKnockback)
-                .add(Attributes.KNOCKBACK_RESISTANCE, knockbackResistance);
+                .add(Attributes.KNOCKBACK_RESISTANCE, knockbackResistance).build();
     }
 
     private void pushEntitiesBack()
