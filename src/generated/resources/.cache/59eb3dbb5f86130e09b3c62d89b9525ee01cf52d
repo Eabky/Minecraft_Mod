@@ -1,5 +1,15 @@
-// 1.20.1	2025-03-16T16:09:10.9363705	Loot Tables
+// 1.20.1	2025-03-21T16:06:28.7793548	Loot Tables
+3361c01ebcfe227999b5c69f5384e65260291769 data/codexa/loot_tables/blocks/alabaster.json
+5be1f79bc36bbc34ab05fda5be6d38f165e8949e data/codexa/loot_tables/blocks/alabaster_bricks.json
+12952d2a8443dc7bc028b3b31b4ee163e45ea007 data/codexa/loot_tables/blocks/alabaster_brick_slab.json
+69d08984c11ccc05c9a218c83257065dd2f8661f data/codexa/loot_tables/blocks/alabaster_brick_stairs.json
+dc375ac694e3c9eb6514e29fc364ae2c275436f2 data/codexa/loot_tables/blocks/alabaster_brick_wall.json
+0a23cabe333bff1a7b0529534784dd4c23980796 data/codexa/loot_tables/blocks/alabaster_pillar.json
+c3ae3f817a9bb2b702ba1ea685c45cac43fd9a62 data/codexa/loot_tables/blocks/alabaster_slab.json
+6c3d22d9645fc3acb6a3674990846a426e96f4ba data/codexa/loot_tables/blocks/alabaster_stairs.json
+d8cd24307b53c161713925856773926ef76e0cae data/codexa/loot_tables/blocks/alabaster_wall.json
 1030e4c7e3da0613d6e028fdf618439950f066ec data/codexa/loot_tables/blocks/black_hole.json
+0cbffafdce2b58d09872f91e8946077e48dbc897 data/codexa/loot_tables/blocks/carved_alabaster.json
 715ca4b62bb438a1e3f83d195f23fc3dc9f15537 data/codexa/loot_tables/blocks/concrete.json
 c2c4fb017496f13eb0ce748cf9bfcfcf972d56b1 data/codexa/loot_tables/blocks/concrete_slab.json
 41ef5fd853aa1d0e8de05693ebbbab08ea5fdb5b data/codexa/loot_tables/blocks/concrete_stairs.json

@@ -40,6 +40,18 @@ public class CodexaModCreativeTabs
                     pOutput.accept(CodexaModBlocks.POLISHED_CONCRETE.get());
                     pOutput.accept(CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get());
                     pOutput.accept(CodexaModBlocks.POLISHED_CONCRETE_SLAB.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_BRICKS.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_PILLAR.get());
+                    pOutput.accept(CodexaModBlocks.CARVED_ALABASTER.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_STAIRS.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_SLAB.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_WALL.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_BRICK_STAIRS.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_BRICK_SLAB.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER_BRICK_WALL.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER.get());
+                    pOutput.accept(CodexaModBlocks.ALABASTER.get());
                     pOutput.accept(CodexaModBlocks.BLACK_HOLE.get());
                     pOutput.accept(CodexaModBlocks.SUNELM_LOG.get());
                     pOutput.accept(CodexaModBlocks.SUNELM_WOOD.get());

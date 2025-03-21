@@ -1,5 +1,7 @@
 {
   "values": [
-    "codexa:concrete_wall"
+    "codexa:concrete_wall",
+    "codexa:alabaster_wall",
+    "codexa:alabaster_brick_wall"
   ]
 }

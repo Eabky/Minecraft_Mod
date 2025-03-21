@@ -31,7 +31,6 @@ public class CodexaModBlocks
     public static final RegistryObject<Block> BLACK_HOLE;
     public static final RegistryObject<Block> PALE_FORTUNE;
     public static final RegistryObject<Block> POTTED_PALE_FORTUNE;
-
     public static final RegistryObject<Block> SUNELM_LOG;
     public static final RegistryObject<Block> SUNELM_WOOD;
     public static final RegistryObject<Block> STRIPPED_SUNELM_LOG;
@@ -39,12 +38,20 @@ public class CodexaModBlocks
     public static final RegistryObject<Block> SUNELM_PLANKS;
     public static final RegistryObject<Block> SUNELM_LEAVES;
     public static final RegistryObject<Block> SUNELM_SAPLING;
-
     public static final RegistryObject<Block> MIDNIGHT_GRASS_BLOCK;
     public static final RegistryObject<Block> MIDNIGHT_DIRT;
     public static final RegistryObject<Block> MIDNIGHT_STONE;
     public static final RegistryObject<Block> MIDNIGHT_GRASS;
-
+    public static final RegistryObject<Block> ALABASTER;
+    public static final RegistryObject<Block> ALABASTER_BRICKS;
+    public static final RegistryObject<Block> ALABASTER_PILLAR;
+    public static final RegistryObject<Block> ALABASTER_SLAB;
+    public static final RegistryObject<Block> ALABASTER_STAIRS;
+    public static final RegistryObject<Block> ALABASTER_WALL;
+    public static final RegistryObject<Block> ALABASTER_BRICK_STAIRS;
+    public static final RegistryObject<Block> ALABASTER_BRICK_SLAB;
+    public static final RegistryObject<Block> ALABASTER_BRICK_WALL;
+    public static final RegistryObject<Block> CARVED_ALABASTER;
     public static final RegistryObject<Block> OTHERWORLDLY_LANTERN;
 
 
@@ -70,17 +77,6 @@ public class CodexaModBlocks
         /* ORES */
         DEEPSLATE_PLATINUM_ORE = registerBlock("deepslate_platinum_ore", ()-> new DropExperienceBlock(BlockBehaviour.Properties.of().strength(5f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(),UniformInt.of(3, 6)));
 
-        /* BUILDING */
-        CONCRETE = registerBlock("concrete", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
-        CONCRETE_STRAIRS = registerBlock("concrete_stairs", ()-> new StairBlock(()-> CodexaModBlocks.CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
-        CONCRETE_SLAB = registerBlock("concrete_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
-        CONCRETE_WALL = registerBlock("concrete_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(CONCRETE.get())));
-        POLISHED_CONCRETE = registerBlock("polished_concrete", ()-> new Block(BlockBehaviour.Properties.copy(CONCRETE.get())));
-        POLISHED_CONCRETE_STRAIRS = registerBlock("polished_concrete_stairs", ()-> new StairBlock(()-> CodexaModBlocks.POLISHED_CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
-        POLISHED_CONCRETE_SLAB = registerBlock("polished_concrete_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
-        SUNELM_PLANKS = registerBlock("sunelm_planks", () -> new ModPlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
-
-
         /* NATURAL */
         PALE_FORTUNE = registerBlock("pale_fortune", () -> new FlowerBlock(() -> MobEffects.LUCK, 5, BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
         POTTED_PALE_FORTUNE = REGISTRY.register("potted_pale_fortune", () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CodexaModBlocks.PALE_FORTUNE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
@@ -94,6 +90,26 @@ public class CodexaModBlocks
         MIDNIGHT_DIRT = registerBlock("midnight_dirt", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
         MIDNIGHT_STONE = registerBlock("midnight_stone", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
         MIDNIGHT_GRASS = registerBlock("midnight_grass", () -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).noOcclusion().noCollission()));
+        ALABASTER = registerBlock("alabaster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+
+        /* BUILDING */
+        CONCRETE = registerBlock("concrete", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        CONCRETE_STRAIRS = registerBlock("concrete_stairs", ()-> new StairBlock(()-> CodexaModBlocks.CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        CONCRETE_SLAB = registerBlock("concrete_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        CONCRETE_WALL = registerBlock("concrete_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(CONCRETE.get())));
+        POLISHED_CONCRETE = registerBlock("polished_concrete", ()-> new Block(BlockBehaviour.Properties.copy(CONCRETE.get())));
+        POLISHED_CONCRETE_STRAIRS = registerBlock("polished_concrete_stairs", ()-> new StairBlock(()-> CodexaModBlocks.POLISHED_CONCRETE.get().defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
+        POLISHED_CONCRETE_SLAB = registerBlock("polished_concrete_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_CONCRETE.get())));
+        SUNELM_PLANKS = registerBlock("sunelm_planks", () -> new ModPlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+        ALABASTER_BRICKS = registerBlock("alabaster_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        ALABASTER_STAIRS = registerBlock("alabaster_stairs", ()-> new StairBlock(()-> CodexaModBlocks.ALABASTER.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        ALABASTER_SLAB = registerBlock("alabaster_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        ALABASTER_WALL = registerBlock("alabaster_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(ALABASTER.get())));
+        ALABASTER_BRICK_STAIRS = registerBlock("alabaster_brick_stairs", ()-> new StairBlock(()-> CodexaModBlocks.ALABASTER_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        ALABASTER_BRICK_SLAB = registerBlock("alabaster_brick_slab", ()-> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+        ALABASTER_BRICK_WALL = registerBlock("alabaster_brick_wall", ()-> new WallBlock(BlockBehaviour.Properties.copy(ALABASTER_BRICKS.get())));
+        ALABASTER_PILLAR = registerBlock("alabaster_pillar", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
+        CARVED_ALABASTER = registerBlock("carved_alabaster", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
 
         /* FUNCTIONAL */
         OTHERWORLDLY_LANTERN = REGISTRY.register("otherworldly_lantern", ()-> new OtherworldlyLanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel((state) -> 15)));

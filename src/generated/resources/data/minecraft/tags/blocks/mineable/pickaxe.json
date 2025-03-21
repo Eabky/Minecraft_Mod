@@ -7,6 +7,16 @@
     "codexa:concrete_stairs",
     "codexa:polished_concrete_slab",
     "codexa:polished_concrete_stairs",
+    "codexa:alabaster",
+    "codexa:alabaster_bricks",
+    "codexa:alabaster_pillar",
+    "codexa:carved_alabaster",
+    "codexa:alabaster_stairs",
+    "codexa:alabaster_brick_stairs",
+    "codexa:alabaster_slab",
+    "codexa:alabaster_brick_slab",
+    "codexa:alabaster_wall",
+    "codexa:alabaster_brick_wall",
     "codexa:otherworldly_lantern"
   ]
 }

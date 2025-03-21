@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "codexa:block/alabaster",
+    "side": "codexa:block/alabaster",
+    "top": "codexa:block/alabaster"
+  }
+}

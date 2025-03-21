@@ -41,12 +41,12 @@ public class GemiteEntity extends Monster implements GeoEntity
     {
         this.goalSelector.addGoal(0, new FloatGoal(this));
 
-        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1D, 120));
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.6D, 120));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 3f));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         //this.goalSelector.addGoal(1, new GemGolemAttackGoal(this, 1.0D, true));
-        this.targetSelector.addGoal(2, new MeleeAttackGoal(this, 1D, false));
+        this.targetSelector.addGoal(2, new MeleeAttackGoal(this, 0.6D, false));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
     }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "codexa:block/alabaster_bricks",
+    "side": "codexa:block/carved_alabaster"
+  }
+}

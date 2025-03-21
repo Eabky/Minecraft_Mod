@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "codexa:block/alabaster_slab"
+    },
+    "type=double": {
+      "model": "codexa:block/alabaster"
+    },
+    "type=top": {
+      "model": "codexa:block/alabaster_slab_top"
+    }
+  }
+}

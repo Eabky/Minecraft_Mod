@@ -31,33 +31,32 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(CodexaModBlocks.CONCRETE_STRAIRS.get());
         this.dropSelf(CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get());
         this.dropSelf(CodexaModBlocks.CONCRETE_WALL.get());
-
-        this.add(CodexaModBlocks.CONCRETE_SLAB.get(),
-                block -> createSlabItemTable(CodexaModBlocks.CONCRETE_SLAB.get()));
-        this.add(CodexaModBlocks.POLISHED_CONCRETE_SLAB.get(),
-                block -> createSlabItemTable(CodexaModBlocks.POLISHED_CONCRETE_SLAB.get()));
-
-        this.add(CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get(),
-                block -> createCopperLikeOreDrops(CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get(), CodexaModItems.RAW_PLATINUM.get()));
-
+        this.dropSelf(CodexaModBlocks.ALABASTER.get());
+        this.dropSelf(CodexaModBlocks.ALABASTER_BRICKS.get());
+        this.dropSelf(CodexaModBlocks.ALABASTER_PILLAR.get());
+        this.dropSelf(CodexaModBlocks.ALABASTER_STAIRS.get());
+        this.add(CodexaModBlocks.ALABASTER_SLAB.get(), block -> createSlabItemTable(CodexaModBlocks.ALABASTER_SLAB.get()));
+        this.dropSelf(CodexaModBlocks.ALABASTER_WALL.get());
+        this.dropSelf(CodexaModBlocks.ALABASTER_BRICK_STAIRS.get());
+        this.add(CodexaModBlocks.ALABASTER_BRICK_SLAB.get(), block -> createSlabItemTable(CodexaModBlocks.ALABASTER_BRICK_SLAB.get()));
+        this.dropSelf(CodexaModBlocks.ALABASTER_BRICK_WALL.get());
+        this.dropSelf(CodexaModBlocks.CARVED_ALABASTER.get());
+        this.add(CodexaModBlocks.CONCRETE_SLAB.get(), block -> createSlabItemTable(CodexaModBlocks.CONCRETE_SLAB.get()));
+        this.add(CodexaModBlocks.POLISHED_CONCRETE_SLAB.get(), block -> createSlabItemTable(CodexaModBlocks.POLISHED_CONCRETE_SLAB.get()));
+        this.add(CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get(), block -> createCopperLikeOreDrops(CodexaModBlocks.DEEPSLATE_PLATINUM_ORE.get(), CodexaModItems.RAW_PLATINUM.get()));
         this.dropSelf(CodexaModBlocks.PALE_FORTUNE.get());
         this.add(CodexaModBlocks.POTTED_PALE_FORTUNE.get(), createPotFlowerItemTable(CodexaModBlocks.PALE_FORTUNE.get()));
-
         this.dropSelf(CodexaModBlocks.SUNELM_LOG.get());
         this.dropSelf(CodexaModBlocks.SUNELM_WOOD.get());
         this.dropSelf(CodexaModBlocks.STRIPPED_SUNELM_LOG.get());
         this.dropSelf(CodexaModBlocks.STRIPPED_SUNELM_WOOD.get());
         this.dropSelf(CodexaModBlocks.SUNELM_PLANKS.get());
         this.dropSelf(CodexaModBlocks.SUNELM_SAPLING.get());
-
-        this.add(CodexaModBlocks.SUNELM_LEAVES.get(), block ->
-                createLeavesDrops(block, CodexaModBlocks.SUNELM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-
+        this.add(CodexaModBlocks.SUNELM_LEAVES.get(), block -> createLeavesDrops(block, CodexaModBlocks.SUNELM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropSelf(CodexaModBlocks.MIDNIGHT_GRASS_BLOCK.get());
         this.dropSelf(CodexaModBlocks.MIDNIGHT_DIRT.get());
         this.dropSelf(CodexaModBlocks.MIDNIGHT_STONE.get());
         this.dropSelf(CodexaModBlocks.MIDNIGHT_GRASS.get());
-
         this.dropSelf(CodexaModBlocks.OTHERWORLDLY_LANTERN.get());
     }
 

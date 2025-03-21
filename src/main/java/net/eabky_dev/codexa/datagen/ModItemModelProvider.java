@@ -62,11 +62,17 @@ public class ModItemModelProvider extends ItemModelProvider
         simpleBlockItemBlockTexture(CodexaModBlocks.PALE_FORTUNE);
 
         wallItem(CodexaModBlocks.CONCRETE_WALL, CodexaModBlocks.CONCRETE);
+        wallItem(CodexaModBlocks.ALABASTER_WALL, CodexaModBlocks.ALABASTER);
+        wallItem(CodexaModBlocks.ALABASTER_BRICK_WALL, CodexaModBlocks.ALABASTER_BRICKS);
 
         evenSimplerBlockItem(CodexaModBlocks.CONCRETE_STRAIRS);
         evenSimplerBlockItem(CodexaModBlocks.POLISHED_CONCRETE_STRAIRS);
         evenSimplerBlockItem(CodexaModBlocks.CONCRETE_SLAB);
         evenSimplerBlockItem(CodexaModBlocks.POLISHED_CONCRETE_SLAB);
+        evenSimplerBlockItem(CodexaModBlocks.ALABASTER_STAIRS);
+        evenSimplerBlockItem(CodexaModBlocks.ALABASTER_BRICK_STAIRS);
+        evenSimplerBlockItem(CodexaModBlocks.ALABASTER_SLAB);
+        evenSimplerBlockItem(CodexaModBlocks.ALABASTER_BRICK_SLAB);
 
         withExistingParent(CodexaModItems.GEM_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(CodexaModItems.GEMITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

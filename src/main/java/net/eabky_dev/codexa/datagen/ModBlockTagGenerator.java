@@ -29,6 +29,16 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         CodexaModBlocks.CONCRETE_STRAIRS.get(),
                         CodexaModBlocks.POLISHED_CONCRETE_SLAB.get(),
                         CodexaModBlocks.POLISHED_CONCRETE_STRAIRS.get(),
+                        CodexaModBlocks.ALABASTER.get(),
+                        CodexaModBlocks.ALABASTER_BRICKS.get(),
+                        CodexaModBlocks.ALABASTER_PILLAR.get(),
+                        CodexaModBlocks.CARVED_ALABASTER.get(),
+                        CodexaModBlocks.ALABASTER_STAIRS.get(),
+                        CodexaModBlocks.ALABASTER_BRICK_STAIRS.get(),
+                        CodexaModBlocks.ALABASTER_SLAB.get(),
+                        CodexaModBlocks.ALABASTER_BRICK_SLAB.get(),
+                        CodexaModBlocks.ALABASTER_WALL.get(),
+                        CodexaModBlocks.ALABASTER_BRICK_WALL.get(),
                         CodexaModBlocks.OTHERWORLDLY_LANTERN.get());
 
 
@@ -46,7 +56,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.NEEDS_PLATINUM_TOOL);
 
         this.tag(BlockTags.WALLS)
-                .add(CodexaModBlocks.CONCRETE_WALL.get());
+                .add(CodexaModBlocks.CONCRETE_WALL.get())
+                .add(CodexaModBlocks.ALABASTER_WALL.get())
+                .add(CodexaModBlocks.ALABASTER_BRICK_WALL.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(CodexaModBlocks.SUNELM_LOG.get())

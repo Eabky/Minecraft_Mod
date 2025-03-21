@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "codexa:block/carved_alabaster_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "codexa:block/carved_alabaster"
+    },
+    "axis=z": {
+      "model": "codexa:block/carved_alabaster_horizontal",
+      "x": 90
+    }
+  }
+}

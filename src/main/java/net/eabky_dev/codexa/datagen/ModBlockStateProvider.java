@@ -21,7 +21,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
     {
         blockWithItem(CodexaModBlocks.PLATINUM_BLOCK);
         blockWithItem(CodexaModBlocks.DEEPSLATE_PLATINUM_ORE);
-
         blockWithItem(CodexaModBlocks.BLACK_HOLE);
         blockWithItem(CodexaModBlocks.CONCRETE);
         blockWithItem(CodexaModBlocks.POLISHED_CONCRETE);
@@ -30,20 +29,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock(((SlabBlock) CodexaModBlocks.CONCRETE_SLAB.get()), blockTexture(CodexaModBlocks.CONCRETE.get()), blockTexture(CodexaModBlocks.CONCRETE.get()));
         slabBlock(((SlabBlock) CodexaModBlocks.POLISHED_CONCRETE_SLAB.get()), blockTexture(CodexaModBlocks.POLISHED_CONCRETE.get()), blockTexture(CodexaModBlocks.POLISHED_CONCRETE.get()));
         wallBlock(((WallBlock) CodexaModBlocks.CONCRETE_WALL.get()), blockTexture(CodexaModBlocks.CONCRETE.get()));
-
-        simpleBlockWithItem(CodexaModBlocks.PALE_FORTUNE.get(), models().cross(blockTexture(CodexaModBlocks.PALE_FORTUNE.get()).getPath(),
-                blockTexture(CodexaModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
-        simpleBlockWithItem(CodexaModBlocks.POTTED_PALE_FORTUNE.get(), models().singleTexture("potted_pale_fortune", ResourceLocation.parse("flower_pot_cross"), "plant",
-                blockTexture(CodexaModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
-
+        blockWithItem(CodexaModBlocks.ALABASTER);
+        blockWithItem(CodexaModBlocks.ALABASTER_BRICKS);
+        blockItem(CodexaModBlocks.ALABASTER_PILLAR);
+        blockItem(CodexaModBlocks.CARVED_ALABASTER);
+        slabBlock(((SlabBlock) CodexaModBlocks.ALABASTER_SLAB.get()), blockTexture(CodexaModBlocks.ALABASTER.get()), blockTexture(CodexaModBlocks.ALABASTER.get()));
+        slabBlock(((SlabBlock) CodexaModBlocks.ALABASTER_BRICK_SLAB.get()), blockTexture(CodexaModBlocks.ALABASTER_BRICKS.get()), blockTexture(CodexaModBlocks.ALABASTER_BRICKS.get()));
+        wallBlock(((WallBlock) CodexaModBlocks.ALABASTER_WALL.get()), blockTexture(CodexaModBlocks.ALABASTER.get()));
+        wallBlock(((WallBlock) CodexaModBlocks.ALABASTER_BRICK_WALL.get()), blockTexture(CodexaModBlocks.ALABASTER_BRICKS.get()));
+        stairsBlock(((StairBlock) CodexaModBlocks.ALABASTER_STAIRS.get()), blockTexture(CodexaModBlocks.ALABASTER.get()));
+        stairsBlock(((StairBlock) CodexaModBlocks.ALABASTER_BRICK_STAIRS.get()), blockTexture(CodexaModBlocks.ALABASTER_BRICKS.get()));
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.ALABASTER_PILLAR.get()), blockTexture(CodexaModBlocks.ALABASTER_PILLAR.get()), ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/alabaster"));
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.CARVED_ALABASTER.get()), blockTexture(CodexaModBlocks.CARVED_ALABASTER.get()), ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/alabaster_bricks"));
+        simpleBlockWithItem(CodexaModBlocks.PALE_FORTUNE.get(), models().cross(blockTexture(CodexaModBlocks.PALE_FORTUNE.get()).getPath(), blockTexture(CodexaModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
+        simpleBlockWithItem(CodexaModBlocks.POTTED_PALE_FORTUNE.get(), models().singleTexture("potted_pale_fortune", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(CodexaModBlocks.PALE_FORTUNE.get())).renderType("cutout"));
         logBlock(((RotatedPillarBlock) CodexaModBlocks.SUNELM_LOG.get()));
         axisBlock(((RotatedPillarBlock) CodexaModBlocks.SUNELM_WOOD.get()), blockTexture(CodexaModBlocks.SUNELM_LOG.get()), blockTexture(CodexaModBlocks.SUNELM_LOG.get()));
-
-        axisBlock(((RotatedPillarBlock) CodexaModBlocks.STRIPPED_SUNELM_LOG.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()),
-                ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/stripped_sunelm_log_top"));
-        axisBlock(((RotatedPillarBlock) CodexaModBlocks.STRIPPED_SUNELM_WOOD.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()),
-                blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()));
-
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.STRIPPED_SUNELM_LOG.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()), ResourceLocation.fromNamespaceAndPath(CODEXA.MOD_ID, "block/stripped_sunelm_log_top"));
+        axisBlock(((RotatedPillarBlock) CodexaModBlocks.STRIPPED_SUNELM_WOOD.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()), blockTexture(CodexaModBlocks.STRIPPED_SUNELM_LOG.get()));
         blockItem(CodexaModBlocks.SUNELM_LOG);
         blockItem(CodexaModBlocks.SUNELM_WOOD);
         blockItem(CodexaModBlocks.STRIPPED_SUNELM_LOG);
@@ -51,12 +54,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(CodexaModBlocks.SUNELM_PLANKS);
         leavesBlock(CodexaModBlocks.SUNELM_LEAVES);
         saplingBlock(CodexaModBlocks.SUNELM_SAPLING);
-
         grassBlock(CodexaModBlocks.MIDNIGHT_GRASS_BLOCK);
         blockWithItem(CodexaModBlocks.MIDNIGHT_DIRT);
         blockWithItem(CodexaModBlocks.MIDNIGHT_STONE);
-        simpleBlockWithItem(CodexaModBlocks.MIDNIGHT_GRASS.get(), models().cross(blockTexture(CodexaModBlocks.MIDNIGHT_GRASS.get()).getPath(),
-                blockTexture(CodexaModBlocks.MIDNIGHT_GRASS.get())).renderType("cutout"));
+        simpleBlockWithItem(CodexaModBlocks.MIDNIGHT_GRASS.get(), models().cross(blockTexture(CodexaModBlocks.MIDNIGHT_GRASS.get()).getPath(), blockTexture(CodexaModBlocks.MIDNIGHT_GRASS.get())).renderType("cutout"));
     }
 
     private void grassBlock(RegistryObject<Block> blockRegistryObject)
