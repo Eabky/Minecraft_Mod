@@ -4,11 +4,13 @@ import net.eabky_dev.codexa.CODEXA;
 import net.eabky_dev.codexa.entity.client.renderer.*;
 import net.eabky_dev.codexa.entity.custom.GemiteEntity;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.ItemEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 @Mod.EventBusSubscriber(modid = CODEXA.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class CodexaModEntityRenders

@@ -37,6 +37,7 @@ public class CodexaModItems {
     public static final RegistryObject<Item> OTHERWORLDLY_LANTERN_ITEM;
     public static final RegistryObject<Item> GEM_GOLEM_SPAWN_EGG;
     public static final RegistryObject<Item> GEMITE_SPAWN_EGG;
+    public static final RegistryObject<Item> STAR_FORGER;
 
     static
     {
@@ -69,6 +70,7 @@ public class CodexaModItems {
         WOODEN_GREATSWORD = REGISTRY.register("wooden_greatsword", () -> new SwordItem(Tiers.IRON, 2, -3F, new Item.Properties()));
         BOSS_KILLER = REGISTRY.register("boss_killer", () -> new BossKillerItem(Tiers.NETHERITE, 5, 1F, new Item.Properties()));
         TOMAHAWK = REGISTRY.register("tomahawk", () -> new TomahawkItem(new Item.Properties().stacksTo(16))); // Temporary test item remove or modify later
+        STAR_FORGER = REGISTRY.register("star_forger", () -> new StarForger(Tiers.NETHERITE, 3, -1F, new Item.Properties())); //add custom tier and weapon type later
 
         /* FOOD */
         WISDOM_FRUIT = REGISTRY.register("wisdom_fruit", () -> new Item(new Item.Properties().food(CodexaModFoodProperties.WISDOM_FRUIT)));

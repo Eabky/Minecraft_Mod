@@ -8,17 +8,15 @@
   "item.codexa.platinum_chestplate": "Platinum Chestplate",
   "item.codexa.platinum_leggings": "Platinum leggings",
   "item.codexa.platinum_boots": "Platinum Boots",
-
   "item.codexa.paladinium_ingot": "Paladinium Ingot",
-
   "item.codexa.dark_star_ring": "Dark Star Ring",
   "item.codexa.ring_of_defiance": "Ring of Defiance",
   "item.codexa.mantle_of_the_universe": "Mantle of the Universe",
   "item.codexa.iron_longsword": "Iron Longsword",
   "item.codexa.wooden_greatsword": "Wooden Greatsword",
-
   "item.codexa.wisdom_fruit": "Wisdom Fruit",
   "item.codexa.bamboo_charcoal": "Bamboo Charcoal",
+  "item.codexa.star_forger": "Star Forger",
 
   "block.codexa.platinum_block": "Platinum Block",
   "block.codexa.deepslate_platinum_ore": "Platinum Ore",
@@ -42,7 +40,17 @@
   "block.codexa.midnight_stone": "Midnight Stone",
   "block.codexa.midnight_grass": "Midnight Grass",
   "block.codexa.pale_fortune": "Pale Fortune",
-  "block.codexa.otherworldly_lantern": "Otherworldly Lantern",
+  "block.codexa.alabaster": "Alabaster",
+  "block.codexa.alabaster_bricks": "Alabaster Bricks",
+  "block.codexa.alabaster_pillar": "Alabaster Pillar",
+  "block.codexa.carved_alabaster": "Carved Alabaster",
+  "block.codexa.alabaster_stairs": "Alabaster Stairs",
+  "block.codexa.alabaster_slab": "Alabaster Slab",
+  "block.codexa.alabaster_wall": "Alabaster Wall",
+  "block.codexa.alabaster_brick_stairs": "Alabaster Brick Stairs",
+  "block.codexa.alabaster_brick_slab": "Alabaster Brick Slab",
+  "block.codexa.alabaster_brick_wall": "Alabaster Brick Wall",
+
 
   "effect.codexa.corrosion": "Corrosion",
 

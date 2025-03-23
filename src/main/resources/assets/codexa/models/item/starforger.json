@@ -1,0 +1,59 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "textures": {
+    "0": "codexa:item/starforger",
+    "particle": "codexa:item/starforger"
+  },
+  "texture_size": [
+    64,
+    64
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [
+        0,
+        -7.75,
+        2
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        0,
+        -7.75,
+        2
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        22,
+        0
+      ],
+      "translation": [
+        0,
+        -9.75,
+        1.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        22,
+        0
+      ],
+      "translation": [
+        0,
+        -9.75,
+        1.5
+      ]
+    },
+    "ground": {
+      "rotation": [
+        42.53,
+        11.01,
+        27.82
+      ]
+    }
+  }
+}

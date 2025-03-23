@@ -100,6 +100,7 @@ public class CodexaModCreativeTabs
                     pOutput.accept(CodexaModItems.IRON_LONGSWORD.get());
                     pOutput.accept(CodexaModItems.WOODEN_GREATSWORD.get());
                     pOutput.accept(CodexaModItems.TOMAHAWK.get());
+                    pOutput.accept(CodexaModItems.STAR_FORGER.get());
 
                 }).build());
 
